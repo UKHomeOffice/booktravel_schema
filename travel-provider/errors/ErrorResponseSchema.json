@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "TSP Interface Error Response Schema",
+  "version": "0.0.1",
+  "description": "Schema describing an error that occurred when processing an API request",
+  "properties": {
+    "statusCode": {
+      "type": "integer",
+      "minimum": 100,
+      "maximum": 599,
+      "description": "The http status code returned by the API call."
+    },
+    "errors": {
+      "type": "array",
+      "description": "A list of one or more errors that have occurred.",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/definitions/error"
+      }
+    }
+  },
+  "required": [
+    "statusCode",
+    "errors"
+  ],
+  "definitions": {
+    "error": {
+      "type": "object",
+      "description": "Details of an error.",
+      "required": [
+        "correlationId",
+        "reason",
+        "message"
+      ],
+      "properties": {
+        "correlationId": {
+          "type": "string",
+          "description": "A unique identifier generated and logged by the API that detects the error. Intended to support debugging and issue resolution by support teams where necessary.",
+          "pattern": "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$"
+        },
+        "reason": {
+          "type": "string",
+          "description": "A code representing the error condition that has been detected. Whilst the message may change for a particular problem, this value won't.",
+          "format": "string",
+          "minLength": 1
+        },
+        "message": {
+          "type": "string",
+          "description": "A description intended for human consumption that describes the problem that occurred.",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}
