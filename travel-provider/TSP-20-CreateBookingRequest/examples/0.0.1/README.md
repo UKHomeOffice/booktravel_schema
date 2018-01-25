@@ -1,9 +1,12 @@
-Exampes List
+Examples List
 ============
 
 This directory contains the following schemas which are valid against the schema version indicated by its name.
 
-basic.json
+Requests
+========
+
+request-basic.json
 ----------
 
 A booking request for a single unescorted traveller.
@@ -16,7 +19,7 @@ A booking request for a single unescorted traveller.
 * Travel doc type provided
 * No special assistance or meal requirements
 
-escorted-single.json
+request-escorted-single.json
 --------------------
 
 As basic.json but with need for medical and security escort.
@@ -24,7 +27,7 @@ As basic.json but with need for medical and security escort.
 * Request states that TSP should wait for escort details before making booking.
 * Traveller details indicate both medical and security escorts are needed.
 
-family-complex.json
+request-family-complex.json
 -------------------
 
 A family group consisting of an adult female and dependant male child.
@@ -41,4 +44,9 @@ A family group consisting of an adult female and dependant male child.
 * traveller[1] has special assistance requirements
 
 
+Responses
+=========
 
+response.json
+
+An example response message. All response messages have the same structure.
