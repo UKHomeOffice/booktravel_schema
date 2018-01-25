@@ -1,0 +1,67 @@
+{
+  "requestId": 123456,
+  "handlingGuidelines": {
+    "isComplex": true,
+    "complexReason": "Vulnerable female with multiple failed removals before plus young son with medical needs.",
+    "awaitEscortNames": true
+  },
+  "requester": {
+    "name": "Hannah Smythe",
+    "email": "test@example.com",
+    "telephone": "01234 546434",
+    "groupName": "ICE - London",
+    "groupCode": "ICEL"
+  },
+  "journey": {
+    "origin": {
+      "airport": {
+        "IATACode": "LHR"
+      }
+    },
+    "destination": {
+      "airport": {
+        "IATACode": "BKK"
+      }
+    },
+    "scheduleConstraints": {
+      "departureDate": {
+        "before": "2018-01-30"
+      }
+    },
+    "flightTicketConstraints": {
+      "flightNumber": "BA-74",
+      "routingRequirements": "Flight on a Monday or Tuesday only please.",
+      "refundableRequired": true
+    }
+  },
+  "travellers": [
+    {
+      "travellerId": "7f9d86da-b62c-4bdf-852d-0d963da379d2",
+      "forename": "Andria",
+      "surname": "Weston",
+      "dateOfBirth": "1970-01-01",
+      "gender": "F",
+      "nationality": "KHM",
+      "mealPreference": "Vegetarian",
+      "travellerType": "PERSON_RETURNING",
+      "requiresMedicalEscort": false,
+      "requiresSecurityEscort": false
+    },
+    {
+      "travellerId": "13c6263a-8212-4e20-b76e-24ed20e35986",
+      "forename": "Peter",
+      "surname": "Weston",
+      "dateOfBirth": "2007-04-22",
+      "gender": "M",
+      "nationality": "KHM",
+      "specialAssistance": "Requires a wheelchair to be available at airport and to board plane.",
+      "mealPreference": "Lactose free",
+      "travellerType": "PERSON_RETURNING",
+      "requiresMedicalEscort": true,
+      "requiresSecurityEscort": false,
+      "isDependentForTraveller": [
+        "7f9d86da-b62c-4bdf-852d-0d963da379d2"
+      ]
+    }
+  ]
+}
