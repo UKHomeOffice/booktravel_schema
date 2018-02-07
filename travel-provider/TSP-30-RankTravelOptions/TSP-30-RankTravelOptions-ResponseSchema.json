@@ -14,7 +14,8 @@
       "description": "Id and ranking information",
       "properties": {
         "id": {
-          "type": "string"
+          "type": "string",
+          "pattern": "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$"
         },
         "dateTime": {
           "description": "Local time is assumed. Do not include timezone information in the value. Format is YYYY-MM-DDThh:mm:ss.",
@@ -62,7 +63,8 @@
   "additionalProperties": false,
   "required": [
     "returnId",
-    "travelOptions"
+    "travelOptions",
+    "rankInfo"
   ],
   "definitions": {
     "travelOption": {
