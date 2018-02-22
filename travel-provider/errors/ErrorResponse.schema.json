@@ -31,7 +31,8 @@
       "required": [
         "correlationId",
         "reason",
-        "message"
+        "message",
+        "path"
       ],
       "properties": {
         "correlationId": {
@@ -48,6 +49,11 @@
         "message": {
           "type": "string",
           "description": "A description intended for human consumption that describes the problem that occurred.",
+          "minLength": 1
+        },
+        "path": {
+          "type": "string",
+          "description": "The JSON path to the element where the problem occurred.",
           "minLength": 1
         }
       }
