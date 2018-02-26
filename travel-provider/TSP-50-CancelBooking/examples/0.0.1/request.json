@@ -1,0 +1,21 @@
+{
+  "requester": {
+    "name": "Hannah Smythe",
+    "email": "test@example.com",
+    "telephone": "01234 546434",
+    "groupName": "ICE - London",
+    "groupCode": "ICEL"
+  },
+  "travellerBookings": [
+    {
+      "returnId": 234234,
+      "travellerId": "13c6263a-8212-4e20-b76e-24ed20e35986",
+      "forename": "asdfa",
+      "surname": "asdfsdaf",
+      "tickets": [
+        "c4d8e019-1102-4f44-9d1e-c59644cb02c2",
+        "d9c5eaf4-1e60-4a50-99fa-e35569f43232"
+      ]
+    }
+  ]
+}
