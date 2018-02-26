@@ -35,7 +35,7 @@
     },
     "rankedTravelOptions": {
       "type": "array",
-      "description": "A list of travel options ranked in order of best value first.",
+      "description": "A list of travel options ranked in order of preference from most preferred to leaast preferred.",
       "minItems": 1,
       "maxItems": 9,
       "items": {

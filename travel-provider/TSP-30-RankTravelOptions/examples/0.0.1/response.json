@@ -1,0 +1,33 @@
+{
+  "returnId": 12334,
+  "rankInfo": {
+    "id": "08bebd91-42b2-4fc4-b35c-21ab056224a1",
+    "dateTime": "2019-12-12T12:12:12",
+    "engineVersion": 1
+  },
+  "rankedTravelOptions": [
+    {
+      "rank": 1,
+      "flights": [
+        {
+          "flightNumber": "BA-234",
+          "departureDateTime": "2012-04-23T18:25:43"
+        }
+      ],
+      "totalTicketPricePence": 123222
+    },
+{
+      "rank": 2,
+      "flights": [
+        {
+          "flightNumber": "BA-674",
+          "departureDateTime": "2012-04-25T18:25:43"
+        }
+      ],
+      "totalTicketPricePence": 98832
+    }
+  ],
+  "providerFeedback": {
+    "limitedOptionsReason": "PERMITTED_AIRLINE_CONSTRAINTS"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "returnId": 12334,
+  "travelOptions": [
+    {
+      "flights": [
+        {
+          "flightNumber": "BA-674",
+          "departureDateTime": "2012-04-25T18:25:43"
+        }
+      ],
+      "totalTicketPricePence": 98832
+    },
+    {
+      "flights": [
+        {
+          "flightNumber": "BA-234",
+          "departureDateTime": "2012-04-23T18:25:43"
+        }
+      ],
+      "totalTicketPricePence": 123222
+    }
+  ],
+  "providerFeedback": {
+    "limitedOptionsReason": "PERMITTED_AIRLINE_CONSTRAINTS"
+  }
+}
