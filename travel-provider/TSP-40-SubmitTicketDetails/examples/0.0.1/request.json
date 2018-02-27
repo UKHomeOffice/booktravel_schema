@@ -1,0 +1,47 @@
+{
+  "requestId": 123123,
+  "travellers": [
+    {
+      "travellerId": "13c6263a-8212-4e20-b76e-24ed20e35986",
+      "forename": "Peter",
+      "surname": "Weston",
+      "dateOfBirth": "2007-04-22",
+      "gender": "M",
+      "nationality": "KHM",
+      "travellerType": "PERSON_RETURNING",
+      "addedBy": "RMP",
+      "tickets": [
+        {
+          "ticketId": "13c6263a-8212-4e20-b76e-24ed20e35986",
+          "ticketNumber": "323432423",
+          "issuingAirline": {
+            "description": "Easyjet",
+            "ICAOCode": "EZY"
+          },
+          "ticketPricePence": 324,
+          "segments": [
+            {
+              "departureAirport": {
+                "description": "London Heathrow",
+                "IATACode": "LHR"
+              },
+              "arrivalAirport": {
+                "description": "Dubai",
+                "IATACode": "DXB"
+              },
+              "departureDateTime": "2012-04-23T19:25:00",
+              "arrivalDateTime": "2012-05-24T06:15:00",
+              "airline": {
+                "description": "Easyjet",
+                "ICAOCode": "EZY"
+              },
+              "flightNumber": "EZ-57",
+              "seatNumber": "24A"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "isComplete": true
+}

@@ -1,0 +1,138 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "TSP-40-SubmitTicketDetails Request Schema",
+  "version": "0.0.1",
+  "description": "Schema for TSP to supply RMP with details about the ticket(s) it has booked following a booking request from RMP. The TSP may send this message multiple times for a single booking request but a specific traveller must only be included in one message i.e. The TSP should wait until they have the full set of fulfilment details for a traveller before including them in a message.",
+  "properties": {
+    "requestId": {
+      "type": "integer",
+      "description": "Unique Id of the booking being responded to. Taken from the original booking request."
+    },
+    "travellers": {
+      "type": "array",
+      "description": "A list of travellers for whom this message contains fulfilment details. This does not need to be all travellers on the original booking as the TSP can submit details over a number of messages (see isComplete flag). It may also include travellers not listed in the original request - see handlingGuidelines.awaitEscortNames in TSP-20 request schema for more information.",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/definitions/travellerFulfilment"
+      }
+    },
+    "isComplete": {
+      "type": "boolean",
+      "description": "A flag indicating whether this is the final message with booking details for this request. Once this flag has been sent, RMP will accept no further requests on this interface for this requestId."
+    }
+  },
+  "required": [
+    "requestId",
+    "travellers",
+    "isComplete"
+  ],
+  "additionalProperties": false,
+  "definitions": {
+    "travellerFulfilment": {
+      "type": "object",
+      "description": "Basic contact details.",
+      "properties": {
+        "travellerId": {},
+        "forename": {},
+        "surname": {},
+        "dateOfBirth": {},
+        "gender": {},
+        "nationality": {},
+        "travellerType": {},
+        "addedBy": {},
+        "tickets": {
+          "type": "array",
+          "description": "A list of tickets obtained for this traveller.",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/ticket"
+          }
+        }
+      }
+
+    },
+    "ticket": {
+      "type": "object",
+      "description": "Details of a ticket.",
+      "properties": {
+        "ticketId": {},
+        "ticketNumber": {},
+        "issuingAirline": {},
+        "ticketPricePence": {},
+        "segments": {
+          "type": "array",
+          "description": "A list of flight segments covered by this ticket.",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/segment"
+          }
+        }
+      }
+    },
+    "segment": {
+      "type": "object",
+      "description": "Details of a flight segment.",
+      "properties": {
+        "departureAirport": {
+          "$ref": "#/definitions/airport",
+          "description": "The departure airport."
+        },
+        "arrivalAirport": {
+          "$ref": "#/definitions/airport",
+          "description": "The departure airport."
+        },
+        "departureDateTime": {},
+        "arrivalDateTime": {},
+        "airline": {
+          "$ref": "#/definitions/airline",
+          "description": "The airline operating this flight."
+        },
+        "flightNumber": {},
+        "seatNumber": {}
+      }
+    },
+    "airport": {
+      "type": "object",
+      "description": "Details identifying an airport",
+      "properties": {
+        "description": {
+          "description": "A human friendly name for the airport corresponding to the give IATA code.",
+          "type": "string",
+          "minLength": 1
+        },
+        "IATACode": {
+          "description": "The IATA code for the airport.",
+          "type": "string",
+          "pattern": "^[A-Z]{3}$"
+        }
+      },
+      "required": [
+        "description",
+        "IATACode"
+      ],
+      "additionalProperties": false
+    },
+    "airline": {
+      "type": "object",
+      "description": "Details identifying an airline",
+      "properties": {
+        "description": {
+          "description": "A human friendly name for the airline corresponding to the give ICAO code.",
+          "type": "string",
+          "minLength": 1
+        },
+        "ICAOCode": {
+          "description": "The ICAO code for the airline.",
+          "type": "string",
+          "pattern": "^[A-Z]{3}$"
+        }
+      },
+      "required": [
+        "description",
+        "ICAOCode"
+      ],
+      "additionalProperties": false
+    }
+  }
+}
