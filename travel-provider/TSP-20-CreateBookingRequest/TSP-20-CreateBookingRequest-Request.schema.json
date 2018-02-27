@@ -356,7 +356,7 @@
       "description": "Info about a person who will be travelling.",
       "properties": {
         "travellerId": {
-          "description": "A unique Id for this person for their involvement in this journey. If the journey requirements are revised and a new requests is submitted, the same person Id will be used on the new booking to facilitate identification and reuse of tickets that may have been booked for them against the previous request. If the person is involved in a subsequent unrelated journey, they will have a new traveller Id.",
+          "description": "A unique Id for this person for their involvement in this return. If the journey requirements are revised and a new requests is submitted, the same person Id will be used on the new booking to facilitate identification and reuse of tickets that may have been booked for them against the previous request. If the person is involved in a subsequent unrelated journey, they will have a new traveller Id.",
           "type": "string",
           "pattern": "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$"
         },
@@ -379,7 +379,7 @@
           "minLength": 1
         },
         "forename": {
-          "description": "Traveller(s) forenames.",
+          "description": "Traveller's forenames.",
           "type": "string",
           "minLength": 1
         },

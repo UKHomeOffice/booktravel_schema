@@ -97,7 +97,7 @@
       "type": "object",
       "description": "Details of a prior traveller booking request for whom tickets are no longer required.",
       "properties": {
-        "returnId": {
+        "requestId": {
           "type": "integer",
           "description": "The Id of the booking request."
         },
@@ -132,7 +132,7 @@
         }
       },
       "required": [
-        "returnId",
+        "requestId",
         "travellerId",
         "forename",
         "surname"

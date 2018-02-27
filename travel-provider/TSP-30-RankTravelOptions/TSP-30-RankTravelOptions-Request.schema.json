@@ -5,7 +5,7 @@
   "version": "0.0.1",
   "description": "Schema for the travel options ranking request sent by TSP.",
   "properties": {
-    "returnId": {
+    "requestId": {
       "type": "integer",
       "description": "Unique Id for this booking - taken from the original booking request sent from RMP to TSP."
     },
@@ -40,7 +40,7 @@
   },
   "additionalProperties": false,
   "required": [
-    "returnId",
+    "requestId",
     "travelOptions"
   ],
   "definitions": {
