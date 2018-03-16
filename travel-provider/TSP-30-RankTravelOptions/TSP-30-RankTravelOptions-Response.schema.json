@@ -9,6 +9,10 @@
       "type": "integer",
       "description": "Unique Id for this booking - take from the original booking request sent from RMP to TSP."
     },
+    "requester": {
+      "$ref": "#/definitions/contact",
+      "description": "Details of the person who is requesting the options ranking."
+    },
     "rankInfo": {
       "type": "object",
       "description": "Id and ranking information",
@@ -69,6 +73,70 @@
     "rankInfo"
   ],
   "definitions": {
+    "contact": {
+      "type": "object",
+      "description": "Basic contact details.",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of the contact.",
+          "minLength": 1
+        },
+        "email": {
+          "type": "string",
+          "description": "Email address of the contact.",
+          "format": "email"
+        },
+        "telephone": {
+          "type": "string",
+          "description": "Phone number of the contact.",
+          "minLength": 1
+        },
+        "groupName": {
+          "type": "string",
+          "description": "Group name to contact if named contact not available.",
+          "minLength": 1
+        },
+        "groupCode": {
+          "type": "string",
+          "description": "Code of the contact group.",
+          "minLength": 1
+        },
+        "groupEmail": {
+          "type": "string",
+          "description": "Email address of the contact group.",
+          "format": "email"
+        },
+        "groupTelephone": {
+          "type": "string",
+          "description": "Phone number of the contact group.",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false,
+      "oneOf": [
+        {
+          "description": "Constraints requiring either telephone or group telephone to be provided.",
+          "required": [
+            "name",
+            "email",
+            "groupName",
+            "groupCode",
+            "telephone"
+          ]
+        },
+        {
+          "description": "Constraints requiring either telephone or group telephone to be provided.",
+          "required": [
+            "name",
+            "email",
+            "groupName",
+            "groupCode",
+            "groupTelephone"
+          ]
+        }
+      ]
+    },
     "travelOption": {
       "type": "object",
       "description": "A travel option that meets the requirements of the return case.",

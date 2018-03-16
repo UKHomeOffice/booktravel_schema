@@ -24,5 +24,11 @@
       "type": "integer",
       "description": "Number of seconds until the issued token expires."
     }
-  }
+  },
+  "required": [
+    "access_token",
+    "token_type",
+    "issued_at",
+    "expires_in"
+  ]
 }

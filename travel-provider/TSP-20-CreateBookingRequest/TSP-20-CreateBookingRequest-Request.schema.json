@@ -14,8 +14,8 @@
       "description": "Guidelines for service providers processing this booking request."
     },
     "requester": {
-      "$ref": "#/definitions/requester",
-      "description": "Details of the person who created this request in case of any queries."
+      "$ref": "#/definitions/contact",
+      "description": "Details of the person who raised this request."
     },
     "journey": {
       "$ref": "#/definitions/journey",
@@ -39,7 +39,7 @@
     "travellers"
   ],
   "definitions": {
-    "requester": {
+    "contact": {
       "type": "object",
       "description": "Basic contact details.",
       "properties": {

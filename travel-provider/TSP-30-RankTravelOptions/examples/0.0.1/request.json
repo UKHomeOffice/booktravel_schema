@@ -1,5 +1,12 @@
 {
   "requestId": 12334,
+  "requester": {
+    "name": "Bob Jones",
+    "email": "test@example.com",
+    "telephone": "01234 546434",
+    "groupName": "CWT Home Office Team",
+    "groupCode": "CWT"
+  },
   "travelOptions": [
     {
       "flights": [
