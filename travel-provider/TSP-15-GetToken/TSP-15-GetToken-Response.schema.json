@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "TSP-15-GetToken Response Schema",
+  "version": "0.0.1",
+  "description": "Schema for authentication token response provided to TSP by RMP",
+  "properties": {
+    "access_token": {
+      "type": "string",
+      "description": "The access token to be used in subsequent API calls."
+    },
+    "expires_in": {
+      "type": "integer",
+      "description": "Number of seconds until the access token expires."
+    },
+    "refresh_expires_in": {
+      "type": "integer",
+      "description": "Number of seconds until the issued token expires."
+    },
+    "refresh_token": {
+      "type": "string",
+      "description": "A refresh token. Not relevant for CWT."
+    },
+    "token_type": {
+      "type": "string",
+      "description": "The type of access token provided.",
+      "enum": [
+        "bearer"
+      ]
+    },
+    "id_token": {
+      "type": "string",
+      "description": "A token containing identifty information about the authetnicated party. Not relevant for CWT."
+
+    },
+    "not-before-policy": {
+      "type": "integer",
+      "description": "Unix timestamp in seconds before which this token will not be accepted. Not relevant for CWT."
+    },
+    "session_state": {
+      "type": "string",
+      "description": "A session state management identifier. Not relevant for CWT."
+
+    }
+  },
+  "required": [
+    "access_token",
+    "expires_in"
+  ]
+}

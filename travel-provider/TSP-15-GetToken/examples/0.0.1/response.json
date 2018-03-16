@@ -1,0 +1,10 @@
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSld.....",
+  "expires_in": 36000,
+  "refresh_expires_in": 1799,
+  "refresh_token": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiS....",
+  "token_type": "bearer",
+  "id_token": "eyJhbGciOiJSUzI1NiIsInR5cCI.....",
+  "not-before-policy": 1519557697,
+  "session_state": "715490d6-f79e-4330-a01d-d85c18a8fb10"
+}
