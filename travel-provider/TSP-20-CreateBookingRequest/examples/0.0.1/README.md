@@ -19,6 +19,16 @@ A booking request for a single unescorted traveller.
 * Travel doc type provided
 * No special assistance or meal requirements
 
+request-basic-superseding-earlier-request.json
+-------------------------
+
+Demonstrates what would be sent if the requirements for a request change. Example is an amendment on request-basic.json.
+
+* This subsequent message contains a new request Id.
+* The traveller on the booking contains the same person Id as the orignal request (it's the same person).
+* The person details indicate that their inclusion on this request supersede the earlier request i..e no further work should be done for that person in relation to the earlier request.
+* The only change is that the earliest travel date has been pushed back by 2 days.
+
 request-escorted-single.json
 --------------------
 

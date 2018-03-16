@@ -9,6 +9,10 @@
       "type": "integer",
       "description": "Unique Id of the booking being responded to. Taken from the original booking request."
     },
+    "actionedBy": {
+      "$ref": "#/definitions/contact",
+      "description": "Details of the person who is requesting cancellation in case of any queries."
+    },
     "travellers": {
       "type": "array",
       "description": "A list of travellers for whom this message contains fulfilment details. This does not need to be all travellers on the original booking as the TSP can submit details over a number of messages (see isComplete flag). It may also include travellers not listed in the original request - see handlingGuidelines.awaitEscortNames in TSP-20 request schema for more information.",
@@ -29,6 +33,70 @@
   ],
   "additionalProperties": false,
   "definitions": {
+    "contact": {
+      "type": "object",
+      "description": "Basic contact details.",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of the contact.",
+          "minLength": 1
+        },
+        "email": {
+          "type": "string",
+          "description": "Email address of the contact.",
+          "format": "email"
+        },
+        "telephone": {
+          "type": "string",
+          "description": "Phone number of the contact.",
+          "minLength": 1
+        },
+        "groupName": {
+          "type": "string",
+          "description": "Group name to contact if named contact not available.",
+          "minLength": 1
+        },
+        "groupCode": {
+          "type": "string",
+          "description": "Code of the contact group.",
+          "minLength": 1
+        },
+        "groupEmail": {
+          "type": "string",
+          "description": "Email address of the contact group.",
+          "format": "email"
+        },
+        "groupTelephone": {
+          "type": "string",
+          "description": "Phone number of the contact group.",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false,
+      "oneOf": [
+        {
+          "description": "Constraints requiring either telephone or group telephone to be provided.",
+          "required": [
+            "name",
+            "email",
+            "groupName",
+            "groupCode",
+            "telephone"
+          ]
+        },
+        {
+          "description": "Constraints requiring either telephone or group telephone to be provided.",
+          "required": [
+            "name",
+            "email",
+            "groupName",
+            "groupCode",
+            "groupTelephone"
+          ]
+        }
+      ]
+    },
     "travellerFulfilment": {
       "type": "object",
       "description": "Basic contact details.",
@@ -104,7 +172,7 @@
       "description": "Details of a ticket.",
       "properties": {
         "ticketId": {
-          "description": "A unique Id for this ticket assigned by the TSP. Used to reference this ticket in subsequent messages. Avoids potential ambiguity where two different airlines issue tickets that happen to have the same number. A v4 UUID.",
+          "description": "A unique Id for this ticket assigned by the TSP. Used to reference this ticket in subsequent messages - including where this ticket is re-used to satisfy a subsequent booking request following the amendment to travel requirements. Avoids potential ambiguity where two different airlines issue tickets that happen to have the same number. A v4 UUID.",
           "type": "string",
           "pattern": "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$"
         },
