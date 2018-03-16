@@ -1,0 +1,145 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "TSP-70-Submit Refund Details Request Schema",
+  "version": "0.0.1",
+  "description": "Schema for informing RMP of refunds received for tickets. A message sent on this interface will always reference a single cancellation request. Multiple messages may be sent in response to a single cancellation request as refunds may arrive at different times.",
+  "properties": {
+    "cancellationId": {
+      "type": "integer",
+      "description": "The Id of the cancellation request."
+    },
+    "actionedBy": {
+      "$ref": "#/definitions/contact",
+      "description": "Details of the person who has confirmed receipt of refund."
+    },
+    "cancelledBookings": {
+      "type": "array",
+      "description": "A list of the traveller tickets that have been refunded.",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/definitions/travellerRefund"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "cancellationId",
+    "actionedBy",
+    "cancelledBookings"
+  ],
+  "definitions": {
+    "contact": {
+      "type": "object",
+      "description": "Basic contact details.",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of the contact.",
+          "minLength": 1
+        },
+        "email": {
+          "type": "string",
+          "description": "Email address of the contact.",
+          "format": "email"
+        },
+        "telephone": {
+          "type": "string",
+          "description": "Phone number of the contact.",
+          "minLength": 1
+        },
+        "groupName": {
+          "type": "string",
+          "description": "Group name to contact if named contact not available.",
+          "minLength": 1
+        },
+        "groupCode": {
+          "type": "string",
+          "description": "Code of the contact group.",
+          "minLength": 1
+        },
+        "groupEmail": {
+          "type": "string",
+          "description": "Email address of the contact group.",
+          "format": "email"
+        },
+        "groupTelephone": {
+          "type": "string",
+          "description": "Phone number of the contact group.",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false,
+      "oneOf": [
+        {
+          "description": "Constraints requiring either telephone or group telephone to be provided.",
+          "required": [
+            "name",
+            "email",
+            "groupName",
+            "groupCode",
+            "telephone"
+          ]
+        },
+        {
+          "description": "Constraints requiring either telephone or group telephone to be provided.",
+          "required": [
+            "name",
+            "email",
+            "groupName",
+            "groupCode",
+            "groupTelephone"
+          ]
+        }
+      ]
+    },
+    "travellerRefund": {
+      "type": "object",
+      "description": "Confirmation of refund for a specific traveller's tickets.",
+      "properties": {
+        "requestId": {
+          "type": "integer",
+          "description": "The Id of the booking request the tickets were originally obtained for."
+        },
+        "travellerId": {
+          "description": "The ID of the traveller.",
+          "type": "string",
+          "pattern": "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$"
+        },
+        "tickets": {
+          "type": "array",
+          "description": "A list of refunded tickets.",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/refundedTicket"
+          }
+        }
+      },
+      "required": [
+        "requestId",
+        "travellerId"
+      ],
+      "additionalProperties": false
+    },
+    "refundedTicket": {
+      "type": "object",
+      "description": "A ticket that has been refunded.",
+      "properties": {
+        "ticketId": {
+          "type": "string",
+          "description": "The unique ID that was assigned to this ticket when TSP first told RMP about it.",
+          "pattern": "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$"
+        },
+        "refundReceivedPence": {
+          "type": "integer",
+ "description": "The amount refunded in pence."
+        }
+      },
+      "required": [
+        "ticketId",
+        "refundReceivedPence"
+      ],
+      "additionalProperties": false
+    }
+  }
+}
