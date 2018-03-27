@@ -1,0 +1,50 @@
+{
+  "requestId": 123456,
+  "handlingGuidelines": {
+    "isComplex": false,
+    "awaitEscortNames": true
+  },
+  "requester": {
+    "name": "Hannah Smythe",
+    "email": "test@example.com",
+    "telephone": "01234 546434",
+    "groupName": "ICE - London",
+    "groupCode": "ICEL"
+  },
+  "journey": {
+    "origin": {
+      "airport": {
+        "description": "Anywhere in the South East. Preferably Gatwick"
+      }
+    },
+    "destination": {
+      "airport": {
+        "IATACode": "BKK"
+      }
+    },
+    "scheduleConstraints": {
+      "departureDate": {
+        "after": "2018-01-30"
+      },
+      "arrivalTime": {
+        "before": "18:00:00"
+      }
+    }
+  },
+  "travellers": [
+    {
+      "travellerId": "13c6263a-8212-4e20-b76e-24ed20e35986",
+      "forename": "Benjamin",
+      "surname": "Jones",
+      "dateOfBirth": "1980-01-01",
+      "gender": "M",
+      "nationality": "THA",
+      "travelDocument": {
+        "type": "PASSPORT"
+      },
+      "travellerType": "PERSON_RETURNING",
+      "requiresMedicalEscort": true,
+      "requiresSecurityEscort": true
+    }
+  ]
+}
