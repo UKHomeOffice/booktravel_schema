@@ -5,7 +5,7 @@
   "version": "0.0.1",
   "description": "Schema for the travel options ranking request sent by TSP.",
   "properties": {
-    "requestId": {
+    "returnId": {
       "type": "integer",
       "description": "Unique Id for this booking - taken from the original booking request sent from RMP to TSP."
     },
@@ -25,7 +25,7 @@
         "limitedOptionsReason": {
           "description": "The reason why fewer than 9 travel options have been provided",
           "type": "string",
-          "enum": ["PERMITTED_AIRLINE_CONSTRAINTS", "FLIGHT_QUOTA_CONSTRAINTS", "FLIGHT_FREQUENCY_CONSTRAINTS", "REQUEST_REQUIREMENT_CONSTRAINTS", "ESCORT_PROVIDER_CONSTRAINTS", "TRAVEL_DOCUMENT_CONSTRAINTS", "OTHER"]
+          "enum": ["AIRLINE_RESTRICTIONS", "CASE_OWNER_REQUEST_RESTRICTIONS", "COUNTRY_RESTRICTIONS", "ESP_RESTRICTIONS", "FLIGHT_FREQUENCY_OR_SCHEDULE", "IMMIGRATION_QUOTA_EXCEEDED", "TRAVEL_DOCUMENT_RESTRICTIONS", "OTHER"]
         },
         "limitedOptionsDescription": {
           "description": "A detailed description of why there are fewer than 9 travel options",
@@ -40,7 +40,7 @@
   },
   "additionalProperties": false,
   "required": [
-    "requestId",
+    "returnId",
     "travelOptions"
   ],
   "definitions": {
