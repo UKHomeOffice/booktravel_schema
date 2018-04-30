@@ -1,0 +1,35 @@
+{
+  "requestId": 234252,
+  "requestType": "Removals",
+  "requester": {
+    "requesterid": "rmp-dev-1",
+    "name": "Demo One",
+    "email": "rmp-caseworker@digital.homeoffice.gov.uk",
+    "telephone": "0203 447 8723",
+    "teamName": "/AVR",
+    "teamEmail": "rmp-provider@digital.homeoffice.gov.uk"
+  },
+  "subjects": [
+    {
+      "homeOfficeReference": "HRF28032018160932",
+      "personId": "23424342",
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "alias": "JA",
+      "nationality": "Albanian",
+      "dateOfBirth": "1985-05-03",
+      "gender": "F",
+      "risksPosed": "Pregnancy",
+      "journeyDetails": {
+        "movementDate": "2018-04-21",
+        "from": "Colnbrook",
+        "to": "Heathrow",
+        "additionalInformation": "London airport only if Heathrow is closed",
+        "departureDetails" : {
+          "departureDateTime" : "2018-04-22",
+          "destination": "Albania"
+        }
+      }
+    }
+  ]
+}
