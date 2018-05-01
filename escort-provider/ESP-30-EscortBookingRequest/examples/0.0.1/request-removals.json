@@ -15,19 +15,30 @@
       "personId": "23424342",
       "firstName": "Jane",
       "lastName": "Doe",
-      "alias": "JA",
+      "aliases": "JA",
       "nationality": "Albanian",
       "dateOfBirth": "1985-05-03",
       "gender": "F",
       "risksPosed": "Pregnancy",
       "journeyDetails": {
         "movementDate": "2018-04-21",
-        "from": "Colnbrook",
-        "to": "Heathrow",
+        "from": {
+          "addressLine1" : "Colnbrook Bypass",
+          "addressLine2" : "Harmondsworth",
+          "addressLine3" : "West Drayton",
+          "addressLine4" : "Middlesex",
+          "postcode": "UB7 0FX"
+        },
+        "to": {
+          "addressLine1" : "Heathrow Airport T2",
+          "addressLine2" : "Longford",
+          "postcode": "TW6 1EW"
+        },
         "additionalInformation": "London airport only if Heathrow is closed",
         "departureDetails" : {
           "departureDateTime" : "2018-04-22",
-          "destination": "Albania"
+          "destination": "Albania",
+          "flightNumber": "BA123"
         }
       }
     }

@@ -1,6 +1,6 @@
 {
-  "requestId": 123456,
-  "requestType": "Appointments",
+  "requestId": 234252,
+  "requestType": "Removals",
   "requester": {
     "requesterid": "rmp-dev-1",
     "name": "Demo One",
@@ -15,16 +15,29 @@
       "personId": "617676276",
       "firstName": "John",
       "lastName": "Doe",
-      "alias": "JO",
+      "aliases": "JO",
       "nationality": "Pakistan",
       "dateOfBirth": "1981-10-21",
       "gender": "M",
       "risksPosed": "Escape",
       "journeyDetails": {
         "movementDate": "2018-09-05",
-        "from": "Colnbrook",
-        "to": "Heathrow",
-        "additionalInformation": "Must carry Passport"
+        "from": {
+          "addressLine1" : "Colnbrook Bypass",
+          "addressLine2" : "Harmondsworth",
+          "postcode": "UB7 0FX"
+        },
+        "to": {
+          "addressLine1" : "Lunar House",
+          "addressLine2" : "40 Wellesley Road",
+          "addressLine3" : "Croydon",
+          "postcode": "CR9 2BY"
+        },
+        "additionalInformation": "Asylum Appointment",
+        "departureDetails" : {
+          "departureDateTime" : "2018-09-06",
+          "destination": "Albania"
+        }
       }
     }
   ]
