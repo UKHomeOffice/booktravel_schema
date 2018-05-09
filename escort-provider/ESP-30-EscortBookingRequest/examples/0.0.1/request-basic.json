@@ -4,10 +4,9 @@
   "requester": {
     "requesterid": "rmp-dev-1",
     "name": "Demo One",
-    "email": "rmp-caseworker@digital.homeoffice.gov.uk",
-    "telephone": "0203 447 8723",
-    "teamName": "/AVR",
-    "teamEmail": "rmp-provider@digital.homeoffice.gov.uk"
+    "teamEmail": "rmp-provider@digital.homeoffice.gov.uk",
+    "teamTelephone": "0203 447 8723",
+    "teamName": "/AVR"
   },
   "subjects": [
     {
@@ -15,27 +14,40 @@
       "personId": "617676276",
       "firstName": "John",
       "lastName": "Doe",
-      "aliases": "JO",
+      "aliases": ["JO"],
       "nationality": "Pakistan",
       "dateOfBirth": "1981-10-21",
       "gender": "M",
-      "risksPosed": "Escape",
+      "risksPosed": [
+        {
+          "risksCode": "ESC",
+          "risksDescription": "Escaped previously",
+          "risksStartDate": "2012-02-01",
+          "risksEndDate": "2013-04-03"
+        },
+        {
+          "risksCode": "Serious criminal record",
+          "risksDescription": "Had a criminal record",
+          "risksStartDate": "2015-05-01",
+          "risksEndDate": "2018-04-30"
+        }
+      ],
       "journeyDetails": {
         "movementDate": "2018-09-05",
         "from": {
-          "addressLine1" : "Colnbrook Bypass",
-          "addressLine2" : "Harmondsworth",
+          "addressLine1": "Colnbrook Bypass",
+          "addressLine2": "Harmondsworth",
           "postcode": "UB7 0FX"
         },
         "to": {
-          "addressLine1" : "Lunar House",
-          "addressLine2" : "40 Wellesley Road",
-          "addressLine3" : "Croydon",
+          "addressLine1": "Lunar House",
+          "addressLine2": "40 Wellesley Road",
+          "addressLine3": "Croydon",
           "postcode": "CR9 2BY"
         },
         "additionalInformation": "Asylum Appointment",
-        "departureDetails" : {
-          "departureDateTime" : "2018-09-06",
+        "departureDetails": {
+          "departureDateTime": "2018-09-06",
           "destination": "Albania"
         }
       }

@@ -15,11 +15,25 @@
       "personId": "23424342",
       "firstName": "Jane",
       "lastName": "Doe",
-      "aliases": "JA",
+      "aliases": ["JA"],
       "nationality": "Albanian",
       "dateOfBirth": "1985-05-03",
       "gender": "F",
-      "risksPosed": "Pregnancy",
+      "risksPosed": [
+        {
+          "risksCode": "PR",
+          "risksDescription": "Pregnancy",
+          "risksStartDate": "2012-05-21",
+          "risksEndDate": "2013-04-20"
+        },
+        {
+          "risksCode": "Violent",
+          "risksDescription": "Became violent and refused to eat",
+          "risksStartDate": "2018-04-25",
+          "risksEndDate": "2018-04-29"
+        }
+      ],
+
       "journeyDetails": {
         "movementDate": "2018-04-21",
         "from": {

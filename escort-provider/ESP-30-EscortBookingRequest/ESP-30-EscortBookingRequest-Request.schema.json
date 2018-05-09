@@ -39,7 +39,7 @@
   ],
   "definitions": {
     "requester": {
-        "type": "object",
+      "type": "object",
       "description": "Basic contact details.",
       "properties": {
         "requesterid": {
@@ -86,7 +86,7 @@
       "additionalProperties": false,
       "oneOf": [
         {
-          "description": "Constraints requiring either telephone or team telephone to be provided.",
+          "description": "Constraints requiring either personal or team contact details to be provided.",
           "required": [
             "name",
             "email",
@@ -95,12 +95,12 @@
           ]
         },
         {
-          "description": "Constraints requiring either telephone or team telephone to be provided.",
+          "description": "Constraints requiring either personal or team contact details to be provided.",
           "required": [
             "name",
-            "email",
-            "teamName",
-            "teamTelephone"
+            "teamEmail",
+            "teamTelephone",
+            "teamName"
           ]
         }
       ]
@@ -145,13 +145,15 @@
           "minLength": 1
         },
         "aliases": {
-          "type": "string",
-          "description": "Alias Names of the subject",
-          "minLength": 1
+          "type": "array",
+          "description": "Alternative Names of the subject if any",
+          "items": {
+            "type": "string"
+          }
         },
         "nationality": {
           "type": "string",
-          "description": "Nationality of the person",
+          "description": "Nationality of the person or Standardised Nationality List PCDP",
           "minLength": 1
         },
         "dateOfBirth": {
@@ -166,18 +168,11 @@
           ]
         },
         "risksPosed": {
-          "description": "What risks does the person pose?",
-          "enum": [
-            "Self harm",
-            "Suicide",
-            "Escape",
-            "Food and/or fluid refusal",
-            "Pregnancy",
-            "Disruption",
-            "Serious criminal record",
-            "Violence",
-            "Other"
-          ]
+          "type": "array",
+          "description": "What risks does the person poses or has posed in the past?",
+          "items": {
+            "$ref": "#/definitions/risks"
+          }
         },
         "journeyDetails": {
           "type": "object",
@@ -240,6 +235,32 @@
         "personId",
         "firstName",
         "lastName"
+      ]
+    },
+    "risks": {
+      "properties": {
+        "risksCode": {
+          "type": "string",
+          "description": "This may be the risk code stored in PCDP based on information from CID"
+        },
+        "risksDescription": {
+          "type": "string",
+          "description": "This is a free text"
+        },
+        "risksStartDate": {
+          "type": "string",
+          "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$",
+          "description": "Date in the ISO-8601 format of YYYY-MM-DD for when the risk starts"
+        },
+        "risksEndDate": {
+          "type": "string",
+          "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$",
+          "description": "Date in the ISO-8601 format of YYYY-MM-DD for when the risk ends"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "risksCode"
       ]
     },
     "address": {
