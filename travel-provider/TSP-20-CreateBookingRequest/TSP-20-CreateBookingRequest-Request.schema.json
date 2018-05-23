@@ -11,7 +11,7 @@
     },
     "handlingGuidelines": {
       "$ref": "#/definitions/handlingGuidelines",
-      "description": "Guidelines or Handling Instructions for service providers processing this booking request."
+      "description": "Guidelines for service providers processing this booking request."
     },
     "requester": {
       "$ref": "#/definitions/contact",
@@ -161,7 +161,7 @@
         {
           "properties": {
             "airport": {
-              "description": "An airport waypoint or locator code for the airport",
+              "description": "An airport waypoint",
               "$ref": "#/definitions/airport"
             }
           },
@@ -184,12 +184,22 @@
           "description": "A description for the airport. IATA codes are preferred but sometimes the code won't be known or requirements are less specific e.g. 'Any airport in the south of the UK'.",
           "type": "string",
           "minLength": 1
+        },
+        "IATACode": {
+          "description": "An IATA code for an airport or set of airports (e.g. LON).",
+          "type": "string",
+          "pattern": "^[A-Z]{3}$"
         }
       },
       "anyOf": [
         {
           "required": [
             "description"
+          ]
+        },
+        {
+          "required": [
+            "IATACode"
           ]
         }
       ],
@@ -443,6 +453,8 @@
       },
       "required": [
         "travellerId",
+        "forename",
+        "surname",
         "dateOfBirth",
         "gender",
         "nationality",
@@ -457,7 +469,7 @@
       "type": "object",
       "properties": {
         "type": {
-          "description": "The travel document type.",
+          "description": "The document type.",
           "enum": [
             "PASSPORT",
             "ID_CARD",

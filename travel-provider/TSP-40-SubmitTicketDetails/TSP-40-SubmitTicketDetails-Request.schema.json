@@ -176,8 +176,23 @@
           "type": "string",
           "pattern": "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$"
         },
-        "ticketNumber": {
-          "description": "Airline assigned reference for this ticket.",
+        "locatorCode": {
+          "description": "Viewtrip Reservation Number which can be used along with surname to find the flight details",
+          "type": "string",
+          "minLength": 1
+        },
+        "eTicketNumber": {
+          "description": "Airline assigned reference also referred as travel document's identifier e.g. 016-1246781231",
+          "type": "string",
+          "minLength": 1
+        },
+        "bookingReference": {
+          "description": "Airline assigned reference also know as a PNR E.g. 84SRTL",
+          "type": "string",
+          "minLength": 1
+        },
+        "fareBasisCode": {
+          "description": "To identity te fare type and rules applicable to that fare e.g. Y-full-fare Economy class, W	full-fare Premium economy, IN-Infant fare, CH-Child fare etc ",
           "type": "string",
           "minLength": 1
         },
@@ -200,6 +215,9 @@
       },
       "required": [
         "ticketId",
+        "locatorCode",
+        "eTicketNumber",
+        "fareBasisCode",
         "issuingAirline",
         "ticketPricePence",
         "segments"
@@ -257,20 +275,33 @@
       "type": "object",
       "description": "Details identifying an airport",
       "properties": {
-        "description": {
-          "description": "A human friendly name for the airport corresponding to the given IATA code.",
-          "type": "string",
-          "minLength": 1
-        },
         "IATACode": {
           "description": "The IATA code for the airport.",
           "type": "string",
           "pattern": "^[A-Z]{3}$"
+        },
+        "name": {
+          "description": "A human friendly name for the airport corresponding to the given IATA code.",
+          "type": "string",
+          "minLength": 1
+        },
+        "country": {
+          "type": "string",
+          "minLength": 1
+        },
+        "city": {
+          "type": "string",
+          "minLength": 1
+        },
+        "terminal": {
+          "description": "The Terminal of the flight if known",
+          "type": "string",
+          "minLength": 1
         }
       },
       "required": [
-        "description",
-        "IATACode"
+        "IATACode",
+        "Name"
       ],
       "additionalProperties": false
     },
