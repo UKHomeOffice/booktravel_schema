@@ -1,50 +1,58 @@
 {
+  "companyId": "Home Office",
+  "travelType": "Flight",
+  "actionType": "New",
+  "key": "CWT4534",
   "requestId": 123456,
-  "handlingGuidelines": {
-    "isComplex": false,
-    "awaitEscortNames": false
-  },
   "requester": {
-    "name": "Hannah Smythe",
-    "email": "test@example.com",
+    "name": "RMP CaseWorker",
+    "email": "caseworker1@ho.com",
     "telephone": "01234 546434",
-    "groupName": "ICE - London",
-    "groupCode": "ICEL"
+    "teamEmail": "rmp@ho.com",
+    "teamCode": "ICEL"
   },
-  "journey": {
-    "origin": {
-      "airport": {
-        "description": "Anywhere in the South East. Preferably Gatwick"
-      }
-    },
-    "destination": {
-      "airport": {
-        "IATACode": "BKK"
-      }
-    },
-    "scheduleConstraints": {
-      "departureDate": {
-        "after": "2018-01-30"
-      },
-      "arrivalTime": {
-        "before": "18:00:00"
-      }
-    }
-  },
-  "travellers": [
+  "travelers": [
     {
-      "travellerId": "13c6263a-8212-4e20-b76e-24ed20e35986",
-      "forename": "Benjamin",
-      "surname": "Jones",
-      "dateOfBirth": "1980-01-01",
-      "gender": "M",
-      "nationality": "THA",
-      "travelDocument": {
-        "type": "PASSPORT"
-      },
-      "travellerType": "PERSON_RETURNING",
-      "requiresMedicalEscort": false,
-      "requiresSecurityEscort": false
+      "homeOfficeReference": "HO123",
+      "travelerId": "CID123",
+      "travelerType": "DEPU",
+      "routeType": "OneWay",
+      "travelerDetails": {
+        "firstName": "John",
+        "lastName": "Doe",
+        "gender": "Male"
+      }
+    },
+    {
+      "homeOfficeReference": "HO214",
+      "travelerId": "CID234",
+      "travelerType": "DEPU",
+      "routeType": "Return",
+      "travelerDetails": {
+        "firstName": "Jane",
+        "lastName": "Day",
+        "gender": "Female"
+      }
     }
-  ]
+  ],
+  "flights": {
+    "refundableRequired": true,
+    "flightClass": "Economy",
+    "flightDetails": {
+      "departureAirport": "London Heathrow",
+      "departureAirportCode": "LHR",
+      "travelTimeConstraintType": "Morning Departure only",
+      "preferredDepartureTime": "11:25",
+      "earliestDepartureDate": "2018-09-12",
+      "latestDepartureDate": "2018-11-21",
+      "flightNumber": "PK-308",
+      "arrivalAirport": "Karachi",
+      "arrivalAirportCode": "KHI",
+      "arrivalDate": "2018-09-13",
+      "preferredArrivalTime": "04:45"
+    },
+    "routeType": "Air Boeing 747-400",
+    "routingConsiderations": "Direct Flight Only",
+    "additionalInformation": "Some Additional Information"
+  }
 }
