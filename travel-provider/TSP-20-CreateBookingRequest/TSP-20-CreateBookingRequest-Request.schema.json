@@ -117,8 +117,8 @@
       "items": {
         "type": "object",
         "properties": {
-          "homeOfficeReference": {
-            "description": "Traveller's Home Office Reference. Only present if they are a returnee. May be shared by multiple travelers on a booking so should not be used as a unique Id.",
+          "reference": {
+            "description": "This should not be used as a unique Id as for a Family/Group Booking this may be shared by multiple travelers. For Home Office it is Traveller's Reference and only present if they are a returnee. ",
             "type": "string",
             "minLength": 1
           },
