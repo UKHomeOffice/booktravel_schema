@@ -13,12 +13,11 @@
       "$ref": "#/definitions/contact",
       "description": "Details of the person who is requesting cancellation in case of any queries."
     },
-    "travellers": {
-      "type": "array",
-      "description": "A list of travellers for whom this message contains fulfilment details. This does not need to be all travellers on the original booking as the TSP can submit details over a number of messages (see isComplete flag). It may also include travellers not listed in the original request - see handlingGuidelines.awaitEscortNames in TSP-20 request schema for more information.",
+    "bookedTicketDetails": {
+      "description": "The TSP can submit details over a number of messages (see isComplete flag). It may also include travellers not listed in the original request - see handlingGuidelines.awaitEscortNames in TSP-20 request schema for more information.",
       "minItems": 1,
       "items": {
-        "$ref": "#/definitions/travellerFulfilment"
+        "$ref": "#/definitions/bookedTicketFulfilment"
       }
     },
     "isComplete": {
@@ -28,7 +27,7 @@
   },
   "required": [
     "requestId",
-    "travellers",
+    "bookedTicketDetails",
     "isComplete"
   ],
   "additionalProperties": false,
@@ -97,7 +96,7 @@
         }
       ]
     },
-    "travellerFulfilment": {
+    "bookedTicketFulfilment": {
       "type": "object",
       "description": "Basic contact details.",
       "properties": {
@@ -106,12 +105,12 @@
           "type": "string",
           "pattern": "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$"
         },
-        "forename": {
+        "firstName": {
           "description": "Traveller's forenames.",
           "type": "string",
           "minLength": 1
         },
-        "surname": {
+        "lastName": {
           "description": "Traveller's surname(s).",
           "type": "string",
           "minLength": 1
@@ -133,14 +132,6 @@
           "type": "string",
           "pattern": "^[A-Z]{3}$"
         },
-        "travellerType": {
-          "description": "Traveller's type.",
-          "enum": [
-            "PERSON_RETURNING",
-            "MEDICAL_ESCORT",
-            "SECURITY_ESCORT"
-          ]
-        },
         "addedBy": {
           "description": "Indicates which system added this person to the booking. Exists to support transitional phase where the TSP will be receiving data about escorts directly from the ESP and adding them to this message to communicate details of these escorts back to RMP.",
           "enum": [
@@ -148,91 +139,79 @@
             "TSP"
           ]
         },
-        "tickets": {
-          "type": "array",
-          "description": "A list of tickets obtained for this traveller.",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/ticket"
-          }
+        "flightDetails": {
+          "$ref": "#/definitions/flightDetailsDefinition"
         }
       },
       "required": [
-        "travellerId",
-        "forename",
-        "surname",
-        "travellerType",
-        "addedBy",
-        "tickets"
+        "firstName",
+        "lastName",
+        "flightDetails"
       ],
       "additionalProperties": false
     },
-    "ticket": {
-      "type": "object",
-      "description": "Details of a ticket.",
+    "flightDetailsDefinition": {
+      "locator": {
+        "$ref": "#/definitions/locatorDefinition"
+      },
+      "personnelType": {
+        "description": "Personnel type.",
+        "enum": [
+          "IS_RETURNEE",
+          "IS_MEDIC",
+          "IS_ESCORT"
+        ]
+      },
+      "itinerary": {
+        "$ref": "#/definitions/itineraryDefinition"
+      },
+      "required": [
+        "locator",
+        "personnelType",
+        "itinerary"
+      ]
+    },
+    "locatorDefinition": {
       "properties": {
-        "ticketId": {
-          "description": "A unique Id for this ticket assigned by the TSP. Used to reference this ticket in subsequent messages - including where this ticket is re-used to satisfy a subsequent booking request following the amendment to travel requirements. Avoids potential ambiguity where two different airlines issue tickets that happen to have the same number. A v4 UUID.",
+        "code": {
+          "description": "A unique Id for this person for their involvement in this return. If addedBy is RMP, this value will have been provided by RMP in the booking request. If it's TSP, the travel provider will have generated this value. A v4 UUID is used as the unique Id.",
           "type": "string",
           "pattern": "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$"
         },
-        "locatorCode": {
-          "description": "Viewtrip Reservation Number which can be used along with surname to find the flight details",
+        "lastName": {
           "type": "string",
           "minLength": 1
         },
-        "eTicketNumber": {
-          "description": "Airline assigned reference also referred as travel document's identifier e.g. 016-1246781231",
-          "type": "string",
-          "minLength": 1
-        },
-        "bookingReference": {
-          "description": "Airline assigned reference also know as a PNR E.g. 84SRTL",
-          "type": "string",
-          "minLength": 1
-        },
-        "fareBasisCode": {
-          "description": "To identity te fare type and rules applicable to that fare e.g. Y-full-fare Economy class, W	full-fare Premium economy, IN-Infant fare, CH-Child fare etc ",
-          "type": "string",
-          "minLength": 1
-        },
-        "issuingAirline": {
-          "description": "ICAO code of the airline that issued this ticket. Due to code shares, there may be segments on this ticket that will be flown with a different airline hence inclusion of ICAO code for each segment.",
-          "$ref": "#/definitions/airline"
-        },
-        "ticketPricePence": {
-          "description": "Price paid for this ticket in pence.",
-          "type": "integer"
-        },
-        "segments": {
-          "type": "array",
-          "description": "A list of flight segments covered by this ticket.",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/segment"
-          }
-        }
-      },
-      "required": [
-        "ticketId",
-        "locatorCode",
-        "eTicketNumber",
-        "fareBasisCode",
-        "issuingAirline",
-        "ticketPricePence",
-        "segments"
-      ],
-      "additionalProperties": false
+        "required": [
+          "code",
+          "lastName"
+        ],
+        "additionalProperties": false
+      }
     },
-    "segment": {
+    "itineraryDefinition": {
+      "from": {
+        "$ref": "#/definitions/airportDefinition",
+        "description": "The starting leg of the journey"
+      },
+      "to": {
+        "$ref": "#/definitions/airportDefinition",
+        "description": "The last leg of the journey"
+      },
+      "totalCost": {
+        "type": "string",
+        "description": "Ticket price in pence",
+        "minLength": 1
+      },
+      "segments": {
+        "$ref": "#/definitions/segmentDefinition"
+      }
+    },
+    "segmentDefinition": {
       "type": "object",
       "description": "Details of a flight segment i.e. a plane taking off to landing. A ticket may cover one segment - or multiple segments where the journey is non-direct.",
       "properties": {
         "departureAirport": {
-          "$ref": "#/definitions/airport",
-          "description": "The departure airport."
-        },
-        "arrivalAirport": {
           "$ref": "#/definitions/airport",
           "description": "The departure airport."
         },
@@ -241,47 +220,54 @@
           "type": "string",
           "pattern": "^\\d\\d\\d\\d-\\d\\d-\\d\\dT\\d\\d:\\d\\d:\\d\\d$"
         },
+        "arrivalAirport": {
+          "$ref": "#/definitions/airport"
+        },
         "arrivalDateTime": {
           "description": "The date time when the flight arrives. Local time is assumed. Do not include timezone information in the value. Format is YYYY-MM-DDThh:mm:ss.",
           "type": "string",
           "pattern": "^\\d\\d\\d\\d-\\d\\d-\\d\\dT\\d\\d:\\d\\d:\\d\\d$"
         },
-        "airline": {
-          "$ref": "#/definitions/airline",
-          "description": "The airline operating this flight."
+        "airlineName": {
+          "type": "string",
+          "description": "The airline operating this flight e.g American Airlines"
+        },
+        "airlineCode": {
+          "type": "string",
+          "description": "The airline operating this flight e.g. AA"
         },
         "flightNumber": {
           "description": "The flight number.",
           "type": "string",
           "minLength": 1
         },
-        "seatNumber": {
-          "description": "The seat number.",
-          "type": "string",
-          "minLength": 1
+        "tickets": {
+          "$ref": "#/definitions/ticketDefinition"
         }
       },
       "required": [
         "departureAirport",
-        "arrivalAirport",
         "departureDateTime",
+        "arrivalAirport",
         "arrivalDateTime",
-        "airline",
-        "flightNumber"
+        "airlineName",
+        "airlineCode",
+        "flightNumber",
+        "tickets"
       ],
       "additionalProperties": false
     },
-    "airport": {
+    "airportDefinition": {
       "type": "object",
       "description": "Details identifying an airport",
       "properties": {
-        "IATACode": {
-          "description": "The IATA code for the airport.",
+        "code": {
+          "description": "The IATA code for the airport. e.g. LHR",
           "type": "string",
           "pattern": "^[A-Z]{3}$"
         },
         "name": {
-          "description": "A human friendly name for the airport corresponding to the given IATA code.",
+          "description": "A human friendly name for the airport corresponding to the given IATA code e.g. London Heathrow",
           "type": "string",
           "minLength": 1
         },
@@ -300,29 +286,51 @@
         }
       },
       "required": [
-        "IATACode",
-        "Name"
+        "code"
       ],
       "additionalProperties": false
     },
-    "airline": {
+    "ticketDefinition": {
       "type": "object",
-      "description": "Details identifying an airline",
+      "description": "Details of a ticket.",
       "properties": {
-        "description": {
-          "description": "A human friendly name for the airline corresponding to the give ICAO code.",
+        "firstName": {
+          "description": "Traveller's forenames.",
           "type": "string",
           "minLength": 1
         },
-        "ICAOCode": {
-          "description": "The ICAO code for the airline.",
+        "lastName": {
+          "description": "Traveller's surname(s).",
           "type": "string",
-          "pattern": "^[A-Z]{3}$"
+          "minLength": 1
+        },
+        "ticketId": {
+          "description": "A unique Id for this ticket assigned by the TSP. Used to reference this ticket in subsequent messages - including where this ticket is re-used to satisfy a subsequent booking request following the amendment to travel requirements. Avoids potential ambiguity where two different airlines issue tickets that happen to have the same number. A v4 UUID.",
+          "type": "string",
+          "pattern": "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$"
+        },
+        "eTicketNumber": {
+          "description": "Airline assigned reference also referred as travel document's identifier e.g. 016-1246781231",
+          "type": "string",
+          "minLength": 1
+        },
+        "bookingReference": {
+          "description": "Airline assigned reference also know as a PNR E.g. 84SRTL",
+          "type": "string",
+          "minLength": 1
+        },
+        "fareBasisCode": {
+          "description": "Airline assigned reference also know as a PNR E.g. 84SRTL",
+          "type": "string",
+          "minLength": 1
         }
       },
       "required": [
-        "description",
-        "ICAOCode"
+        "firstName",
+        "lastName",
+        "ticketId",
+        "eTicketNumber",
+        "fareBasisCode"
       ],
       "additionalProperties": false
     }
