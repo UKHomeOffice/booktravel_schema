@@ -1,9 +1,9 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
   "title": "TSP-40-SubmitTicketDetails Request Schema",
   "version": "0.0.1",
   "description": "Schema for TSP to supply RMP with details about the ticket(s) it has booked following a booking request from RMP. The TSP may send this message multiple times for a single booking request but a specific traveller must only be included in one message i.e. The TSP should wait until they have the full set of fulfilment details for a traveller before including them in a message.",
+  "type": "object",
   "properties": {
     "requestId": {
       "type": "integer",
@@ -11,13 +11,14 @@
     },
     "actionedBy": {
       "$ref": "#/definitions/contact",
-      "description": "Details of the person who is requesting cancellation in case of any queries."
+      "description": "Details of the logger from TSP who is fulfilling the request"
     },
     "bookedTicketDetails": {
       "description": "The TSP can submit details over a number of messages (see isComplete flag). It may also include travellers not listed in the original request - see handlingGuidelines.awaitEscortNames in TSP-20 request schema for more information.",
       "minItems": 1,
+      "type": "object",
       "items": {
-        "$ref": "#/definitions/bookedTicketFulfilment"
+        "$ref": "#/definitions/bookedTicketDefinition"
       }
     },
     "isComplete": {
@@ -25,50 +26,50 @@
       "description": "A flag indicating whether this is the final message with booking details for this request. Once this flag has been sent, RMP will accept no further requests on this interface for this requestId."
     }
   },
+  "additionalProperties": false,
   "required": [
     "requestId",
     "bookedTicketDetails",
     "isComplete"
   ],
-  "additionalProperties": false,
   "definitions": {
     "contact": {
       "type": "object",
-      "description": "Basic contact details.",
+      "description": "Basic contact details of the TSP Logger actioning this request",
       "properties": {
         "name": {
           "type": "string",
-          "description": "Name of the contact.",
+          "description": "Name of the logger.",
           "minLength": 1
         },
         "email": {
           "type": "string",
-          "description": "Email address of the contact.",
+          "description": "Email address of the logger.",
           "format": "email"
         },
         "telephone": {
           "type": "string",
-          "description": "Phone number of the contact.",
+          "description": "Phone number of the logger.",
           "minLength": 1
         },
         "groupName": {
           "type": "string",
-          "description": "Group name to contact if named contact not available.",
+          "description": "TSP Group name to contact if named contact not available.",
           "minLength": 1
         },
         "groupCode": {
           "type": "string",
-          "description": "Code of the contact group.",
+          "description": "Code of the TSP contact group.",
           "minLength": 1
         },
         "groupEmail": {
           "type": "string",
-          "description": "Email address of the contact group.",
+          "description": "Email address of the TSP contact group.",
           "format": "email"
         },
         "groupTelephone": {
           "type": "string",
-          "description": "Phone number of the contact group.",
+          "description": "Phone number of the TSP contact group.",
           "minLength": 1
         }
       },
@@ -79,9 +80,9 @@
           "required": [
             "name",
             "email",
+            "telephone",
             "groupName",
-            "groupCode",
-            "telephone"
+            "groupCode"
           ]
         },
         {
@@ -96,74 +97,82 @@
         }
       ]
     },
-    "bookedTicketFulfilment": {
-      "type": "object",
-      "description": "Basic contact details.",
-      "properties": {
-        "travellerId": {
-          "description": "A unique Id for this person for their involvement in this return. If addedBy is RMP, this value will have been provided by RMP in the booking request. If it's TSP, the travel provider will have generated this value. A v4 UUID is used as the unique Id.",
-          "type": "string",
-          "pattern": "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$"
+    "bookedTicketDefinition": {
+      "items": {
+        "type": "object",
+        "properties": {
+          "travellerId": {
+            "description": "A unique Id for this person for their involvement in this return. If addedBy is RMP, this value will have been provided by RMP in the booking request. If it's TSP, the travel provider will have generated this value. A v4 UUID is used as the unique Id.",
+            "type": "string",
+            "pattern": "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$"
+          },
+          "firstName": {
+            "description": "Traveller's forenames.",
+            "type": "string",
+            "minLength": 1
+          },
+          "lastName": {
+            "description": "Traveller's surname(s).",
+            "type": "string",
+            "minLength": 1
+          },
+          "dateOfBirth": {
+            "description": "Traveller's date of birth in ISO-8601 Format",
+            "type": "string",
+            "format": "date"
+          },
+          "gender": {
+            "type": "string",
+            "enum": [
+              "M",
+              "F"
+            ]
+          },
+          "nationality": {
+            "description": "Traveller's country of nationality - represented as an ISO-3166 country code.",
+            "type": "string",
+            "pattern": "^[A-Z]{3}$"
+          },
+          "addedBy": {
+            "description": "Indicates which system added this person to the booking. Exists to support transitional phase where the TSP will be receiving data about escorts directly from the ESP and adding them to this message to communicate details of these escorts back to RMP.",
+            "type": "string",
+            "enum": [
+              "CWT",
+              "RMP"
+            ],
+            "default": "CWT"
+          },
+          "flightDetails": {
+            "$ref": "#/definitions/flightDetailsDefinition"
+          }
         },
-        "firstName": {
-          "description": "Traveller's forenames.",
-          "type": "string",
-          "minLength": 1
-        },
-        "lastName": {
-          "description": "Traveller's surname(s).",
-          "type": "string",
-          "minLength": 1
-        },
-        "dateOfBirth": {
-          "description": "Traveller's date of birth.",
-          "type": "string",
-          "format": "date"
-        },
-        "gender": {
-          "description": "Traveller's gender.",
-          "enum": [
-            "M",
-            "F"
-          ]
-        },
-        "nationality": {
-          "description": "Traveller's country of nationality - represented as an ISO-3166 country code.",
-          "type": "string",
-          "pattern": "^[A-Z]{3}$"
-        },
-        "addedBy": {
-          "description": "Indicates which system added this person to the booking. Exists to support transitional phase where the TSP will be receiving data about escorts directly from the ESP and adding them to this message to communicate details of these escorts back to RMP.",
-          "enum": [
-            "RMP",
-            "TSP"
-          ]
-        },
-        "flightDetails": {
-          "$ref": "#/definitions/flightDetailsDefinition"
-        }
-      },
-      "required": [
-        "firstName",
-        "lastName",
-        "flightDetails"
-      ],
-      "additionalProperties": false
+        "required": [
+          "firstName",
+          "lastName",
+          "flightDetails"
+        ],
+        "additionalProperties": false
+      }
     },
     "flightDetailsDefinition": {
-      "locator": {
-        "$ref": "#/definitions/locatorDefinition"
-      },
-      "personnelType": {
-        "description": "Personnel type.",
-        "enum": [
-          "IS_RETURNEE",
-          "IS_MEDIC",
-          "IS_ESCORT"
-        ]
-      },
-      "itinerary": {
-        "$ref": "#/definitions/itineraryDefinition"
+      "type": "object",
+      "properties": {
+        "locator": {
+          "$ref": "#/definitions/locatorDefinition"
+        },
+        "personnelType": {
+          "description": "Personnel type suggests the kind of travellers being booked as part of this booking",
+          "type": "string",
+          "enum": [
+            "IS_RETURNEE",
+            "IS_MEDIC",
+            "IS_ESCORT",
+            "IS_MIXED"
+          ]
+        },
+        "itinerary": {
+          "$ref": "#/definitions/itineraryDefinition"
+        }
       },
       "required": [
         "locator",
@@ -172,6 +181,7 @@
       ]
     },
     "locatorDefinition": {
+      "type": "object",
       "properties": {
         "code": {
           "description": "A unique Id for this person for their involvement in this return. If addedBy is RMP, this value will have been provided by RMP in the booking request. If it's TSP, the travel provider will have generated this value. A v4 UUID is used as the unique Id.",
@@ -181,30 +191,33 @@
         "lastName": {
           "type": "string",
           "minLength": 1
-        },
-        "required": [
-          "code",
-          "lastName"
-        ],
-        "additionalProperties": false
-      }
+        }
+      },
+      "required": [
+        "code",
+        "lastName"
+      ],
+      "additionalProperties": false
     },
     "itineraryDefinition": {
-      "from": {
-        "$ref": "#/definitions/airportDefinition",
-        "description": "The starting leg of the journey"
-      },
-      "to": {
-        "$ref": "#/definitions/airportDefinition",
-        "description": "The last leg of the journey"
-      },
-      "totalCost": {
-        "type": "string",
-        "description": "Ticket price in pence",
-        "minLength": 1
-      },
-      "segments": {
-        "$ref": "#/definitions/segmentDefinition"
+      "type": "object",
+      "properties": {
+        "from": {
+          "$ref": "#/definitions/airportDefinition",
+          "description": "The starting leg of the journey"
+        },
+        "to": {
+          "$ref": "#/definitions/airportDefinition",
+          "description": "The last leg of the journey"
+        },
+        "totalCost": {
+          "type": "number",
+          "multipleOf": 0.01,
+          "description": "Ticket price in pounds and pence e.g. 500.45"
+        },
+        "segments": {
+          "$ref": "#/definitions/segmentDefinition"
+        }
       }
     },
     "segmentDefinition": {
@@ -295,12 +308,10 @@
       "description": "Details of a ticket.",
       "properties": {
         "firstName": {
-          "description": "Traveller's forenames.",
           "type": "string",
           "minLength": 1
         },
         "lastName": {
-          "description": "Traveller's surname(s).",
           "type": "string",
           "minLength": 1
         },
@@ -320,7 +331,7 @@
           "minLength": 1
         },
         "fareBasisCode": {
-          "description": "Airline assigned reference also know as a PNR E.g. 84SRTL",
+          "description": "Airline assigned e.g. 'W' represents full-fare Premium economy and 'Y' represents full-fare Economy class",
           "type": "string",
           "minLength": 1
         }

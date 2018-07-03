@@ -13,7 +13,7 @@
   },
   "travelers": [
     {
-      "homeOfficeReference": "HO123",
+      "reference": "HO123",
       "travelerId": "CID123",
       "travelerType": "DEPU",
       "routeType": "OneWay",
@@ -24,7 +24,7 @@
       }
     },
     {
-      "homeOfficeReference": "HO214",
+      "reference": "HO214",
       "travelerId": "CID234",
       "travelerType": "DEPU",
       "routeType": "Return",

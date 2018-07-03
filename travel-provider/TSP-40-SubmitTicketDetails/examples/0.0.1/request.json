@@ -1,47 +1,73 @@
 {
   "requestId": 123123,
-  "travellers": [
-    {
-      "travellerId": "13c6263a-8212-4e20-b76e-24ed20e35986",
-      "forename": "Peter",
-      "surname": "Weston",
-      "dateOfBirth": "2007-04-22",
-      "gender": "M",
-      "nationality": "KHM",
-      "travellerType": "PERSON_RETURNING",
-      "addedBy": "RMP",
-      "tickets": [
-        {
-          "ticketId": "13c6263a-8212-4e20-b76e-24ed20e35986",
-          "ticketNumber": "323432423",
-          "issuingAirline": {
-            "description": "Easyjet",
-            "ICAOCode": "EZY"
+  "actionedBy": {
+    "name": "CWT Logger1",
+    "email": "logger1@cwt.com",
+    "telephone": "01234 546434",
+    "groupName": "CWT - Team 1",
+    "groupCode": "CWT"
+  },
+  "bookedTicketDetails": {
+    "travellerId": "3232",
+    "firstName": "Ikram",
+    "lastName": "Murtaza",
+    "dateOfBirth": "1985-04-03",
+    "gender": "SS",
+    "nationality": "Pakistani",
+    "addedBy": "asdfasf",
+    "flightDetails": {
+      "locator": {
+        "code": "VIEWTRIP01",
+        "lastName": "Murtaza"
+      },
+      "personnelType": "IS_RETURNEE",
+      "itinerary": {
+        "from": {
+          "code": "LHR",
+          "name": "London Heathrow",
+          "country": "England",
+          "city": "London",
+          "terminal": "2"
+        },
+        "to": {
+          "code": "KHI",
+          "name": "Jinnah International Airport",
+          "country": "Pakistan",
+          "city": "Karachi",
+          "terminal": "1"
+        },
+        "totalCost": 700.64,
+        "segments": {
+          "departureAirport": {
+            "code": "LHR",
+            "name": "London Heathrow",
+            "country": "England",
+            "city": "London",
+            "terminal": "2"
           },
-          "ticketPricePence": 324,
-          "segments": [
-            {
-              "departureAirport": {
-                "description": "London Heathrow",
-                "IATACode": "LHR"
-              },
-              "arrivalAirport": {
-                "description": "Dubai",
-                "IATACode": "DXB"
-              },
-              "departureDateTime": "2012-04-23T19:25:00",
-              "arrivalDateTime": "2012-05-24T06:15:00",
-              "airline": {
-                "description": "Easyjet",
-                "ICAOCode": "EZY"
-              },
-              "flightNumber": "EZ-57",
-              "seatNumber": "24A"
-            }
-          ]
+          "departureDateTime": "",
+          "arrivalAirport": {
+            "code": "KHI",
+            "name": "Jinnah International Airport",
+            "country": "Pakistan",
+            "city": "Karachi",
+            "terminal": "1"
+          },
+          "arrivalDateTime": "",
+          "airlineName": "",
+          "airlineCode": "",
+          "flightNumber": "",
+          "tickets": {
+            "firstName": ",",
+            "lastName": "",
+            "ticketId": "",
+            "eTicketNumber": "",
+            "bookingReference": "",
+            "fareBasisCode": ""
+          }
         }
-      ]
+      }
     }
-  ],
-  "isComplete": true
+  },
+  "isComplete": false
 }
