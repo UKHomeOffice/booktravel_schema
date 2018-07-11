@@ -20,17 +20,12 @@
       "items": {
         "$ref": "#/definitions/bookedTicketDefinition"
       }
-    },
-    "isComplete": {
-      "type": "boolean",
-      "description": "A flag indicating whether this is the final message with booking details for this request. Once this flag has been sent, RMP will accept no further requests on this interface for this requestId."
     }
   },
   "additionalProperties": false,
   "required": [
     "requestId",
-    "bookedTicketDetails",
-    "isComplete"
+    "bookedTicketDetails"
   ],
   "definitions": {
     "contact": {
@@ -39,7 +34,7 @@
       "properties": {
         "name": {
           "type": "string",
-          "description": "Name of the logger.",
+          "description": "Name of the TSP logger who fulfilled the request and created the booking",
           "minLength": 1
         },
         "email": {
@@ -74,27 +69,10 @@
         }
       },
       "additionalProperties": false,
-      "oneOf": [
-        {
-          "description": "Constraints requiring either telephone or group telephone to be provided.",
-          "required": [
-            "name",
-            "email",
-            "telephone",
-            "groupName",
-            "groupCode"
-          ]
-        },
-        {
-          "description": "Constraints requiring either telephone or group telephone to be provided.",
-          "required": [
-            "name",
-            "email",
-            "groupName",
-            "groupCode",
-            "groupTelephone"
-          ]
-        }
+      "required": [
+        "name",
+        "email",
+        "telephone"
       ]
     },
     "bookedTicketDefinition": {
@@ -117,30 +95,21 @@
             "minLength": 1
           },
           "dateOfBirth": {
-            "description": "Traveller's date of birth in ISO-8601 Format",
+            "description": "Traveller's date of birth in ISO-8601 Format of yyyy-MM-dd",
             "type": "string",
-            "format": "date"
+            "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$"
           },
           "gender": {
             "type": "string",
             "enum": [
-              "M",
-              "F"
+              "Male",
+              "Female"
             ]
           },
           "nationality": {
             "description": "Traveller's country of nationality - represented as an ISO-3166 country code.",
             "type": "string",
             "pattern": "^[A-Z]{3}$"
-          },
-          "addedBy": {
-            "description": "Indicates which system added this person to the booking. Exists to support transitional phase where the TSP will be receiving data about escorts directly from the ESP and adding them to this message to communicate details of these escorts back to RMP.",
-            "type": "string",
-            "enum": [
-              "CWT",
-              "RMP"
-            ],
-            "default": "CWT"
           },
           "flightDetails": {
             "$ref": "#/definitions/flightDetailsDefinition"

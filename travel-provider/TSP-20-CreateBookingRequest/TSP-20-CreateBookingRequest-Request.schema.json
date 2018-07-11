@@ -163,7 +163,7 @@
                 "maxLength": 50
               },
               "dateOfBirth": {
-                "description": "Date of birth of the traveler",
+                "description": "Date of birth of the traveler in ISO-8601 format of yyyy-MM-dd",
                 "type": "string",
                 "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$"
               },
