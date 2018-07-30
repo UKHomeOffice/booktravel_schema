@@ -8,66 +8,61 @@
     "groupCode": "CWT"
   },
   "bookedTicketDetails": {
-    "travellerId": "3232",
-    "firstName": "Ikram",
-    "lastName": "Murtaza",
-    "dateOfBirth": "1985-04-03",
-    "gender": "SS",
-    "nationality": "Pakistani",
-    "addedBy": "asdfasf",
-    "flightDetails": {
-      "locator": {
-        "code": "VIEWTRIP01",
-        "lastName": "Murtaza"
-      },
-      "personnelType": "IS_RETURNEE",
-      "itinerary": {
-        "from": {
-          "code": "LHR",
-          "name": "London Heathrow",
-          "country": "England",
-          "city": "London",
-          "terminal": "2"
+    "flightDetails": [
+      {
+        "locator": {
+          "code": "A2B4C6",
+          "firstName": "Ikram",
+          "lastName": "Murtaza"
         },
-        "to": {
-          "code": "KHI",
-          "name": "Jinnah International Airport",
-          "country": "Pakistan",
-          "city": "Karachi",
-          "terminal": "1"
-        },
-        "totalCost": 700.64,
-        "segments": {
-          "departureAirport": {
+        "personnelType": "DEPU",
+        "itinerary": {
+          "from": {
             "code": "LHR",
             "name": "London Heathrow",
             "country": "England",
             "city": "London",
             "terminal": "2"
           },
-          "departureDateTime": "",
-          "arrivalAirport": {
+          "to": {
             "code": "KHI",
             "name": "Jinnah International Airport",
             "country": "Pakistan",
             "city": "Karachi",
             "terminal": "1"
           },
-          "arrivalDateTime": "",
-          "airlineName": "",
-          "airlineCode": "",
-          "flightNumber": "",
-          "tickets": {
-            "firstName": ",",
-            "lastName": "",
-            "ticketId": "",
-            "eTicketNumber": "",
-            "bookingReference": "",
-            "fareBasisCode": ""
+          "totalCost": 700.64,
+          "segments": {
+            "departureAirport": {
+              "code": "LHR",
+              "name": "London Heathrow",
+              "country": "England",
+              "city": "London",
+              "terminal": "2"
+            },
+            "departureDateTime": "2018-12-04",
+            "arrivalAirport": {
+              "code": "KHI",
+              "name": "Jinnah International Airport",
+              "country": "Pakistan",
+              "city": "Karachi",
+              "terminal": "1"
+            },
+            "arrivalDateTime": "2018-12-05",
+            "airlineName": "PIA",
+            "airlineCode": "",
+            "flightNumber": "PI123",
+            "tickets": {
+              "firstName": "Ikram",
+              "lastName": "Murtaza",
+              "eTicketNumber": "95738754835",
+              "fareType": "Adult",
+              "bookingReference": "Y84STL",
+              "fareBasisCode": "W234OW"
+            }
           }
         }
       }
-    }
-  },
-  "isComplete": false
+    ]
+  }
 }
