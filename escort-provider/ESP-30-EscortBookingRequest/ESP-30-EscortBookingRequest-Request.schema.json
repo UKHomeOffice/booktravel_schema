@@ -40,7 +40,7 @@
   "definitions": {
     "requester": {
       "type": "object",
-      "description": "Basic contact details.",
+      "description": "Basic contact details of the requester and/or the team",
       "properties": {
         "requesterId": {
           "type": "string",
@@ -49,17 +49,14 @@
         },
         "name": {
           "type": "string",
-          "description": "Name of the contact.",
           "minLength": 1
         },
         "email": {
           "type": "string",
-          "description": "Email address of the contact.",
           "format": "email"
         },
         "telephone": {
           "type": "string",
-          "description": "Phone number of the contact.",
           "minLength": 1
         },
         "teamName": {
@@ -74,12 +71,10 @@
         },
         "teamEmail": {
           "type": "string",
-          "description": "Email address of the contact group.",
           "format": "email"
         },
         "teamTelephone": {
           "type": "string",
-          "description": "Phone number of the contact group.",
           "minLength": 1
         }
       },
@@ -116,7 +111,7 @@
         },
         "portReference": {
           "type": "string",
-          "description": "Port Reference Number if present",
+          "description": "Port Reference Number if present. Used in case of transport from Ferry etc",
           "minLength": 1
         },
         "nomsReference": {
@@ -136,7 +131,7 @@
         },
         "firstName": {
           "type": "string",
-          "description": "Given Name of the subject",
+          "description": "Given Name of the subject including any middle name",
           "minLength": 1
         },
         "lastName": {
@@ -200,8 +195,9 @@
               "description": "This will be provided in case of Removals",
               "properties": {
                 "departureDateTime": {
+                  "description": "Date in the ISO-8601 format of [YYYY]-[MM]-[DD]T[hh]:[mm]:[ss] e.g. 2018-05-01T08:37:12Z",
                   "type": "string",
-                  "description": "Date in the ISO-8601 format of [YYYY]-[MM]-[DD]T[hh]:[mm]:[ss] e.g. 2018-05-01T08:37:12Z"
+                  "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T(0[0-9]|1[0-9]|2[0-3]):(0[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9])$"
                 },
                 "destination": {
                   "type": "string",

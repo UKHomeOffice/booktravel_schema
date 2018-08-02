@@ -15,7 +15,7 @@
     },
     "subjects": {
       "type": "array",
-      "description": "The person/s for whom we need the escorts",
+      "description": "The person/s for whom the escorts need to be cancelled. Currently it's complete cancellation for all",
       "minItems": 1,
       "items": {
         "$ref": "#/definitions/subjects"
@@ -31,7 +31,6 @@
   "definitions": {
     "requester": {
       "type": "object",
-      "description": "Basic contact details.",
       "properties": {
         "requesterid": {
           "type": "string",
@@ -40,17 +39,14 @@
         },
         "name": {
           "type": "string",
-          "description": "Name of the contact.",
           "minLength": 1
         },
         "email": {
           "type": "string",
-          "description": "Email address of the contact.",
           "format": "email"
         },
         "telephone": {
           "type": "string",
-          "description": "Phone number of the contact.",
           "minLength": 1
         },
         "teamName": {
@@ -60,17 +56,14 @@
         },
         "teamCode": {
           "type": "string",
-          "description": "Code of the contact group.",
           "minLength": 1
         },
         "teamEmail": {
           "type": "string",
-          "description": "Email address of the contact group.",
           "format": "email"
         },
         "teamTelephone": {
           "type": "string",
-          "description": "Phone number of the contact group.",
           "minLength": 1
         }
       },
@@ -98,7 +91,7 @@
     },
     "subjects": {
       "type": "object",
-      "description": "Subject details.",
+      "description": "Subject details for whom cancellation is requested. At present we send the lead passenger details",
       "properties": {
         "homeOfficeReference": {
           "type": "string",
@@ -127,12 +120,11 @@
         },
         "firstName": {
           "type": "string",
-          "description": "Given Name of the subject",
+          "description": "Given Name of the subject including any middle name",
           "minLength": 1
         },
         "lastName": {
           "type": "string",
-          "description": "Family Name of the subject",
           "minLength": 1
         },
         "aliases": {
@@ -191,8 +183,9 @@
               "description": "This will be provided in case of Removals",
               "properties": {
                 "departureDateTime": {
+                  "description": "Date in the ISO-8601 format of [YYYY]-[MM]-[DD]T[hh]:[mm]:[ss] e.g. 2018-05-01T08:37:12Z",
                   "type": "string",
-                  "description": "Date in the ISO-8601 format of [YYYY]-[MM]-[DD]T[hh]:[mm]:[ss] e.g. 2018-05-01T08:37:12Z"
+                  "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T(0[0-9]|1[0-9]|2[0-3]):(0[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9])$"
                 },
                 "destination": {
                   "type": "string",

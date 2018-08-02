@@ -206,8 +206,7 @@
                   "issueDate": {
                     "description": "Date of issue of the document",
                     "type": "string",
-                    "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$",
-                    "format": "date-time"
+                    "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$"
                   },
                   "expiryDate": {
                     "description": "Expiry date of the document",
