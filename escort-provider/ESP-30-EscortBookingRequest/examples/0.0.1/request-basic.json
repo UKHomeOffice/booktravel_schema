@@ -1,9 +1,9 @@
 {
   "requestId": 234252,
-  "requestType": "Removals",
+  "requestType": "Occupancy",
   "requester": {
     "requesterid": "rmp-dev-1",
-    "name": "Demo One",
+    "name": "DEPMU",
     "teamEmail": "rmp-provider@digital.homeoffice.gov.uk",
     "teamTelephone": "0203 447 8723",
     "teamName": "/AVR"
