@@ -1,8 +1,9 @@
 {
-  "requestId": 234252,
-  "requestType": "Occupancy",
-  "requester": {
-    "requesterid": "rmp-dev-1",
+  "movementRef": 234252,
+  "movementType": "Occupancy",
+  "movementReason": "Transfer to Another Detention Facility - Long Term Accomodation",
+  "requestAuthoriser": {
+    "requesterId": "rmp-dev-1",
     "name": "DEPMU",
     "teamEmail": "rmp-provider@digital.homeoffice.gov.uk",
     "teamTelephone": "0203 447 8723",
@@ -17,22 +18,22 @@
       "aliases": ["JO"],
       "nationality": "Pakistan",
       "dateOfBirth": "1981-10-21",
-      "gender": "M",
-      "risksPosed": [
+      "gender": "Male",
+      "risk": [
         {
-          "risksCode": "ESC",
-          "risksDescription": "Escaped previously",
-          "risksStartDate": "2012-02-01",
-          "risksEndDate": "2013-04-03"
+          "riskCode": "ESC",
+          "riskDescription": "Escaped previously",
+          "riskStartDate": "2012-02-01",
+          "riskEndDate": "2013-04-03"
         },
         {
-          "risksCode": "Serious criminal record",
-          "risksDescription": "Had a criminal record",
-          "risksStartDate": "2015-05-01",
-          "risksEndDate": "2018-04-30"
+          "riskCode": "Serious criminal record",
+          "riskDescription": "Had a criminal record",
+          "riskStartDate": "2015-05-01",
+          "riskEndDate": "2018-04-30"
         }
       ],
-      "journeyDetails": {
+      "movementDetails": {
         "movementDate": "2018-09-05",
         "from": {
           "addressLine1": "Colnbrook Bypass",
@@ -47,7 +48,7 @@
         },
         "additionalInformation": "Asylum Appointment",
         "departureDetails": {
-          "departureDateTime": "2018-09-06",
+          "departureDateTime": "2018-09-06T08:37",
           "destination": "Albania"
         }
       }

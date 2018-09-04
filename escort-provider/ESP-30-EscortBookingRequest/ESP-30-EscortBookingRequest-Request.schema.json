@@ -19,7 +19,7 @@
     },
     "movementReason": {
       "type": "string",
-      "description": "Reason corresponding to the movement type e.g. Transfer to Another Detention Facility - Interview"
+      "description": "Reason e.g. Transfer to Another Detention Facility - Interview"
     },
     "requestAuthoriser": {
       "$ref": "#/definitions/requester",
@@ -27,7 +27,7 @@
     },
     "subjects": {
       "type": "array",
-      "description": "The person/s for whom we need the escorts",
+      "description": "The person/s who needs to be escorted",
       "minItems": 1,
       "items": {
         "$ref": "#/definitions/subjects"
@@ -98,7 +98,6 @@
         },
         "homeOfficeReference": {
           "type": "string",
-          "description": "Home Office Reference Number",
           "minLength": 1
         },
         "portReference": {
@@ -145,8 +144,8 @@
         },
         "gender": {
           "enum": [
-            "M",
-            "F"
+            "Male",
+            "Female"
           ]
         },
         "risksPosed": {
@@ -217,6 +216,7 @@
       "required": [
         "personId",
         "firstName",
+        "dateOfBirth",
         "gender",
         "movementDetails"
       ]
