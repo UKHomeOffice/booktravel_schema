@@ -134,7 +134,7 @@
         },
         "nationality": {
           "type": "string",
-          "description": "Nationality of the person or Standardised Nationality List PCDP. Is it mandatory?",
+          "description": "Nationality of the person from CID. e.g. Angola, British Citizen",
           "minLength": 1
         },
         "dateOfBirth": {
@@ -225,11 +225,11 @@
       "properties": {
         "riskCode": {
           "type": "string",
-          "description": "This will be the DS Risk code "
+          "description": "This will be the DS Risk code e.g. DEMC, DE "
         },
         "riskDescription": {
           "type": "string",
-          "description": "This is a free text"
+          "description": "DS descriptions for the codes e.g. DS: Existing Medical Condition, DS: Escape Risk"
         },
         "riskStartDate": {
           "type": "string",
