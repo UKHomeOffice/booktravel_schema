@@ -17,7 +17,7 @@
         "Removals"
       ]
     },
-    "movementReason": {
+    "reason": {
       "type": "string",
       "description": "Reason e.g. Transfer to Another Detention Facility - Interview"
     },
@@ -37,7 +37,7 @@
   "required": [
     "movementRef",
     "movementType",
-    "movementReason",
+    "reason",
     "requestAuthoriser",
     "subjects"
   ],

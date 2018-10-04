@@ -7,7 +7,7 @@
   "properties": {
     "movementRef": {
       "type": "integer",
-      "description": "Unique Id generated for this movement request"
+      "description": "The unique movement request that is being cancelled"
     },
     "movementType": {
       "description": "Type of movement as identified in the CID",
@@ -17,7 +17,7 @@
         "Removals"
       ]
     },
-    "cancellationReason": {
+    "reason": {
       "type": "string",
       "description": "Reason e.g. Reset for 13/11/18"
     },
@@ -37,7 +37,7 @@
   "required": [
     "movementRef",
     "movementType",
-    "cancellationReason",
+    "reason",
     "requestAuthoriser",
     "subjects"
   ],
