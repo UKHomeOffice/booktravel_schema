@@ -21,6 +21,10 @@
       "type": "string",
       "description": "Reason e.g. Transfer to Another Detention Facility - Interview"
     },
+    "escortingContractor": {
+      "type": "string",
+      "description": "Care and Custody ICE (In-Country Escort) OR Care and Custody OSE (OverSeas Escort) OR Care and Custody ICE (Medic Only)"
+    },
     "requestAuthoriser": {
       "$ref": "#/definitions/requester",
       "description": "Details of the person/case worker who raised this request."
@@ -38,6 +42,7 @@
     "movementRef",
     "movementType",
     "reason",
+    "escortingContractor",
     "requestAuthoriser",
     "subjects"
   ],
@@ -148,9 +153,21 @@
             "Female"
           ]
         },
+        "medicalRisk": {
+          "enum": [
+            "Y",
+            "N"
+          ]
+        },
+        "nonMedicalRisk": {
+          "enum": [
+            "Y",
+            "N"
+          ]
+        },
         "risksPosed": {
           "type": "array",
-          "description": "What risks does the person poses or has posed in the past?",
+          "description": "Risks can be Medical or Non-Medical and both will be captured here",
           "items": {
             "$ref": "#/definitions/risk"
           }

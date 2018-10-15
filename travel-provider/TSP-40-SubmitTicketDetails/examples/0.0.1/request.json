@@ -1,66 +1,443 @@
 {
   "requestId": 123123,
-  "actionedBy": {
+  "reference": "HO/REF/34362-18",
+  "createdBy": {
     "name": "CWT Logger1",
     "email": "logger1@cwt.com",
     "telephone": "01234 546434",
     "groupName": "CWT - Team 1",
     "groupCode": "CWT"
   },
-  "bookedTicketDetails": {
+  "bookingDetails": {
+    "bookingID": "2344324",
     "flightDetails": [
       {
+        "totalPrice": 700.64,
+        "priceCurrency": "GBP",
         "locator": {
-          "code": "A2B4C6",
-          "firstName": "Ikram",
+          "locatorCode": "A2B4C6",
+          "firstName": "I",
           "lastName": "Murtaza"
         },
         "personnelType": "DEPU",
         "itinerary": {
           "from": {
-            "code": "LHR",
-            "name": "London Heathrow",
+            "airportCode": "LHR",
+            "airportName": "London Heathrow",
             "country": "England",
             "city": "London",
-            "terminal": "2"
+            "terminal": 2
           },
           "to": {
-            "code": "KHI",
-            "name": "Jinnah International Airport",
+            "airportCode": "KHI",
+            "airportName": "Jinnah International Airport",
             "country": "Pakistan",
             "city": "Karachi",
-            "terminal": "1"
+            "terminal": 1
           },
-          "totalCost": 700.64,
-          "segments": {
-            "departureAirport": {
-              "code": "LHR",
-              "name": "London Heathrow",
-              "country": "England",
-              "city": "London",
-              "terminal": "2"
-            },
-            "departureDateTime": "2018-12-04",
-            "arrivalAirport": {
-              "code": "KHI",
-              "name": "Jinnah International Airport",
-              "country": "Pakistan",
-              "city": "Karachi",
-              "terminal": "1"
-            },
-            "arrivalDateTime": "2018-12-05",
-            "airlineName": "PIA",
-            "airlineCode": "",
-            "flightNumber": "PI123",
-            "tickets": {
-              "firstName": "Ikram",
-              "lastName": "Murtaza",
-              "eTicketNumber": "95738754835",
-              "fareType": "Adult",
-              "bookingReference": "Y84STL",
-              "fareBasisCode": "W234OW"
+          "segments": [
+            {
+              "segmentNumber": 1,
+              "airlineCode": "HFG",
+              "airlineName": "Pak Airlines",
+              "flightNumber": "PI123",
+              "departureAirport": {
+                "airportCode": "LHR",
+                "airportName": "London Heathrow",
+                "terminal": 2,
+                "city": "London",
+                "country": "England"
+              },
+              "departureDateTime": "2018-12-04T01:02:03",
+              "arrivalAirport": {
+                "airportCode": "KHI",
+                "airportName": "Jinnah International Airport",
+                "terminal": 1,
+                "city": "Karachi",
+                "country": "Pakistan"
+              },
+              "arrivalDateTime": "2018-12-05T01:02:03",
+              "url": "http://britishairways.com",
+              "legs": [
+                {
+                  "flightNumber": "500",
+                  "departureAirport": {
+                    "airportCode": "LHR",
+                    "airportName": "Heathrow",
+                    "terminal": 2,
+                    "city": "London",
+                    "country": "GB"
+                  },
+                  "arrivalAirport": {
+                    "airportCode": "CPH",
+                    "airportName": "Copenhagen Arpt",
+                    "terminal": 3,
+                    "city": "Copenhagen",
+                    "country": "DK"
+                  }
+                }
+              ],
+              "tickets": [
+                {
+                  "firstName": "Ikram",
+                  "lastName": "Murtaza",
+                  "eTicketNumber": "95738754835",
+                  "fareType": "Adult",
+                  "fareBasisCode": "W234OW"
+                }
+              ]
             }
-          }
+          ]
+        }
+      },
+      {
+        "totalPrice": 800.23,
+        "priceCurrency": "GBP",
+        "locator": {
+          "locatorCode": "quis",
+          "firstName": "fir",
+          "lastName": "las"
+        },
+        "itinerary": {
+          "from": {
+            "airportCode": "TWS",
+            "airportName": "eu aliqua sint cupidatat sit"
+          },
+          "to": {
+            "airportCode": "FKL",
+            "airportName": "nulla esse in magna in"
+          },
+          "segments": [
+            {
+              "segmentNumber": 1,
+              "airlineName": "dolore magna proident dolor irur",
+              "airlineCode": "veniam culpa incididunt dolor dolore",
+              "flightNumber": "culpa anim",
+              "url": {
+                "description": "Web page to do the web check-in or manage the booking"
+              },
+              "departureAirport": {
+                "airportCode": "TBF",
+                "airportName": "proident commodo dolore magna ut"
+              },
+              "departureDateTime": "8050-10-31T01:57:33",
+              "arrivalAirport": {
+                "airportCode": "WKE",
+                "airportName": "sit proident sint"
+              },
+              "arrivalDateTime": "4400-06-31T14:39:58",
+              "tickets": [
+                {
+                  "firstName": "est cupidatat anim reprehen",
+                  "lastName": "sed elit laborum dolore fugiat",
+                  "eTicketNumber": "Lorem enim nisi",
+                  "fareType": "proident"
+                },
+                {
+                  "firstName": "dolor commodo voluptate occaeca",
+                  "lastName": "quis labore cillum occaecat velit",
+                  "eTicketNumber": "ea magna Lorem sed anim",
+                  "fareType": "sed culpa"
+                },
+                {
+                  "firstName": "do nulla",
+                  "lastName": "aliqua",
+                  "eTicketNumber": "minim deserunt aute ea",
+                  "fareType": "veniam magna nulla ad"
+                },
+                {
+                  "firstName": "proident qui magna anim in",
+                  "lastName": "commodo voluptate in",
+                  "eTicketNumber": "nostrud irure eu fugiat",
+                  "fareType": "eiusmod qui voluptate ea Duis"
+                },
+                {
+                  "firstName": "ut occaecat ullamco adipisicing ea",
+                  "lastName": "in",
+                  "eTicketNumber": "consectetur ",
+                  "fareType": "nisi"
+                }
+              ],
+              "legs": [
+                {
+                  "departureAirport": {
+                    "airportCode": "ICT",
+                    "airportName": "ullamco incididunt ipsum est in"
+                  },
+                  "arrivalAirport": {
+                    "airportCode": "JQT",
+                    "airportName": "qui nisi"
+                  },
+                  "flightNumber": "cupidatat aliqua nostrud officia"
+                },
+                {
+                  "departureAirport": {
+                    "airportCode": "ZPP",
+                    "airportName": "consectetur quis"
+                  },
+                  "arrivalAirport": {
+                    "airportCode": "OHV",
+                    "airportName": "dolor voluptate minim labore adipisicing"
+                  },
+                  "flightNumber": "quis eu"
+                },
+                {
+                  "departureAirport": {
+                    "airportCode": "GJH",
+                    "airportName": "irure amet Duis in"
+                  },
+                  "arrivalAirport": {
+                    "airportCode": "CHN",
+                    "airportName": "occaecat Duis Ut"
+                  },
+                  "flightNumber": "consectetur"
+                }
+              ]
+            },
+            {
+              "segmentNumber": 2,
+              "airlineName": "occaecat dolore nostrud exercitation",
+              "airlineCode": "dolore velit mollit in officia",
+              "flightNumber": "in ",
+              "url": {
+                "description": "Web page to do the web check-in or manage the booking"
+              },
+              "departureAirport": {
+                "airportCode": "WIM",
+                "airportName": "id eiusmod fugiat Lorem"
+              },
+              "departureDateTime": "1205-12-30T20:35:22",
+              "arrivalAirport": {
+                "airportCode": "AOZ",
+                "airportName": "veniam sint"
+              },
+              "arrivalDateTime": "9231-10-05T07:36:38",
+              "tickets": [
+                {
+                  "firstName": "ipsum dolor id adipisicing",
+                  "lastName": "aute aliquip reprehenderit commodo",
+                  "eTicketNumber": "proident velit do laborum",
+                  "fareType": "ut voluptate nostrud ullamco incididunt"
+                },
+                {
+                  "firstName": "cillum ea",
+                  "lastName": "occaecat id dolore dolor laboris",
+                  "eTicketNumber": "cupidatat",
+                  "fareType": "Lorem"
+                },
+                {
+                  "firstName": "anim id in tempor",
+                  "lastName": "in tempor ut ut",
+                  "eTicketNumber": "consectetur ut",
+                  "fareType": "sed laboris irure mollit sint"
+                }
+              ],
+              "legs": [
+                {
+                  "departureAirport": {
+                    "airportCode": "QMP",
+                    "airportName": "ut eu laboris in"
+                  },
+                  "arrivalAirport": {
+                    "airportCode": "INY",
+                    "airportName": "dolore qui"
+                  },
+                  "flightNumber": "exercitation do pariatur dolor ut"
+                },
+                {
+                  "departureAirport": {
+                    "airportCode": "CLB",
+                    "airportName": "in eiusmod fugiat voluptate"
+                  },
+                  "arrivalAirport": {
+                    "airportCode": "ZES",
+                    "airportName": "eiusmod laboris pariatur elit"
+                  },
+                  "flightNumber": "veniam"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "totalPrice": 950.00,
+        "priceCurrency": "GBP",
+        "locator": {
+          "locatorCode": "ex",
+          "firstName": "aliquip aliqua deserunt nostrud",
+          "lastName": "eu ex ut Ut nulla"
+        },
+        "itinerary": {
+          "from": {
+            "airportCode": "HPA",
+            "airportName": "c"
+          },
+          "to": {
+            "airportCode": "JAC",
+            "airportName": "Lorem sit veniam Ut cillum"
+          },
+          "segments": [
+            {
+              "segmentNumber": 1,
+              "airlineName": "magna non reprehenderit eu",
+              "airlineCode": "reprehenderit in fugiat",
+              "flightNumber": "proident nulla laborum amet ex",
+              "url": {
+                "description": "Web page to do the web check-in or manage the booking"
+              },
+              "departureAirport": {
+                "airportCode": "YTP",
+                "airportName": "velit"
+              },
+              "departureDateTime": "1918-11-31T09:58:50",
+              "arrivalAirport": {
+                "airportCode": "NEK",
+                "airportName": "irure"
+              },
+              "arrivalDateTime": "7427-11-12T05:03:34",
+              "tickets": [
+                {
+                  "firstName": "do aliquip magna voluptate",
+                  "lastName": "sunt",
+                  "eTicketNumber": "sit ullamco ea et exercitation",
+                  "fareType": "in"
+                },
+                {
+                  "firstName": "sunt cillum nulla ut qui",
+                  "lastName": "in id",
+                  "eTicketNumber": "exercitation magna",
+                  "fareType": "ad ullamco"
+                }
+              ],
+              "legs": [
+                {
+                  "departureAirport": {
+                    "airportCode": "YUD",
+                    "airportName": "anim non nostrud in veniam"
+                  },
+                  "arrivalAirport": {
+                    "airportCode": "LYQ",
+                    "airportName": "dolor ea ut sunt qui"
+                  },
+                  "flightNumber": "consectetur"
+                },
+                {
+                  "departureAirport": {
+                    "airportCode": "IIY",
+                    "airportName": "id culpa nostrud nisi Duis"
+                  },
+                  "arrivalAirport": {
+                    "airportCode": "PBL",
+                    "airportName": "do id Ut fugiat"
+                  },
+                  "flightNumber": "dolor nulla cupid"
+                },
+                {
+                  "departureAirport": {
+                    "airportCode": "UTK",
+                    "airportName": "ut reprehenderit"
+                  },
+                  "arrivalAirport": {
+                    "airportCode": "KWY",
+                    "airportName": "proident"
+                  },
+                  "flightNumber": "deserunt commodo cupidatat"
+                },
+                {
+                  "departureAirport": {
+                    "airportCode": "MEE",
+                    "airportName": "cupidatat ex exercitation"
+                  },
+                  "arrivalAirport": {
+                    "airportCode": "EBG",
+                    "airportName": "qui non ullamco nisi aute"
+                  },
+                  "flightNumber": "Lorem in est"
+                },
+                {
+                  "departureAirport": {
+                    "airportCode": "XFK",
+                    "airportName": "cillum in"
+                  },
+                  "arrivalAirport": {
+                    "airportCode": "UXE",
+                    "airportName": "d"
+                  },
+                  "flightNumber": "aliqua cupidatat"
+                }
+              ]
+            },
+            {
+              "segmentNumber": 2,
+              "airlineName": "consequat i",
+              "airlineCode": "non deserunt",
+              "flightNumber": "est deserunt",
+              "url": {
+                "description": "Web page to do the web check-in or manage the booking"
+              },
+              "departureAirport": {
+                "airportCode": "XHG",
+                "airportName": "elit labore mollit cupidatat quis"
+              },
+              "departureDateTime": "5463-10-21T18:34:22",
+              "arrivalAirport": {
+                "airportCode": "SYS",
+                "airportName": "id pariatur"
+              },
+              "arrivalDateTime": "6860-10-07T22:23:16",
+              "tickets": [
+                {
+                  "firstName": "anim",
+                  "lastName": "nulla in mollit dolore",
+                  "eTicketNumber": "moll",
+                  "fareType": "velit dolore"
+                },
+                {
+                  "firstName": "et quis dolore do",
+                  "lastName": "ipsum do in",
+                  "eTicketNumber": "laborum esse eu",
+                  "fareType": "dolore"
+                },
+                {
+                  "firstName": "et",
+                  "lastName": "qui ut proident dolor",
+                  "eTicketNumber": "ut",
+                  "fareType": "nostrud veniam"
+                },
+                {
+                  "firstName": "anim ex",
+                  "lastName": "veniam",
+                  "eTicketNumber": "ullamco laboris",
+                  "fareType": "aliquip sint mi"
+                }
+              ],
+              "legs": [
+                {
+                  "departureAirport": {
+                    "airportCode": "WZL",
+                    "airportName": "dolore exercitation"
+                  },
+                  "arrivalAirport": {
+                    "airportCode": "VJC",
+                    "airportName": "proident"
+                  },
+                  "flightNumber": "tempor Duis ad deserunt "
+                },
+                {
+                  "departureAirport": {
+                    "airportCode": "YWX",
+                    "airportName": "tempor veniam cupidatat qui"
+                  },
+                  "arrivalAirport": {
+                    "airportCode": "JWU",
+                    "airportName": "tempor minim"
+                  },
+                  "flightNumber": "in tempor officia et"
+                }
+              ]
+            }
+          ]
         }
       }
     ]

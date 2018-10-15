@@ -2,6 +2,7 @@
   "movementRef": 234252,
   "movementType": "Occupancy",
   "movementReason": "Transfer to Another Detention Facility - Long Term Accomodation",
+  "escortingContractor":"Care and Custody ICE Team",
   "requestAuthoriser": {
     "requesterId": "rmp-dev-1",
     "name": "DEPMU",
@@ -19,16 +20,18 @@
       "nationality": "Pakistan",
       "dateOfBirth": "1981-10-21",
       "gender": "Male",
+      "medicalRisk": "Y",
+      "nonMedicalRisk": "Y",
       "risk": [
         {
-          "riskCode": "ESC",
-          "riskDescription": "Escaped previously",
+          "riskCode": "DS: Claimed Medical Condition",
+          "riskDescription": "High BP",
           "riskStartDate": "2012-02-01",
           "riskEndDate": "2013-04-03"
         },
         {
-          "riskCode": "Serious criminal record",
-          "riskDescription": "Had a criminal record",
+          "riskCode": "DS: Criminal Activity,",
+          "riskDescription": "Burglary",
           "riskStartDate": "2015-05-01",
           "riskEndDate": "2018-04-30"
         }

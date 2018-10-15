@@ -1,13 +1,13 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "ESP-40-CancelBookingRequest Request Schema",
+  "title": "ESP-50-EscortBookingRequest Request Schema",
   "version": "0.0.1",
-  "description": "Schema for cancelling a previously requested escort booking.",
+  "description": "Schema for Updating a previously submitted escort booking request",
   "properties": {
     "movementRef": {
       "type": "integer",
-      "description": "The unique movement request that is being cancelled"
+      "description": "Unique Id generated for this movement request"
     },
     "movementType": {
       "description": "Type of movement as identified in the CID",
@@ -19,7 +19,7 @@
     },
     "reason": {
       "type": "string",
-      "description": "Reason e.g. Reset for 13/11/18"
+      "description": "Reason e.g. Transfer to Another Detention Facility - Interview"
     },
     "escortingContractor": {
       "type": "string",
@@ -31,7 +31,7 @@
     },
     "subjects": {
       "type": "array",
-      "description": "The person/s for whom the escorts need to be cancelled. Currently it's complete cancellation for all",
+      "description": "The person/s who needs to be escorted",
       "minItems": 1,
       "items": {
         "$ref": "#/definitions/subjects"
@@ -242,11 +242,11 @@
       "properties": {
         "riskCode": {
           "type": "string",
-          "description": "This will be the DS Risk code e.g. DA, DCMC, DCA "
+          "description": "This will be the DS Risk code e.g. DEMC, DE "
         },
         "riskDescription": {
           "type": "string",
-          "description": "DS descriptions for the codes e.g. DS: Arson, DS: Claimed Medical Condition, DS: Criminal Activity"
+          "description": "DS descriptions for the codes e.g. DS: Existing Medical Condition, DS: Escape Risk"
         },
         "riskStartDate": {
           "type": "string",
