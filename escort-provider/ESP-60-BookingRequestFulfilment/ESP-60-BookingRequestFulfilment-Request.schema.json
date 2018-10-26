@@ -1,0 +1,138 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "ESP-60-BookingRequest Fulfilment Request Schema",
+  "version": "0.0.1",
+  "description": "Schema to update the RMP with movement flow for escort booking request being processed by Mitie",
+  "properties": {
+    "movementRef": {
+      "type": "integer",
+      "description": "Unique Id generated for this movement request"
+    },
+    "movementType": {
+      "description": "Type of movement as identified in the CID",
+      "enum": [
+        "Occupancy",
+        "Non-Occupancy",
+        "Removals"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "description": "E.g. In-Planning OR On-Route-Collection OR Arrived - Collection OR On-Route - Wait OR On-Route – Drop etc.."
+    },
+    "numberOfEscorts": {
+      "type": "string"
+    },
+    "specialCrew": {
+      "type": "boolean"
+    },
+    "SLAType": {
+      "type": "string",
+      "description": ""
+    },
+    "targetDate": {
+      "type": "string",
+      "description": "Date in the ISO-8601 format of [YYYY]-[MM]-[DD]T[hh]:[mm] e.g. 2018-05-01T08:40",
+      "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T(0[0-9]|1[0-9]|2[0-3]):(0[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9])$"
+    },
+    "estOnRouteTimeCollect": {
+      "type": "string",
+      "description": "Date in the ISO-8601 format of [YYYY]-[MM]-[DD]T[hh]:[mm] e.g. 2018-05-01T23:55",
+      "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T(0[0-9]|1[0-9]|2[0-3]):(0[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9])$"
+    },
+    "estArrivalTimeCollect": {
+      "type": "string",
+      "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T(0[0-9]|1[0-9]|2[0-3]):(0[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9])$"
+    },
+    "estOnRouteTimeWait": {
+      "type": "string",
+      "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T(0[0-9]|1[0-9]|2[0-3]):(0[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9])$"
+    },
+    "estArrivalTimeWait": {
+      "type": "string",
+      "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T(0[0-9]|1[0-9]|2[0-3]):(0[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9])$"
+    },
+    "estOnRouteTimeDrop": {
+      "type": "string",
+      "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T(0[0-9]|1[0-9]|2[0-3]):(0[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9])$"
+    },
+    "estArrivalTimeDrop": {
+      "type": "string",
+      "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T(0[0-9]|1[0-9]|2[0-3]):(0[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9])$"
+    },
+    "actOnRouteTimeCollect": {
+      "type": "string",
+      "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T(0[0-9]|1[0-9]|2[0-3]):(0[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9])$"
+    },
+    "actArrivalTimeCollect": {
+      "type": "string",
+      "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T(0[0-9]|1[0-9]|2[0-3]):(0[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9])$"
+    },
+    "actCollectTime": {
+      "type": "string",
+      "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T(0[0-9]|1[0-9]|2[0-3]):(0[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9])$"
+    },
+    "actOnRouteTimeWait": {
+      "type": "string",
+      "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T(0[0-9]|1[0-9]|2[0-3]):(0[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9])$"
+    },
+    "actWaitStartTime": {
+      "type": "string",
+      "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T(0[0-9]|1[0-9]|2[0-3]):(0[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9])$"
+    },
+    "actWaitEndTime": {
+      "type": "string",
+      "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T(0[0-9]|1[0-9]|2[0-3]):(0[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9])$"
+    },
+    "actOnRouteTimeDrop": {
+      "type": "string",
+      "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T(0[0-9]|1[0-9]|2[0-3]):(0[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9])$"
+    },
+    "actArrivalTimeDrop": {
+      "type": "string",
+      "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T(0[0-9]|1[0-9]|2[0-3]):(0[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9])$"
+    },
+    "actDropTime": {
+      "type": "string",
+      "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T(0[0-9]|1[0-9]|2[0-3]):(0[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9])$"
+    },
+    "failureTime": {
+      "type": "string",
+      "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T(0[0-9]|1[0-9]|2[0-3]):(0[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9])$"
+    },
+    "failureReason": {
+      "type": "string"
+    },
+    "cancellationTime": {
+      "type": "string",
+      "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T(0[0-9]|1[0-9]|2[0-3]):(0[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9])$"
+    },
+    "cancellationReason": {
+      "type": "string"
+    },
+    "declinedTime": {
+      "type": "string",
+      "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T(0[0-9]|1[0-9]|2[0-3]):(0[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9])$"
+    },
+    "declinedReason": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "oneOf": [
+    {"required": ["movementRef", "movementType", "status", "targetDate", "estOnRouteTimeCollect", "estArrivalTimeCollect", "estOnRouteTimeWait", "estArrivalTimeWait", "estOnRouteTimeDrop", "estArrivalTimeDrop", "numberOfEscorts", "SLAType", "specialCrew"]},
+    {"required": ["movementRef", "movementType", "status", "targetDate", "actOnRouteTimeCollect", "estArrivalTimeCollect", "estOnRouteTimeWait", "estArrivalTimeWait", "estOnRouteTimeDrop", "estArrivalTimeDrop"]},
+    {"required": ["movementRef", "movementType", "status", "targetDate", "actArrivalTimeCollect", "estOnRouteTimeWait", "estArrivalTimeWait", "estOnRouteTimeDrop", "estArrivalTimeDrop"]},
+    {"required": ["movementRef", "movementType", "status", "targetDate", "actCollectTime", "estOnRouteTimeWait", "estArrivalTimeWait", "estOnRouteTimeDrop", "estArrivalTimeDrop"]},
+    {"required": ["movementRef", "movementType", "status", "targetDate", "actOnRouteTimeWait", "estArrivalTimeWait", "estOnRouteTimeDrop", "estArrivalTimeDrop"]},
+    {"required": ["movementRef", "movementType", "status", "targetDate", "actWaitStartTime", "estOnRouteTimeDrop", "estArrivalTimeDrop"]},
+    {"required": ["movementRef", "movementType", "status", "targetDate", "actWaitEndTime", "estOnRouteTimeDrop", "estArrivalTimeDrop"]},
+    {"required": ["movementRef", "movementType", "status", "targetDate", "actOnRouteTimeDrop", "estArrivalTimeDrop"]},
+    {"required": ["movementRef", "movementType", "status", "targetDate", "actArrivalTimeDrop"]},
+    {"required": ["movementRef", "movementType", "status", "targetDate", "actDropTime"]},
+    {"required": ["movementRef", "movementType", "status", "failureTime", "failureReason"]},
+    {"required": ["movementRef", "movementType", "status", "cancellationTime", "cancellationReason"]},
+    {"required": ["movementRef", "movementType", "status", "declinedTime", "declinedReason"]}
+  ]
+}

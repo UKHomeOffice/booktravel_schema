@@ -8,3 +8,7 @@ Schemas for interfaces between Book Travel service and 3rd parties
 - To generate a Sample JSON from the Schema for testing purpose the following is useful
 
     http://json-schema-faker.js.org/
+    
+- To test the Regular Expressions
+
+    https://www.browserling.com/tools/text-from-regex    
