@@ -1,7 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "title": "TSP-40-SubmitTicketDetails Request Schema",
-  "version": "0.0.1",
   "description": "Schema for TSP to supply RMP with details about the ticket(s) it has booked following a booking request from RMP. The TSP may send this message multiple times for a single booking request but a specific traveller must only be included in one message i.e. The TSP should wait until they have the full set of fulfilment details for a traveller before including them in a message.",
   "type": "object",
   "properties": {
@@ -178,6 +177,14 @@
         },
         "segments": {
           "$ref": "#/definitions/segmentDefinition"
+        },
+        "totalPrice": {
+          "type": "number",
+          "multipleOf": 0.01,
+          "description": "The total cost for the ticket, including applicable taxes etc."
+        },
+        "priceCurrency": {
+          "description": "ISO 4217 currency codes e.g. GBP, USD, INR etc"
         }
       },
       "required": [

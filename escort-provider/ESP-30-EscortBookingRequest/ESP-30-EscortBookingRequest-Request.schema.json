@@ -257,6 +257,10 @@
           "type": "string",
           "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$",
           "description": "Date in the ISO-8601 format of YYYY-MM-DD for when the risk ends"
+        },
+        "additionalInformation": {
+          "type": "string",
+          "description": "Agent entered information e.g. High BP, Burglary etc."
         }
       },
       "additionalProperties": false,
