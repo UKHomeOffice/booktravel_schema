@@ -33,8 +33,7 @@
         "Complete",
         "NotComplete",
         "AuthorityCancelled",
-        "SupplierCancelled",
-        "Declined"
+        "SupplierCancelled"
       ]
     },
     "movementDetails": {
