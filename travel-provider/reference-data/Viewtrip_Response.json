@@ -1,0 +1,281 @@
+{
+    "Locator": "ABC1DE",
+    "LastName": "DOE",
+    "TripName": null,
+    "TripId": 0,
+    "AddedToTripList": false,
+    "PseudoCityCode": "9BL",
+    "SubPCC": null,
+    "Segments": [
+        {
+            "SegmentNum": 1,
+            "Stops": 0,
+            "Seats": null,
+            "AirlineName": "SAS Scandinavian Airlines",
+            "FlightNumber": "500",
+            "OperatingCarrier": "SAS IRELAND",
+            "Legs": [
+                {
+                    "DepartAirport": {
+                        "AirportCode": "LHR",
+                        "Terminal": "2",
+                        "Name": [
+                            "Heathrow"
+                        ],
+                        "Address": null,
+                        "City": "London",
+                        "State": null,
+                        "Zip": null,
+                        "Country": "GB"
+                    },
+                    "ArriveAirport": {
+                        "AirportCode": "CPH",
+                        "Terminal": "3",
+                        "Name": [
+                            "Copenhagen Arpt"
+                        ],
+                        "Address": null,
+                        "City": "Copenhagen",
+                        "State": null,
+                        "Zip": null,
+                        "Country": "DK"
+                    },
+                    "Depart": "2018-10-22T06:45:00",
+                    "Arrive": "2018-10-22T09:35:00",
+                    "TravelTime": "1H 50M",
+                    "FlightInfo": [
+                        "Airbus A320",
+                        "Meal at cost"
+                    ],
+                    "LegMiles": "",
+                    "FlightNumber": "500",
+                    "AirlineName": "SAS Scandinavian Airlines",
+                    "OperatingCarrier": "SAS IRELAND",
+                    "Seats": null
+                }
+            ],
+            "AssociatedRemarks": [],
+            "Arrive": "2018-10-22T09:35:00",
+            "Depart": "2018-10-22T06:45:00",
+            "TravelTime": "1H 50M",
+            "IsPassive": false,
+            "OnlineCheckIn": {
+                "OpenGmtDate": "2018-10-29T08:45:00",
+                "CloseGmtDate": "2018-10-29T08:45:00",
+                "Url": "https://www.flysas.com/en/ie/Generic/Services/Checkin/"
+            },
+            "SpecialServiceRequest": [
+                {
+                    "FirstName": "JOHNMR",
+                    "LastName": "DOE",
+                    "Description": "Deportee (Unaccompanied)",
+                    "Code": "DEPU",
+                    "AgentComment": "UK IMMIG REF- A1234567"
+                }
+            ],
+            "ChangeOfDay": null,
+            "ChangeOfPlanes": false,
+            "EquipmentInfo": {
+                "Code": "32A",
+                "Description": "Airbus A320"
+            },
+            "Guests": [
+                {
+                    "FirstName": "JOHNMR",
+                    "LastName": "DOE",
+                    "Type": "",
+                    "LoyaltyInfo": "",
+                    "FrequentGuestInfo": null,
+                    "EticketNumber": null,
+                    "TicketNumber": null,
+                    "SeatInfo": []
+                }
+            ],
+            "Confirmation": "QT45ES",
+            "Logo": "SK",
+            "Title": "",
+            "ClassOfService": {
+                "Code": "K",
+                "Description": "Economy"
+            },
+            "SegmentDates": [
+                "2018-10-30T06:45:00",
+                "2018-10-30T09:35:00"
+            ],
+            "DepartName": "London",
+            "DepartCode": "LHR",
+            "ArriveName": "Copenhagen",
+            "ArriveCode": "CPH",
+            "SegmentType": "Flight",
+            "StatusEnum": 1
+        },
+        {
+            "SegmentNum": 2,
+            "Stops": 0,
+            "Seats": null,
+            "AirlineName": "SAS Scandinavian Airlines",
+            "FlightNumber": "2746",
+            "OperatingCarrier": "",
+            "Legs": [
+                {
+                    "DepartAirport": {
+                        "AirportCode": "CPH",
+                        "Terminal": "3",
+                        "Name": [
+                            "Copenhagen Arpt"
+                        ],
+                        "Address": null,
+                        "City": "Copenhagen",
+                        "State": null,
+                        "Zip": null,
+                        "Country": "DK"
+                    },
+                    "ArriveAirport": {
+                        "AirportCode": "PLQ",
+                        "Terminal": "",
+                        "Name": [
+                            "Palanga Intl Arpt"
+                        ],
+                        "Address": null,
+                        "City": "Palanga",
+                        "State": null,
+                        "Zip": null,
+                        "Country": "LT"
+                    },
+                    "Depart": "2018-10-22T11:55:00",
+                    "Arrive": "2018-10-22T14:00:00",
+                    "TravelTime": "1H 5M",
+                    "FlightInfo": [
+                        "Airbus A320",
+                        "Meal at cost"
+                    ],
+                    "LegMiles": "",
+                    "FlightNumber": "2746",
+                    "AirlineName": "SAS Scandinavian Airlines",
+                    "OperatingCarrier": "",
+                    "Seats": null
+                }
+            ],
+            "AssociatedRemarks": [],
+            "Arrive": "2018-10-22T14:00:00",
+            "Depart": "2018-10-22T11:55:00",
+            "TravelTime": "1H 5M",
+            "IsPassive": false,
+            "OnlineCheckIn": {
+                "OpenGmtDate": "2018-10-29T12:55:00",
+                "CloseGmtDate": "2018-10-29T12:55:00",
+                "Url": "https://www.flysas.com/en/ie/Generic/Services/Checkin/"
+            },
+            "SpecialServiceRequest": [
+                {
+                    "FirstName": "JOHNMR",
+                    "LastName": "DOE",
+                    "Description": "Deportee (Unaccompanied)",
+                    "Code": "DEPU",
+                    "AgentComment": "UK IMMIG REF- A1234567"
+                }
+            ],
+            "ChangeOfDay": null,
+            "ChangeOfPlanes": false,
+            "EquipmentInfo": {
+                "Code": "320",
+                "Description": "Airbus A320"
+            },
+            "Guests": [
+                {
+                    "FirstName": "JOHNMR",
+                    "LastName": "DOE",
+                    "Type": "",
+                    "LoyaltyInfo": "",
+                    "FrequentGuestInfo": null,
+                    "EticketNumber": null,
+                    "TicketNumber": null,
+                    "SeatInfo": []
+                }
+            ],
+            "Confirmation": "QT45ES",
+            "Logo": "SK",
+            "Title": "",
+            "ClassOfService": {
+                "Code": "K",
+                "Description": "Economy"
+            },
+            "SegmentDates": [
+                "2018-10-30T11:55:00",
+                "2018-10-30T14:00:00"
+            ],
+            "DepartName": "Copenhagen",
+            "DepartCode": "CPH",
+            "ArriveName": "Palanga",
+            "ArriveCode": "PLQ",
+            "SegmentType": "Flight",
+            "StatusEnum": 1
+        }
+    ],
+    "UnassociatedRemarks": [
+        "*CUSTID**LINKADD*",
+        "*************MEDICAL PRECAUTIONS*************",
+        "TRAVELLERS ARE RECOMMENDED TO SEEK MEDICAL",
+        "ADVICE FOR THEIR DESTINATION FROM THEIR GP OR",
+        "A SPECIALIST TRAVEL CLINIC BEFORE TRAVEL",
+        "*CUST**COUNTRY.UK*",
+        "*CUSTID**GB.GOV1002*",
+        "PLEASE CALL CWT WHENEVER A REMOVAL IS NOT GOING",
+        "AHEAD 0203 353 0392",
+        "*CUSTID**GB.GOV1002*",
+        "*RITOP**PORT REF· A1234567",
+        "PASSPORT AND VISA INFORMATION",
+        "ROUTING : LONDON COPENHAGEN PALANGA",
+        "HIGH FARE : GBP292.00",
+        "CHARGED FARE : GBP169.70",
+        "LOWEST FARE : GBP160.70",
+        "SAVINGS ACHIEVED VS HIGH FARE GBP122.30",
+        "SAVINGS MISSED VS LOWEST FARE GBP9.00",
+        "MAIN RESTRICTIONS:",
+        "CHANGE OF RESERVATION : EUR70",
+        "CANCELLATION : NOT PERMITTED",
+        "VALID ON : SK ONLY",
+        "MINIMUM STAY : VALID ONLY ON DATES BOOKED",
+        "MAXIMUM STAY : VALID ONLY ON DATES BOOKED",
+        "REROUTING : NOT PERMITTED",
+        "THIS FARE WILL BE ISSUED AS AN E/TICKET",
+        "****************************************************",
+        "*TLXL*TICKETING DATE NOT SET CONFIRM BY *22/10/2018*",
+        "ALL FARES QUOTED ARE INCLUDING AIRPORT DEPARTURE",
+        "AND SECURITY TAXES AND MAY INCLUDE A NONREFUNDABLE",
+        "CREDIT CARD FEE APPLIED BY THE AIRLINE",
+        "FARES ARE NOT GUARANTEED UNTIL YOUR TICKET HAS BEEN ISSUED",
+        "ON HOLD:AWAITING APPROVAL",
+        "****************************************************",
+        "POLICY WARNING",
+        "REASON: UNITED KINGDOM RISK",
+        "ADVICE: USE C*PORT TO ADD SI. REMARK TO PNR",
+        "STATUS: TA / TRAVELLER/BOOKER ADVISED"
+    ],
+    "HasETicket": false,
+    "Is24HourFormat": true,
+    "Agency": {
+        "Phone": "0203 353 0392 - HOME OFFICE SECTION",
+        "IsWhiteLabel": false,
+        "PhoneList": [
+            "0203 353 0392 CARLSON WAGONLIT HEATHROW",
+            "0203 353 0392 - HOME OFFICE SECTION"
+        ],
+        "Name": [
+            "CARLSON WAGONLIT TVL"
+        ],
+        "Address": "GLOBAL HOUSE 424 BATH ROAD",
+        "City": "LONGFORD",
+        "State": "",
+        "Zip": "UB7 0EB",
+        "Country": "UNITED KINGDOM"
+    },
+    "CannedRemarks": [],
+    "Core": 1,
+    "ProviderCode": "1G",
+    "EmailAddress": null,
+    "ShowExpense": true,
+    "HasEReceipt": false,
+    "OtherVendorConfirmation": null,
+    "PassengerFilter": null
+}

@@ -1,0 +1,157 @@
+{
+	"bookingID": "5433bd24-94b8-44f8-8c9f-e889eb7946f5",
+	"recordLocator": "Q56ZZA",
+	"supplierServiceName": "AMADEUS",
+	"creationDateTime": "2018-11-16T07:54:00.000",
+	"transactionDateTime": "2018-11-16T07:54:32.000",
+	"versionLastUpdateDateTime": "2018-11-16T07:54:00.000",
+	"bookingDetails": {
+		"estimatedPurgeDate": "2019-07-04",
+		"numberInParty": 1,
+		"pointOfSaleGroup": {
+			"ownerDetails": {
+				"agency": {
+					"agentType": "T",
+					"iataNumber": "91253665",
+					"address": {
+						"cityCode": "LON"
+					},
+					"pcc": "LONWL2220",
+					"pccType": "Booking"
+				},
+				"countryCode": "GB",
+				"companyID": "1A"
+			},
+			"creatorDetails": {
+				"agency": {
+					"agentType": "T",
+					"iataNumber": "91253665",
+					"address": {
+						"cityCode": "LON"
+					},
+					"pcc": "LONWL2220",
+					"pccType": "Booking"
+				},
+				"countryCode": "GB",
+				"companyID": "1A"
+			},
+			"updaterDetails": {
+				"agency": {
+					"agentType": "T",
+					"iataNumber": "91253665",
+					"address": {
+						"cityCode": "LON"
+					},
+					"pcc": "LONWL2220",
+					"pccType": "Booking"
+				},
+				"countryCode": "GB",
+				"companyID": "1A"
+			},
+			"creditLine": {
+				"agencyList": [{
+					"agentCode": "1909JDGS",
+					"pcc": "LONWL2220"
+				}],
+				"receivedFromText": "CWTPHTEST-MCG-CWT/UJXD909"
+			}
+		},
+		"systemLastUpdateDateTime": "2018-11-16T07:54:00.000"
+	},
+	"travelerList": [{
+		"personName": {
+			"firstName": "JANE TEST",
+			"lastName": "DEGRANO"
+		},
+		"travelerID": "1"
+	}],
+	"segmentGroup": {
+		"airList": [{
+			"segmentNumber": "1",
+			"statusCode": "HK",
+			"segmentClassificationType": "GDS_ACTIVE",
+			"airMilesFlown": "0",
+			"arrivalAirport": {
+				"code": "SYD",
+				"terminalCode": "1"
+			},
+			"arrivalDate": "2019-07-02",
+			"arrivalTime": "05:10:00.000",
+			"confirmationBusinessSemantic": "COT",
+			"confirmationNumber": "Q56ZZA",
+			"confirmationDate": "2018-11-16",
+			"confirmationTime": "07:53:00.000",
+			"dayChangeIndicator": "1",
+			"dayOfWeek": 7,
+			"departureAirport": {
+				"code": "LHR",
+				"terminalCode": "5"
+			},
+			"departureDate": "2019-06-30",
+			"departureTime": "21:35:00.000",
+			"elementID": "1",
+			"equipmentCode": "777",
+			"flightDuration": "2055",
+			"intermediateStopList": [{
+				"airportCode": "SIN"
+			}],
+			"inboundConnectionFlag": false,
+			"marketingCodeShareInfo": {
+				"flightDetails": {
+					"airlineCode": "BA",
+					"classOfService": "Y",
+					"flightNumber": "15",
+					"flightType": "I"
+				}
+			},
+			"mealList": ["M",
+			"M"],
+			"numberInParty": 1,
+			"operatingCodeShareInfo": {
+				"flightDetails": {
+					"airlineCode": "BA",
+					"classOfService": "Y",
+					"flightNumber": "15",
+					"flightType": "I"
+				}
+			},
+			"originalActionCodeList": ["NN",
+			"NN"],
+			"outboundConnectionFlag": false,
+			"pastFlag": false,
+			"pointOfSale": {
+				"agency": {
+					"agentType": "T",
+					"iataNumber": "91253665",
+					"address": {
+						"cityCode": "LON"
+					},
+					"pcc": "LONWL2220"
+				},
+				"countryCode": "GB",
+				"companyID": "00"
+			},
+			"segmentBookedDate": "2018-11-16",
+			"segmentBookedTime": "07:53:00.000",
+			"segmentBookedDateTimeQualifier": "ZT",
+			"segmentClassCode": "1",
+			"segmentType": "AIR",
+			"selectionOptionList": ["P2"],
+			"eticketFlag": true
+		}]
+	},
+	"bookingEventList": ["NEW_BOOKING",
+	"CONTACT_INFO",
+	"TICKETING",
+	"ITINERARY"],
+	"bookingState": "BOOKED",
+	"reservationType": "Business",
+	"ticketDocumentGroup": {
+		"ticket": {
+			"ticketedFlag": false,
+			"ticketingList": [{
+				"date": "2018-12-23"
+			}]
+		}
+	}
+}

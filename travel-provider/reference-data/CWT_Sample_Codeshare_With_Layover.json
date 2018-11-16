@@ -1,0 +1,275 @@
+{
+	"bookingID": "3b7bdfbd-4bf8-4900-ac31-4d7d7db45ce6",
+	"recordLocator": "Q4RL48",
+	"supplierServiceName": "AMADEUS",
+	"creationDateTime": "2018-11-16T06:10:00.000",
+	"transactionDateTime": "2018-11-16T06:10:09.000",
+	"versionLastUpdateDateTime": "2018-11-16T06:10:00.000",
+	"bookingDetails": {
+		"estimatedPurgeDate": "2019-07-04",
+		"numberInParty": 1,
+		"pointOfSaleGroup": {
+			"ownerDetails": {
+				"agency": {
+					"agentType": "T",
+					"iataNumber": "91253665",
+					"address": {
+						"cityCode": "LON"
+					},
+					"pcc": "LONWL2220",
+					"pccType": "Booking"
+				},
+				"countryCode": "GB",
+				"companyID": "1A"
+			},
+			"creatorDetails": {
+				"agency": {
+					"agentType": "T",
+					"iataNumber": "91253665",
+					"address": {
+						"cityCode": "LON"
+					},
+					"pcc": "LONWL2220",
+					"pccType": "Booking"
+				},
+				"countryCode": "GB",
+				"companyID": "1A"
+			},
+			"updaterDetails": {
+				"agency": {
+					"agentType": "T",
+					"iataNumber": "91253665",
+					"address": {
+						"cityCode": "LON"
+					},
+					"pcc": "LONWL2220",
+					"pccType": "Booking"
+				},
+				"countryCode": "GB",
+				"companyID": "1A"
+			},
+			"creditLine": {
+				"agencyList": [{
+					"agentCode": "1909JDGS",
+					"pcc": "LONWL2220"
+				}],
+				"receivedFromText": "CWTPHTEST-MCG-CWT/UJXD909"
+			}
+		},
+		"qcPassedFlag": false,
+		"systemLastUpdateDateTime": "2018-11-16T06:10:00.000"
+	},
+	"travelerList": [{
+		"addressList": [{
+			
+		}],
+		"personName": {
+			"firstName": "JANE",
+			"lastName": "DEGRANO"
+		},
+		"travelerID": "2",
+		"travelerType": "ADT"
+	}],
+	"segmentGroup": {
+		"airList": [{
+			"segmentNumber": "1",
+			"statusCode": "HK",
+			"segmentClassificationType": "GDS_ACTIVE",
+			"airMilesFlown": "0",
+			"arrivalAirport": {
+				"code": "FRA",
+				"terminalCode": "1"
+			},
+			"arrivalDate": "2019-06-30",
+			"arrivalTime": "05:30:00.000",
+			"confirmationBusinessSemantic": "COT",
+			"confirmationNumber": "Q4RL48",
+			"confirmationDate": "2018-11-16",
+			"confirmationTime": "06:08:00.000",
+			"dayOfWeek": 7,
+			"departureAirport": {
+				"code": "LHR",
+				"terminalCode": "2"
+			},
+			"departureDate": "2019-06-30",
+			"departureTime": "03:00:00.000",
+			"elementID": "1",
+			"equipmentCode": "744",
+			"flightDuration": "0130",
+			"inboundConnectionFlag": false,
+			"marketingCodeShareInfo": {
+				"flightDetails": {
+					"airlineCode": "LH",
+					"classOfService": "V",
+					"flightNumber": "4266",
+					"flightType": "I"
+				}
+			},
+			"marriageGroup": {
+				"dominantFlag": true,
+				"sequenceNumber": "0"
+			},
+			"mealList": ["S"],
+			"numberInParty": 1,
+			"operatingCodeShareInfo": {
+				"flightDetails": {
+					"airlineCode": "LH",
+					"classOfService": "V",
+					"flightNumber": "4266",
+					"flightType": "I"
+				}
+			},
+			"originalActionCodeList": ["NN",
+			"NN"],
+			"outboundConnectionFlag": true,
+			"pastFlag": false,
+			"pointOfSale": {
+				"agency": {
+					"agentType": "T",
+					"iataNumber": "91253665",
+					"address": {
+						"cityCode": "LON"
+					},
+					"pcc": "LONWL2220"
+				},
+				"countryCode": "GB",
+				"companyID": "1A"
+			},
+			"segmentBookedDate": "2018-11-16",
+			"segmentBookedTime": "06:08:00.000",
+			"segmentBookedDateTimeQualifier": "ZT",
+			"segmentClassCode": "1",
+			"segmentType": "AIR",
+			"selectionOptionList": ["P2"],
+			"eticketFlag": true
+		},
+		{
+			"segmentNumber": "2",
+			"statusCode": "HK",
+			"segmentClassificationType": "GDS_ACTIVE",
+			"airMilesFlown": "0",
+			"arrivalAirport": {
+				"code": "SYD",
+				"terminalCode": "1"
+			},
+			"arrivalDate": "2019-07-01",
+			"arrivalTime": "07:00:00.000",
+			"confirmationBusinessSemantic": "COT",
+			"confirmationNumber": "Q4RL48",
+			"confirmationDate": "2018-11-16",
+			"confirmationTime": "06:08:00.000",
+			"dayChangeIndicator": "2",
+			"dayOfWeek": 7,
+			"departureAirport": {
+				"code": "FRA",
+				"terminalCode": "1"
+			},
+			"departureDate": "2019-06-30",
+			"departureTime": "20:00:00.000",
+			"elementID": "2",
+			"equipmentCode": "388",
+			"flightDuration": "0300",
+			"inboundConnectionFlag": true,
+			"marketingCodeShareInfo": {
+				"flightDetails": {
+					"airlineCode": "LH",
+					"classOfService": "V",
+					"flightNumber": "4770",
+					"flightType": "I"
+				}
+			},
+			"marriageGroup": {
+				"dominantFlag": true,
+				"sequenceNumber": "1"
+			},
+			"mealList": ["S"],
+			"numberInParty": 1,
+			"operatingCodeShareInfo": {
+				"flightDetails": {
+					"airlineCode": "LH",
+					"classOfService": "V",
+					"flightNumber": "4770",
+					"flightType": "I"
+				}
+			},
+			"originalActionCodeList": ["NN",
+			"NN"],
+			"outboundConnectionFlag": false,
+			"pastFlag": false,
+			"pointOfSale": {
+				"agency": {
+					"agentType": "T",
+					"iataNumber": "91253665",
+					"address": {
+						"cityCode": "LON"
+					},
+					"pcc": "LONWL2220"
+				},
+				"countryCode": "GB",
+				"companyID": "1A"
+			},
+			"segmentBookedDate": "2018-11-16",
+			"segmentBookedTime": "06:08:00.000",
+			"segmentBookedDateTimeQualifier": "ZT",
+			"segmentClassCode": "1",
+			"segmentType": "AIR",
+			"selectionOptionList": ["P2"],
+			"eticketFlag": true
+		}]
+	},
+	"bookingEventList": ["NEW_BOOKING",
+	"TICKETING",
+	"CONTACT_INFO",
+	"ITINERARY"],
+	"bookingState": "BOOKED",
+	"fareGroup": {
+		"airFareList": [{
+			"price": {
+				"totalAmount": {
+					"formattedValue": "531.74",
+					"currencyCode": "GBP",
+					"value": 53174,
+					"numberOfDecimals": 2
+				},
+				"travelerTotalAmount": {
+					"formattedValue": "531.74",
+					"currencyCode": "GBP",
+					"value": 53174,
+					"numberOfDecimals": 2
+				}
+			},
+			"fareRules": {
+				"fareInfoList": [{
+					"fareBasisCode": "VNCOWGB",
+					"segmentRefID": "1"
+				},
+				{
+					"fareBasisCode": "VNCOWGB",
+					"segmentRefID": "2"
+				}]
+			},
+			"travelerRefIDList": ["2"]
+		}]
+	},
+	"remarkGroup": {
+		"generalRemarkList": [{
+			"remarkIndex": 10,
+			"remarkType": "RM",
+			"segmentReferenceIDList": ["1",
+			"2"],
+			"passengerReferenceIDList": ["2"],
+			"remarkLineList": [{
+				"freeFormText": "PRICING ENTRY FXP/R,UP/LO/NF"
+			}]
+		}]
+	},
+	"reservationType": "Business",
+	"ticketDocumentGroup": {
+		"ticket": {
+			"ticketedFlag": false,
+			"ticketingList": [{
+				"date": "2018-12-20"
+			}]
+		}
+	}
+}
