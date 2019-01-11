@@ -10,16 +10,17 @@
   },
   "bookingDetails": {
     "bookingID": "2344324",
+    "bookingState": "BOOKED",
     "flightDetails": [
       {
         "totalPrice": 700.64,
         "priceCurrency": "GBP",
+        "personnelType": "DEPU",
         "locator": {
           "locatorCode": "A2B4C6",
           "firstName": "I",
           "lastName": "Murtaza"
         },
-        "personnelType": "DEPU",
         "itinerary": {
           "from": {
             "airportCode": "LHR",
@@ -58,25 +59,6 @@
               },
               "arrivalDateTime": "2018-12-05T01:02:03",
               "url": "http://britishairways.com",
-              "legs": [
-                {
-                  "flightNumber": "500",
-                  "departureAirport": {
-                    "airportCode": "LHR",
-                    "airportName": "Heathrow",
-                    "terminal": 2,
-                    "city": "London",
-                    "country": "GB"
-                  },
-                  "arrivalAirport": {
-                    "airportCode": "CPH",
-                    "airportName": "Copenhagen Arpt",
-                    "terminal": 3,
-                    "city": "Copenhagen",
-                    "country": "DK"
-                  }
-                }
-              ],
               "tickets": [
                 {
                   "firstName": "Ikram",
@@ -93,6 +75,7 @@
       {
         "totalPrice": 800.23,
         "priceCurrency": "GBP",
+        "personnelType": "DEPA",
         "locator": {
           "locatorCode": "quis",
           "firstName": "fir",
@@ -263,10 +246,11 @@
       {
         "totalPrice": 950.00,
         "priceCurrency": "GBP",
+        "personnelType": "MEDA",
         "locator": {
           "locatorCode": "ex",
-          "firstName": "aliquip aliqua deserunt nostrud",
-          "lastName": "eu ex ut Ut nulla"
+          "firstName": "John",
+          "lastName": "Doe"
         },
         "itinerary": {
           "from": {

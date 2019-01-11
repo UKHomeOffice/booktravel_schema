@@ -1,0 +1,908 @@
+{
+  "bookingID": "b22c3dff-7ce9-4861-8e6f-326dcebbd333",
+  "recordLocator": "W86JE7",
+  "supplierServiceName": "AMADEUS",
+  "creationDateTime": "2018-08-30T03:17:00.000",
+  "versionLastUpdateDateTime": "2018-08-30T03:37:00.000",
+  "bookingState": "BOOKED",
+  "bookingDetails": {
+    "estimatedPurgeDate": "2018-09-07",
+    "numberInParty": 1,
+    "pointOfSaleGroup": {
+      "ownerDetails": {
+        "agency": {
+          "agentType": "T",
+          "iataNumber": "02301412",
+          "address": {
+            "cityCode": "PER"
+          },
+          "pcc": "PERJS2101"
+        },
+        "countryCode": "AU",
+        "companyID": "1A"
+      },
+      "creatorDetails": {
+        "agency": {
+          "agentType": "T",
+          "iataNumber": "02301412",
+          "address": {
+            "cityCode": "PER"
+          },
+          "pcc": "PERJS2101"
+        },
+        "countryCode": "AU",
+        "companyID": "1A"
+      },
+      "updaterDetails": {
+        "agency": {
+          "agentType": "T",
+          "iataNumber": "23269536",
+          "address": {
+            "cityCode": "FRA"
+          },
+          "pcc": "FRAWL2378"
+        },
+        "countryCode": "DE",
+        "companyID": "1A"
+      },
+      "creditLine": {
+        
+      }
+    },
+    "systemLastUpdateDateTime": "2018-08-30T03:37:00.000"
+  },
+  "travelerList": [
+    {
+      "personName": {
+        "firstName": "CRAIG",
+        "lastName": "COCKS",
+        "prefix": "MR"
+      },
+      "travelerGUID": "14:2225DA8B",
+      "travelerID": "1",
+      "travelerTypeGUID": "14:EC30"
+    }
+  ],
+  "segmentGroup": {
+    "airList": [
+      {
+        "segmentNumber": 2,
+        "statusCode": "HK",
+        "segmentClassificationType": "GDS_ACTIVE",
+        "arrivalAirport": {
+          "code": "LEA"
+        },
+        "arrivalDate": "2018-09-03",
+        "arrivalTime": "07:25:00.000",
+        "confirmationNumber": "W86JE7",
+        "dayOfWeek": 1,
+        "departureAirport": {
+          "code": "PER",
+          "terminalCode": "4"
+        },
+        "departureDate": "2018-09-03",
+        "departureTime": "05:30:00.000",
+        "equipmentCode": "100",
+        "inboundConnectionFlag": false,
+        "inventoryInfo": {
+          "cabin": {
+            "code": "M"
+          }
+        },
+        "marketingCodeShareInfo": {
+          "flightDetails": {
+            "airlineCode": "QF",
+            "classOfService": "Y",
+            "flightNumber": "1640"
+          }
+        },
+        "numberInParty": 1,
+        "operatingCodeShareInfo": {
+          "flightDetails": {
+            "airlineCode": "QF",
+            "classOfService": "Y",
+            "flightNumber": "1640"
+          }
+        },
+        "outboundConnectionFlag": false,
+        "pastFlag": false,
+        "segmentTattooNumber": 1,
+        "selectionOptionList": [
+          "P2"
+        ],
+        "eticketFlag": true
+      }
+    ]
+  },
+  "client": {
+    "clientTop": {
+      "guid": "14:B55B"
+    },
+    "clientSub": {
+      "guid": "14:18BA3"
+    }
+  },
+  "remarkGroup": {
+    "accountingRemarkList": [
+      {
+        "remarkIndex": 104,
+        "remarkType": "RM",
+        "remarkCategory": "$",
+        "remarkLineList": [
+          {
+            "freeFormText": "\/WOODSIDE"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 22,
+        "remarkType": "RM",
+        "remarkCategory": "$",
+        "passengerReferenceIDList": [
+          "1"
+        ],
+        "remarkLineList": [
+          {
+            "freeFormText": "\/WOODSIDE"
+          }
+        ]
+      }
+    ],
+    "generalRemarkList": [
+      {
+        "remarkIndex": 29,
+        "remarkType": "RM",
+        "remarkCategory": "T",
+        "passengerReferenceIDList": [
+          "1"
+        ],
+        "remarkLineList": [
+          {
+            "freeFormText": "GENDER:M"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 124,
+        "remarkType": "RM",
+        "remarkCategory": "Q",
+        "remarkLineList": [
+          {
+            "freeFormText": "QC-TTLRD UD10 30AUG SYSTKT 0"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 25,
+        "remarkType": "RM",
+        "remarkCategory": "G",
+        "passengerReferenceIDList": [
+          "1"
+        ],
+        "remarkLineList": [
+          {
+            "freeFormText": "TRVLR TYPE-TRAVELLER"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 87,
+        "remarkType": "RM",
+        "remarkCategory": "*",
+        "remarkLineList": [
+          {
+            "freeFormText": "BOOK-PERJS2101\/TKT-PERJS2101\/CC-AU"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 54,
+        "remarkType": "RM",
+        "remarkCategory": "*",
+        "remarkLineList": [
+          {
+            "freeFormText": "VFF30\/XX"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 21,
+        "remarkType": "RM",
+        "remarkCategory": "*",
+        "passengerReferenceIDList": [
+          "1"
+        ],
+        "remarkLineList": [
+          {
+            "freeFormText": "BOOK-PERJS2101\/TKT-PERJS2101\/CC-AU"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 83,
+        "remarkType": "RM",
+        "remarkCategory": "*",
+        "remarkLineList": [
+          {
+            "freeFormText": "FF31\/Y"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 50,
+        "remarkType": "RM",
+        "remarkCategory": "*",
+        "remarkLineList": [
+          {
+            "freeFormText": "EC\/L"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 17,
+        "remarkType": "RM",
+        "remarkCategory": "*",
+        "passengerReferenceIDList": [
+          "1"
+        ],
+        "remarkLineList": [
+          {
+            "freeFormText": "FF31\/Y"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 112,
+        "remarkType": "RM",
+        "remarkCategory": "*",
+        "remarkLineList": [
+          {
+            "freeFormText": "MSX\/FCX2\/\/D41.03\/A37.30"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 79,
+        "remarkType": "RM",
+        "remarkCategory": "*",
+        "remarkLineList": [
+          {
+            "freeFormText": "FF6\/AUWEL55"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 46,
+        "remarkType": "RM",
+        "remarkCategory": "*",
+        "remarkLineList": [
+          {
+            "freeFormText": "FF36\/G"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 13,
+        "remarkType": "RM",
+        "remarkCategory": "*",
+        "passengerReferenceIDList": [
+          "1"
+        ],
+        "remarkLineList": [
+          {
+            "freeFormText": "FF6\/AUWEL55"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 108,
+        "remarkType": "RM",
+        "remarkCategory": "*",
+        "remarkLineList": [
+          {
+            "freeFormText": "PC\/4"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 9,
+        "remarkType": "RM",
+        "remarkCategory": "*",
+        "passengerReferenceIDList": [
+          "1"
+        ],
+        "remarkLineList": [
+          {
+            "freeFormText": "TID:112811"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 100,
+        "remarkType": "RM",
+        "remarkCategory": "A",
+        "remarkLineList": [
+          {
+            "freeFormText": "ENSCO DPS 1"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 34,
+        "remarkType": "RM",
+        "remarkCategory": "Y",
+        "passengerReferenceIDList": [
+          "1"
+        ],
+        "remarkLineList": [
+          {
+            "freeFormText": "\/\/\/"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 30,
+        "remarkType": "RM",
+        "remarkCategory": "T",
+        "passengerReferenceIDList": [
+          "1"
+        ],
+        "remarkLineList": [
+          {
+            "freeFormText": "BIRTHDATE:"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 125,
+        "remarkType": "RM",
+        "remarkCategory": "Q",
+        "remarkLineList": [
+          {
+            "freeFormText": "QC-TD IS 31AUG"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 26,
+        "remarkType": "RM",
+        "remarkCategory": "P",
+        "passengerReferenceIDList": [
+          "1"
+        ],
+        "remarkLineList": [
+          {
+            "freeFormText": "GUID\/CT-14:\/SU-14:\/TT-14:\/T-14:"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 121,
+        "remarkType": "RM",
+        "remarkCategory": "*",
+        "remarkLineList": [
+          {
+            "freeFormText": "FF59\/MUUU1PUUUUUA"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 88,
+        "remarkType": "RM",
+        "remarkCategory": "T",
+        "remarkLineList": [
+          {
+            "freeFormText": "GUID\/CT-14:B55B\/SU-14:18BA3"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 55,
+        "remarkType": "RM",
+        "remarkCategory": "*",
+        "remarkLineList": [
+          {
+            "freeFormText": "VFF33\/0"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 84,
+        "remarkType": "RM",
+        "remarkCategory": "*",
+        "remarkLineList": [
+          {
+            "freeFormText": "FF37\/B"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 51,
+        "remarkType": "RM",
+        "remarkCategory": "*",
+        "remarkLineList": [
+          {
+            "freeFormText": "FF30\/XX"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 18,
+        "remarkType": "RM",
+        "remarkCategory": "*",
+        "passengerReferenceIDList": [
+          "1"
+        ],
+        "remarkLineList": [
+          {
+            "freeFormText": "FF37\/B"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 80,
+        "remarkType": "RM",
+        "remarkCategory": "*",
+        "remarkLineList": [
+          {
+            "freeFormText": "CN\/1079"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 47,
+        "remarkType": "RM",
+        "remarkCategory": "*",
+        "remarkLineList": [
+          {
+            "freeFormText": "FF35\/AMA"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 14,
+        "remarkType": "RM",
+        "remarkCategory": "*",
+        "passengerReferenceIDList": [
+          "1"
+        ],
+        "remarkLineList": [
+          {
+            "freeFormText": "CN\/1001"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 10,
+        "remarkType": "RM",
+        "remarkCategory": "*",
+        "passengerReferenceIDList": [
+          "1"
+        ],
+        "remarkLineList": [
+          {
+            "freeFormText": "BPT PROFILE: BPT619368"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 101,
+        "remarkType": "RX",
+        "remarkLineList": [
+          {
+            "freeFormText": "RESTRICTED"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 31,
+        "remarkType": "RM",
+        "remarkCategory": "T",
+        "passengerReferenceIDList": [
+          "1"
+        ],
+        "remarkLineList": [
+          {
+            "freeFormText": "GUID\/CT-14:\/SU-14:"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 126,
+        "remarkType": "RM",
+        "remarkCategory": "*",
+        "remarkLineList": [
+          {
+            "freeFormText": "AQUA USEAUWEL55"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 27,
+        "remarkType": "RM",
+        "remarkCategory": "R",
+        "passengerReferenceIDList": [
+          "1"
+        ],
+        "remarkLineList": [
+          {
+            "freeFormText": "TYPE:CO-\/ST-\/SD-\/SM-NS"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 122,
+        "remarkType": "RM",
+        "remarkCategory": "Q",
+        "remarkLineList": [
+          {
+            "freeFormText": "QC-AQUA PLATINUM QC 30AUG 1126 -18.2.0.28-"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 56,
+        "remarkType": "RM",
+        "remarkCategory": "*",
+        "remarkLineList": [
+          {
+            "freeFormText": "VFF39\/A"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 23,
+        "remarkType": "RM",
+        "remarkCategory": "A",
+        "passengerReferenceIDList": [
+          "1"
+        ],
+        "remarkLineList": [
+          {
+            "freeFormText": "SEAT:NS,"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 85,
+        "remarkType": "RM",
+        "remarkCategory": "*",
+        "remarkLineList": [
+          {
+            "freeFormText": "BR\/1"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 52,
+        "remarkType": "RM",
+        "remarkCategory": "*",
+        "remarkLineList": [
+          {
+            "freeFormText": "NOCOMM"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 19,
+        "remarkType": "RM",
+        "remarkCategory": "*",
+        "passengerReferenceIDList": [
+          "1"
+        ],
+        "remarkLineList": [
+          {
+            "freeFormText": "BR\/1"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 81,
+        "remarkType": "RM",
+        "remarkCategory": "*",
+        "remarkLineList": [
+          {
+            "freeFormText": "DIV\/0001"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 48,
+        "remarkType": "RM",
+        "remarkCategory": "*",
+        "remarkLineList": [
+          {
+            "freeFormText": "FF34\/AB"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 15,
+        "remarkType": "RM",
+        "remarkCategory": "*",
+        "passengerReferenceIDList": [
+          "1"
+        ],
+        "remarkLineList": [
+          {
+            "freeFormText": "DIV\/0001"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 110,
+        "remarkType": "RX",
+        "remarkLineList": [
+          {
+            "freeFormText": "RESTRICTED"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 77,
+        "remarkType": "RM",
+        "remarkLineList": [
+          {
+            "freeFormText": "AX* EXP 0119  BTA"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 11,
+        "remarkType": "RM",
+        "passengerReferenceIDList": [
+          "1"
+        ],
+        "remarkLineList": [
+          {
+            "freeFormText": "AX* EXP 0119  BTA"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 102,
+        "remarkType": "RM",
+        "remarkCategory": "*",
+        "remarkLineList": [
+          {
+            "freeFormText": "FF11\/NON ETM"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 32,
+        "remarkType": "RM",
+        "remarkCategory": "U",
+        "passengerReferenceIDList": [
+          "1"
+        ],
+        "remarkLineList": [
+          {
+            "freeFormText": "4 email@com.AU"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 28,
+        "remarkType": "RM",
+        "remarkCategory": "T",
+        "passengerReferenceIDList": [
+          "1"
+        ],
+        "remarkLineList": [
+          {
+            "freeFormText": "NAME:COCKS-CRAIG--MR"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 123,
+        "remarkType": "RM",
+        "remarkCategory": "Q",
+        "remarkLineList": [
+          {
+            "freeFormText": "AQUA:PRETRIP QC OK"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 57,
+        "remarkType": "RM",
+        "remarkCategory": "*",
+        "remarkLineList": [
+          {
+            "freeFormText": "PC\/4"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 24,
+        "remarkType": "RM",
+        "remarkCategory": "C",
+        "passengerReferenceIDList": [
+          "1"
+        ],
+        "remarkLineList": [
+          {
+            "freeFormText": "TYPE:CO-**\/VT-ICAR\/"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 86,
+        "remarkType": "RM",
+        "remarkCategory": "*",
+        "remarkLineList": [
+          {
+            "freeFormText": "INV\/DEFAULT"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 53,
+        "remarkType": "RM",
+        "remarkCategory": "*",
+        "remarkLineList": [
+          {
+            "freeFormText": "VEC\/L"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 20,
+        "remarkType": "RM",
+        "remarkCategory": "*",
+        "passengerReferenceIDList": [
+          "1"
+        ],
+        "remarkLineList": [
+          {
+            "freeFormText": "INV\/DEFAULT"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 82,
+        "remarkType": "RM",
+        "remarkCategory": "*",
+        "remarkLineList": [
+          {
+            "freeFormText": "FF4\/C105"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 49,
+        "remarkType": "RM",
+        "remarkCategory": "*",
+        "remarkLineList": [
+          {
+            "freeFormText": "PC\/4"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 16,
+        "remarkType": "RM",
+        "remarkCategory": "*",
+        "passengerReferenceIDList": [
+          "1"
+        ],
+        "remarkLineList": [
+          {
+            "freeFormText": "FF4\/C100"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 111,
+        "remarkType": "RM",
+        "remarkCategory": "*",
+        "remarkLineList": [
+          {
+            "freeFormText": "MS\/PC35\/V3004\/TX0\/CP100\/SF37.30\/VC1\/FF34-AB\/FF35-AMA\/FF36-G\/FF47-#CWT"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 78,
+        "remarkType": "RM",
+        "remarkCategory": "*",
+        "remarkLineList": [
+          {
+            "freeFormText": "BUS WOODSIDE OFFSHORE DRILLING"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 45,
+        "remarkType": "RX",
+        "remarkLineList": [
+          {
+            "freeFormText": "RESTRICTED"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 12,
+        "remarkType": "RM",
+        "remarkCategory": "*",
+        "passengerReferenceIDList": [
+          "1"
+        ],
+        "remarkLineList": [
+          {
+            "freeFormText": "BUS WOODSIDE EMPLOYEES ACTIVITY 0"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 107,
+        "remarkType": "RM",
+        "remarkCategory": "*",
+        "remarkLineList": [
+          {
+            "freeFormText": "FF49-C0-909705-5A-4-P1-INS-20"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 41,
+        "remarkType": "RM",
+        "remarkCategory": "*",
+        "remarkLineList": [
+          {
+            "freeFormText": "DI\/D"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 8,
+        "remarkType": "RM",
+        "remarkCategory": "*",
+        "passengerReferenceIDList": [
+          "1"
+        ],
+        "remarkLineList": [
+          {
+            "freeFormText": "FF21\/14:"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 103,
+        "remarkType": "RM",
+        "remarkCategory": "*",
+        "remarkLineList": [
+          {
+            "freeFormText": "FF10\/WEL"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 99,
+        "remarkType": "RM",
+        "remarkCategory": "*",
+        "remarkLineList": [
+          {
+            "freeFormText": "FF12\/JODI REILLY"
+          }
+        ]
+      },
+      {
+        "remarkIndex": 33,
+        "remarkType": "RM",
+        "remarkCategory": "W",
+        "passengerReferenceIDList": [
+          "1"
+        ],
+        "remarkLineList": [
+          {
+            "freeFormText": "PROFILE UPLOADED BY PORTRAIT"
+          }
+        ]
+      }
+    ]
+  }
+}
+
