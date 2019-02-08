@@ -159,11 +159,6 @@
           "description": "The Computer reservation system (CRS) creates a Record Locator also know as a PNR (Passenger Name Record) OR Booking Reference",
           "type": "string"
         },
-        "firstName": {
-          "description": "Traveller's forename including any middle name",
-          "type": "string",
-          "minLength": 1
-        },
         "lastName": {
           "type": "string",
           "minLength": 1
@@ -171,7 +166,6 @@
       },
       "required": [
         "locatorCode",
-        "firstName",
         "lastName"
       ],
       "additionalProperties": false
@@ -190,7 +184,7 @@
         "segments": {
           "$ref": "#/definitions/segmentDefinition"
         },
-        "totalPrice": {
+        "totalCost": {
           "type": "number",
           "multipleOf": 0.01,
           "description": "The total cost for the ticket, including applicable taxes etc."
@@ -251,6 +245,10 @@
           "tickets": {
             "$ref": "#/definitions/ticketDefinition"
           },
+          "confirmationNumber": {
+            "type": "string",
+            "description": "The numbers issued by the airlines to uniquely identify the reservation."
+          },
           "url": {
             "type": "string",
             "description": "Web page to do the web check-in or manage the booking"
@@ -285,7 +283,7 @@
         },
         "terminal": {
           "description": "The Terminal of the flight if known",
-          "type": "number",
+          "type": "string",
           "minLength": 1
         },
         "city": {
@@ -323,12 +321,12 @@
             "minLength": 1
           },
           "fareType": {
-            "description": "Age Category of the traveller. Adult, Child or Infant",
+            "description": "Passenger Type Codes (PTC) definition e.g. ADULT, ACCOMPANIED PASSENGER, AGENT, etc.",
             "type": "string",
             "minLength": 1
           },
           "fareBasisCode": {
-            "description": "Airline assigned Letters and numbers that help identify the class of travel and traveller type e.g.'Y' represents full-fare Economy class and if the last two characters are CH than it's Child fare",
+            "description": "Airline assigned Letters and numbers to identify the class of travel and traveller type e.g. full-fare Economy class (Y), Child fare (CH), Return Fare (RT) etc.",
             "type": "string",
             "minLength": 1
           }
