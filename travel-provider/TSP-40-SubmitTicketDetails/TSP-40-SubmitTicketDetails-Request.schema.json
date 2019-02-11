@@ -1,17 +1,21 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "http://json-schema.org/draft-06/schema#",
   "title": "TSP-40-SubmitTicketDetails Request Schema",
   "description": "Schema for TSP to supply RMP with details about the ticket(s) it has booked following a booking request from RMP. The TSP may send this message multiple times for a single booking request but a specific traveller must only be included in one message i.e. The TSP should wait until they have the full set of fulfilment details for a traveller before including them in a message.",
   "type": "object",
   "properties": {
     "requestId": {
-      "type": "integer",
-      "description": "This is the unique return id created by HO when the request was first submitted by HO to TSP"
+      "type": "string",
+      "description": "This is the unique return id created by HO when the request is first submitted by HO to TSP"
     },
     "reference": {
-      "description": "Home Office Reference. This should not be used as a unique Id as for a Family/Group Booking this will be shared by multiple travelers",
+      "description": "Home Office Reference. This is NOT unique Id, as for a Family/Group Booking this will be shared by multiple travelers",
       "type": "string",
       "minLength": 1
+    },
+    "bookingDetails": {
+      "description": "The TSP can submit details over a number of messages. It may also include travellers not listed in the original request - see handlingGuidelines.awaitEscortNames in TSP-20 request schema for more information.",
+      "$ref": "#/definitions/bookingDetailsDefinition"
     },
     "createdBy": {
       "$ref": "#/definitions/createdByDefinition",
@@ -21,26 +25,14 @@
       "description": "The time the request is created by CWT. Format is YYYY-MM-DDThh:mm:ss.",
       "type": "string",
       "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T(0[0-9]|1[0-9]|2[0-3]):(0[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9]):(0[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9])$"
-    },
-
-    "bookingDetails": {
-      "description": "The TSP can submit details over a number of messages. It may also include travellers not listed in the original request - see handlingGuidelines.awaitEscortNames in TSP-20 request schema for more information.",
-      "$ref": "#/definitions/bookingDetailsDefinition"
-    },
-    "unassociatedItineraryRemarks": {
-      "type": "string",
-      "description": "Unassociated itinerary remarks, display at the bottom of the itinerary"
-    },
-    "accountingRemarks": {
-      "type": "string"
     }
   },
   "additionalProperties": false,
   "required": [
-    "requestId",
     "reference",
-    "createdBy",
-    "bookingDetails"
+    "requestId",
+    "bookingDetails",
+    "createdBy"
   ],
   "definitions": {
     "createdByDefinition": {
@@ -85,15 +77,15 @@
       },
       "additionalProperties": false,
       "required": [
-        "name",
-        "email",
-        "telephone"
+        "groupName",
+        "groupEmail",
+        "groupTelephone"
       ]
     },
     "bookingDetailsDefinition": {
       "type": "object",
       "properties": {
-        "bookingID": {
+        "bookingId": {
           "type": "string",
           "description": "Booking ID OR Itinerary Number issued by the GDS (Global distribution systems - travel networking systems used by travel agencies)"
         },
@@ -107,10 +99,22 @@
         },
         "flightDetails": {
           "$ref": "#/definitions/flightDetailsDefinition"
+        },
+        "itineraryRemarks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "generalRemarks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       },
       "required": [
-        "bookingID",
+        "bookingId",
         "bookingState",
         "flightDetails"
       ],
@@ -122,14 +126,6 @@
       "items": {
         "type": "object",
         "properties": {
-          "totalPrice": {
-            "type": "number",
-            "multipleOf": 0.01,
-            "description": "The total cost for the ticket, including applicable taxes etc."
-          },
-          "priceCurrency": {
-            "description": "ISO 4217 currency codes e.g. GBP, USD, INR etc"
-          },
           "personnelType": {
             "description": "Personnel type suggests the kind of travelers being booked as part of this booking",
             "type": "string",
@@ -163,11 +159,6 @@
           "description": "The Computer reservation system (CRS) creates a Record Locator also know as a PNR (Passenger Name Record) OR Booking Reference",
           "type": "string"
         },
-        "firstName": {
-          "description": "Traveller's forename including any middle name",
-          "type": "string",
-          "minLength": 1
-        },
         "lastName": {
           "type": "string",
           "minLength": 1
@@ -175,7 +166,6 @@
       },
       "required": [
         "locatorCode",
-        "firstName",
         "lastName"
       ],
       "additionalProperties": false
@@ -194,12 +184,12 @@
         "segments": {
           "$ref": "#/definitions/segmentDefinition"
         },
-        "totalPrice": {
+        "totalCost": {
           "type": "number",
           "multipleOf": 0.01,
           "description": "The total cost for the ticket, including applicable taxes etc."
         },
-        "priceCurrency": {
+        "costCurrency": {
           "description": "ISO 4217 currency codes e.g. GBP, USD, INR etc"
         }
       },
@@ -235,10 +225,6 @@
             "type": "string",
             "minLength": 1
           },
-          "url": {
-            "type": "string",
-            "description": "Web page to do the web check-in or manage the booking"
-          },
           "departureAirport": {
             "$ref": "#/definitions/airportDefinition",
             "description": "The departure airport."
@@ -259,8 +245,13 @@
           "tickets": {
             "$ref": "#/definitions/ticketDefinition"
           },
-          "associatedItineraryRemarks": {
-            "type": "string"
+          "confirmationNumber": {
+            "type": "string",
+            "description": "The numbers issued by the airlines to uniquely identify the reservation."
+          },
+          "url": {
+            "type": "string",
+            "description": "Web page to do the web check-in or manage the booking"
           }
         },
         "required": [
@@ -268,7 +259,6 @@
           "airlineCode",
           "airlineName",
           "flightNumber",
-          "url",
           "departureAirport",
           "departureDateTime",
           "arrivalAirport",
@@ -293,7 +283,7 @@
         },
         "terminal": {
           "description": "The Terminal of the flight if known",
-          "type": "number",
+          "type": "string",
           "minLength": 1
         },
         "city": {
@@ -331,12 +321,12 @@
             "minLength": 1
           },
           "fareType": {
-            "description": "Age Category of the traveller. Adult, Child or Infant",
+            "description": "Passenger Type Codes (PTC) definition e.g. ADULT, ACCOMPANIED PASSENGER, AGENT, etc.",
             "type": "string",
             "minLength": 1
           },
           "fareBasisCode": {
-            "description": "Airline assigned Letters and numbers that help identify the class of travel and traveller type e.g.'Y' represents full-fare Economy class and if the last two characters are CH than it's Child fare",
+            "description": "Airline assigned Letters and numbers to identify the class of travel and traveller type e.g. full-fare Economy class (Y), Child fare (CH), Return Fare (RT) etc.",
             "type": "string",
             "minLength": 1
           }
