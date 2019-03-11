@@ -12,9 +12,9 @@
     "movementType": {
       "description": "Type of movement as identified in the CID",
       "enum": [
-        "Occupancy",
-        "Non-Occupancy",
-        "Removals"
+        "OCC",
+        "NOCC",
+        "REM"
       ]
     },
     "reason": {
@@ -149,8 +149,8 @@
         },
         "gender": {
           "enum": [
-            "Male",
-            "Female"
+            "M",
+            "F"
           ]
         },
         "medicalRisk": {
@@ -233,6 +233,7 @@
       "required": [
         "personId",
         "firstName",
+        "lastName",
         "dateOfBirth",
         "gender",
         "movementDetails"

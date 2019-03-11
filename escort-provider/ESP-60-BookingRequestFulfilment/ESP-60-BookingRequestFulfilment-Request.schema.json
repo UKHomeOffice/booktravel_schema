@@ -72,6 +72,14 @@
           "type": "string",
           "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T(0[0-9]|1[0-9]|2[0-3]):(0[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9]):(0[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9])$"
         },
+        "from": {
+          "$ref": "#/definitions/address",
+          "description": "Where the journey starts."
+        },
+        "to": {
+          "$ref": "#/definitions/address",
+          "description": "Where the journey ends."
+        },
         "estEnRouteTimeCollect": {
           "type": [
             "null",
@@ -180,7 +188,9 @@
             "estArrivalTimeDrop",
             "numberOfEscorts",
             "slaType",
-            "suitableCrew"
+            "suitableCrew",
+            "from",
+            "to"
           ]
         },
         {
@@ -322,6 +332,30 @@
         "time",
         "primaryReason",
         "secondaryReason"
+      ]
+    },
+    "address": {
+      "type": "object",
+      "properties": {
+        "addressLine1": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 60
+        },
+        "addressLine2": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 60
+        },
+        "postCode": {
+          "type": "string",
+          "maxLength": 10
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "addressLine1",
+        "postCode"
       ]
     }
   }
