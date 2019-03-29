@@ -1,143 +1,106 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "http://json-schema.org/draft-06/schema#",
   "type": "object",
   "title": "TSP-60-Confirm Cancellation Request Schema",
   "version": "0.0.1",
   "description": "Schema for confirming cancellation of tickets. A message sent on this interface will always reference a single cancellation request. Multiple messages may be sent in response to a single cancellation request as the TSP may not cancel all tickets in one go.",
   "properties": {
-    "cancellationId": {
-      "type": "integer",
-      "description": "The Id of the cancellation request."
+    "requestId": {
+      "type": "string",
+      "description": "This is the unique return id created by HO when the request is first submitted by HO to TSP"
     },
-    "actionedBy": {
-      "$ref": "#/definitions/contact",
+    "bookingId": {
+      "type": "string",
+      "description": "Booking ID OR Itinerary Number issued by the GDS (Global distribution systems - travel networking systems used by travel agencies)"
+    },
+    "locator": {
+      "$ref": "#/definitions/locatorDefinition"
+    },
+    "createdBy": {
+      "$ref": "#/definitions/createdByDefinition",
       "description": "Details of the person who has actioned the cancellation."
     },
-    "cancelledBookings": {
+    "createdDateTime": {
+      "description": "The time the request is created by CWT. Format is YYYY-MM-DDThh:mm:ss.",
+      "type": "string",
+      "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T(0[0-9]|1[0-9]|2[0-3]):(0[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9]):(0[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9])$"
+    },
+    "generalRemarks": {
       "type": "array",
-      "description": "A list of the traveller tickets that have been cancelled.",
-      "minItems": 1,
       "items": {
-        "$ref": "#/definitions/travellerCancellation"
+        "type": "string"
       }
     }
   },
   "additionalProperties": false,
   "required": [
-    "cancellationId",
-    "actionedBy",
-    "cancelledBookings"
+    "requestId",
+    "bookingId",
+    "locator",
+    "createdBy"
   ],
   "definitions": {
-    "contact": {
+    "locatorDefinition": {
       "type": "object",
-      "description": "Basic contact details.",
+      "properties": {
+        "locatorCode": {
+          "description": "The Computer reservation system (CRS) creates a Record Locator also know as a PNR (Passenger Name Record) OR Booking Reference",
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "locatorCode",
+        "lastName"
+      ],
+      "additionalProperties": false
+    },
+    "createdByDefinition": {
+      "type": "object",
+      "description": "Basic contact details of the TSP Logger actioning this request",
       "properties": {
         "name": {
           "type": "string",
-          "description": "Name of the contact.",
-          "minLength": 1
+          "description": "Name of the TSP logger who fulfilled the request and created the booking"
         },
         "email": {
           "type": "string",
-          "description": "Email address of the contact.",
+          "description": "Email address of the logger.",
           "format": "email"
         },
         "telephone": {
           "type": "string",
-          "description": "Phone number of the contact.",
-          "minLength": 1
+          "description": "Phone number of the logger."
         },
         "groupName": {
           "type": "string",
-          "description": "Group name to contact if named contact not available.",
+          "description": "TSP Group name to contact if named contact not available.",
           "minLength": 1
         },
         "groupCode": {
           "type": "string",
-          "description": "Code of the contact group.",
-          "minLength": 1
+          "description": "Code of the TSP contact group."
         },
         "groupEmail": {
           "type": "string",
-          "description": "Email address of the contact group.",
+          "description": "Email address of the TSP contact group.",
           "format": "email"
         },
         "groupTelephone": {
           "type": "string",
-          "description": "Phone number of the contact group.",
+          "description": "Phone number of the TSP contact group.",
           "minLength": 1
         }
       },
       "additionalProperties": false,
-      "oneOf": [
-        {
-          "description": "Constraints requiring either telephone or group telephone to be provided.",
-          "required": [
-            "name",
-            "email",
-            "groupName",
-            "groupCode",
-            "telephone"
-          ]
-        },
-        {
-          "description": "Constraints requiring either telephone or group telephone to be provided.",
-          "required": [
-            "name",
-            "email",
-            "groupName",
-            "groupCode",
-            "groupTelephone"
-          ]
-        }
+      "required": [
+        "groupName",
+        "groupEmail",
+        "groupTelephone"
       ]
-    },
-    "travellerCancellation": {
-      "type": "object",
-      "description": "Confirmation of cancellation for a specific traveller from a specific booking with details of any tickets cancelled.",
-      "properties": {
-        "requestId": {
-          "type": "integer",
-          "description": "The Id of the booking request they've been cancelled from."
-        },
-        "travellerId": {
-          "description": "The ID of the traveller.",
-          "type": "string",
-          "pattern": "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$"
-        },
-        "tickets": {
-          "type": "array",
-          "description": "A list of cancelled tickets.",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/cancelledTicket"
-          }
-        }
-      },
-      "required": [
-        "requestId",
-        "travellerId"
-      ],
-      "additionalProperties": false
-    },
-    "cancelledTicket": {
-      "type": "object",
-      "description": "A ticket that has been cancelled.",
-      "properties": {
-        "ticketId": {
-          "type": "string",
-          "pattern": "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$"
-        },
-        "refundExpected": {
-          "type": "boolean"
-        }
-      },
-      "required": [
-        "ticketId",
-        "refundExpected"
-      ],
-      "additionalProperties": false
     }
   }
 }

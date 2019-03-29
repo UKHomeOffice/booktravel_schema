@@ -41,8 +41,7 @@
       "properties": {
         "name": {
           "type": "string",
-          "description": "Name of the TSP logger who fulfilled the request and created the booking",
-          "minLength": 1
+          "description": "Name of the TSP logger who fulfilled the request and created the booking"
         },
         "email": {
           "type": "string",
@@ -51,8 +50,7 @@
         },
         "telephone": {
           "type": "string",
-          "description": "Phone number of the logger.",
-          "minLength": 1
+          "description": "Phone number of the logger."
         },
         "groupName": {
           "type": "string",
@@ -61,8 +59,7 @@
         },
         "groupCode": {
           "type": "string",
-          "description": "Code of the TSP contact group.",
-          "minLength": 1
+          "description": "Code of the TSP contact group."
         },
         "groupEmail": {
           "type": "string",
@@ -94,7 +91,7 @@
           "enum": [
             "BOOKED",
             "TICKETED",
-            "CANCELLED"
+            "PASSED_QC"
           ]
         },
         "flightDetails": {
@@ -208,9 +205,9 @@
         "type": "object",
         "properties": {
           "segmentNumber": {
-            "exclusiveMinimum": true,
+            "exclusiveMinimum": 0,
             "minimum": 0,
-            "type": "number",
+            "type": "integer",
             "multipleOf": 1
           },
           "airlineCode": {
@@ -296,8 +293,7 @@
         }
       },
       "required": [
-        "airportCode",
-        "airportName"
+        "airportCode"
       ],
       "additionalProperties": false
     },
@@ -334,7 +330,6 @@
         "required": [
           "firstName",
           "lastName",
-          "eTicketNumber",
           "fareType"
         ],
         "additionalProperties": false
