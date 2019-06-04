@@ -1,0 +1,273 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "ESP-20-EscortQuoteRequest Request Schema",
+  "version": "0.0.1",
+  "description": "Schema for escort quote request sent by BRM to escort provider",
+  "properties": {
+    "quoteRef": {
+      "type": "integer",
+      "description": "Unique Id generated for this quote request (the OSE booking request id)"
+    },
+    "requestAuthoriser": {
+      "$ref": "#/definitions/requester",
+      "description": "Details of the person/case worker who raised this request."
+    },
+    "travelDetails": {
+      "$ref": "#/definitions/travelDetails",
+      "description": "Details of destination & possible dates."
+    },
+    "subjects": {
+      "type": "array",
+      "description": "The person/s who needs to be escorted",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/definitions/subject"
+      }
+    }
+  },
+  "required": ["quoteRef", "requestAuthoriser", "travelDetails", "subjects"],
+  "definitions": {
+    "requester": {
+      "type": "object",
+      "description": "Basic contact details of the requester and/or the team",
+      "properties": {
+        "requesterId": {
+          "type": "string",
+          "description": "Case Worker Id if present",
+          "minLength": 1
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "email": {
+          "type": "string",
+          "format": "email"
+        },
+        "telephone": {
+          "type": "string",
+          "minLength": 1
+        },
+        "teamName": {
+          "type": "string",
+          "description": "Group name to contact if named contact not available.",
+          "minLength": 1
+        },
+        "teamCode": {
+          "type": "string",
+          "description": "Code of the contact group.",
+          "minLength": 1
+        },
+        "teamEmail": {
+          "type": "string",
+          "format": "email"
+        },
+        "teamTelephone": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false,
+      "required": ["name"]
+    },
+    "travelDetails": {
+      "type": "object",
+      "description": "Target date range, destination, departure and various restrictions",
+      "properties": {
+        "preferredTravelDate": {
+          "description": "Preferred date for OSE to be made. Date in the ISO-8601 format of [YYYY]-[MM]-[DD",
+          "type": "string",
+          "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])"
+        },
+        "latestTravelDate": {
+          "description": "Latest date that OSE can be made (optional). Date in the ISO-8601 format of [YYYY]-[MM]-[DD",
+          "type": "string",
+          "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])"
+        },
+        "daysNotToTravel": {
+          "description": "Any days when travel should not be made (free text)",
+          "type": "string"
+        },
+        "flightType": {
+          "description": "Preferred flight type (eg Direct flight preferred)",
+          "type": "string"
+        },
+        "travelTimeRestrictions": {
+          "$ref": "#/definitions/restriction",
+          "description": "Restrictions to arrival/departure times (free text)"
+        },
+        "destination": {
+          "type": "string",
+          "description": "The destination to which the subject should be sent"
+        },
+        "departureAirport": {
+          "type": "string",
+          "description": "The departure airport(s) to be used (free text)"
+        },
+        "transitRestrictions": {
+          "$ref": "#/definitions/restriction",
+          "description": "Transit country restrictions"
+        },
+        "airlineRestrictions": {
+          "$ref": "#/definitions/restriction",
+          "description": "Restrictions on which airlines that can be used"
+        },
+        "refundableTickets": {
+          "type": "boolean",
+          "description": "Whether or not flight tickets should be refundable"
+        },
+        "extraInformation": {
+          "type": "string",
+          "description": "Any other information pertinent to the quote request"
+        }
+      },
+      "additionalProperties": false,
+      "required": ["preferredTravelDate", "destination", "departureAirport"]
+    },
+    "restriction": {
+      "type": "object",
+      "properties": {
+        "isRestricted": {
+          "type": "boolean",
+          "description": "Whether or not restriction applies to this quote request"
+        },
+        "information": {
+          "type": "string",
+          "description": "Restrictions information (free text)"
+        }
+      },
+      "additionalProperties": false,
+      "required": ["isRestricted", "information"]
+    },
+    "airlineRestrictions": {
+      "type": "object",
+      "properties": {
+        "isRestricted": {
+          "type": "boolean",
+          "description": "Whether or not airline restrictions apply to this quote request"
+        },
+        "restrictions": {
+          "type": "string",
+          "description": "Restrictions on which airlines that can be used (free text)"
+        }
+      },
+      "additionalProperties": false,
+      "required": ["isRestricted", "restrictions"]
+    },
+    "transitRestrictions": {
+      "type": "object",
+      "properties": {
+        "isRestricted": {
+          "type": "boolean",
+          "description": "Whether or not transit restrictions apply to this quote request"
+        },
+        "restrictions": {
+          "type": "string",
+          "description": "Restrictions on which countries can not be transitted"
+        }
+      },
+      "additionalProperties": false,
+      "required": ["isRestricted", "restrictions"]
+    },
+    "subject": {
+      "type": "object",
+      "description": "Subject details. person Id is always present. Mostly HO OR Port Reference is present",
+      "properties": {
+        "personId": {
+          "type": "string",
+          "description": "Person id found in the cid",
+          "minLength": 1
+        },
+        "homeOfficeReference": {
+          "type": "string",
+          "minLength": 1
+        },
+        "portReference": {
+          "type": "string",
+          "description": "Port Reference Number if present. Used in case of transport from Ferry etc",
+          "minLength": 1
+        },
+        "nomsReference": {
+          "type": "string",
+          "description": "NOMS Reference Number if present",
+          "minLength": 1
+        },
+        "prisonNumber": {
+          "type": "string",
+          "description": "Prison Number if any",
+          "minLength": 1
+        },
+        "firstName": {
+          "type": "string",
+          "description": "Given Name of the subject including any middle name",
+          "minLength": 1
+        },
+        "lastName": {
+          "type": "string",
+          "description": "Family Name of the subject. May be known or not",
+          "minLength": 1
+        },
+        "aliases": {
+          "type": "array",
+          "description": "Alternative Names of the subject if any",
+          "items": {
+            "type": "string"
+          }
+        },
+        "nationality": {
+          "type": "string",
+          "description": "Nationality of the person from CID. e.g. Angola, British Citizen",
+          "minLength": 1
+        },
+        "dateOfBirth": {
+          "type": "string",
+          "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$",
+          "description": "Date in the ISO-8601 format yyyy-MM-dd. Is it mandatory?"
+        },
+        "gender": {
+          "enum": ["Male", "Female"]
+        },
+        "medicalRisk": {
+          "enum": ["Y", "N"]
+        },
+        "nonMedicalRisk": {
+          "enum": ["Y", "N"]
+        },
+        "risksPosed": {
+          "type": "array",
+          "description": "Risks can be Medical or Non-Medical and both will be captured here",
+          "items": {
+            "$ref": "#/definitions/risk"
+          }
+        }
+      },
+      "additionalProperties": false,
+      "required": ["personId", "firstName", "dateOfBirth", "gender"]
+    },
+    "risk": {
+      "properties": {
+        "riskCode": {
+          "type": "string",
+          "description": "This will be the DS Risk code e.g. DEMC, DE "
+        },
+        "riskDescription": {
+          "type": "string",
+          "description": "DS descriptions for the codes e.g. DS: Existing Medical Condition, DS: Escape Risk"
+        },
+        "riskStartDate": {
+          "type": "string",
+          "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$",
+          "description": "Date in the ISO-8601 format of YYYY-MM-DD for when the risk starts"
+        },
+        "riskEndDate": {
+          "type": "string",
+          "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$",
+          "description": "Date in the ISO-8601 format of YYYY-MM-DD for when the risk ends"
+        }
+      },
+      "additionalProperties": false,
+      "required": ["riskCode"]
+    }
+  }
+}
