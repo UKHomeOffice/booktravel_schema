@@ -9,24 +9,28 @@
       "type": "integer",
       "description": "Unique Id generated for this movement request"
     },
-    "movementType": {
-      "description": "Type of movement as identified in the CID",
+    "journeyRef": {
+      "type": "integer",
+      "description": "Unique Id generated for all moves linked to a particular journey"
+    },
+    "directionIndicator": {
       "enum": [
-        "InitialDetentionAcceptance",
-        "Positioning",
-        "Transfer",
-        "Appointment",
-        "CourtHearing",
-        "Removal"
-      ]
+        "Inbound",
+        "Outbound"
+      ],
+      "description": "Inbound/outbound indicator"
     },
     "reason": {
       "type": "string",
       "description": "Reason e.g. Transfer to Another Detention Facility - Interview"
     },
-    "requestAuthoriser": {
-      "$ref": "#/definitions/requester",
-      "description": "Details of the person/case worker who raised this request."
+    "movementType": {
+      "type": "string",
+      "description": "An optional movement type we receive from Atlas. It is not used"
+    },
+    "movementDetails": {
+      "$ref": "#/definitions/movementDetails",
+      "description": "The details of the movement request"
     },
     "subject": {
       "$ref": "#/definitions/subject",
@@ -35,57 +39,11 @@
   },
   "required": [
     "movementRef",
-    "movementType",
     "reason",
-    "requestAuthoriser",
+    "movementDetails",
     "subject"
   ],
   "definitions": {
-    "requester": {
-      "type": "object",
-      "description": "Basic contact details of the requester and/or the team",
-      "properties": {
-        "requesterId": {
-          "type": "string",
-          "description": "Case Worker Id if present",
-          "minLength": 1
-        },
-        "name": {
-          "type": "string",
-          "minLength": 1
-        },
-        "email": {
-          "type": "string",
-          "format": "email"
-        },
-        "telephone": {
-          "type": "string",
-          "minLength": 1
-        },
-        "teamName": {
-          "type": "string",
-          "description": "Group name to contact if named contact not available.",
-          "minLength": 1
-        },
-        "teamCode": {
-          "type": "string",
-          "description": "Code of the contact group.",
-          "minLength": 1
-        },
-        "teamEmail": {
-          "type": "string",
-          "format": "email"
-        },
-        "teamTelephone": {
-          "type": "string",
-          "minLength": 1
-        }
-      },
-      "additionalProperties": false,
-      "required": [
-        "name"
-      ]
-    },
     "subject": {
       "type": "object",
       "description": "Subject details. person Id is always present. Mostly HO OR Port Reference is present",
@@ -95,18 +53,9 @@
           "description": "Person id found in the cid",
           "minLength": 1
         },
-        "homeOfficeReference": {
+        "ceprReference": {
           "type": "string",
-          "minLength": 1
-        },
-        "portReference": {
-          "type": "string",
-          "description": "Port Reference Number if present. Used in case of transport from Ferry etc",
-          "minLength": 1
-        },
-        "nomsReference": {
-          "type": "string",
-          "description": "NOMS Reference Number if present",
+          "description": "CEPR reference",
           "minLength": 1
         },
         "prisonNumber": {
@@ -165,19 +114,15 @@
           "items": {
             "$ref": "#/definitions/risk"
           }
-        },
-        "movementDetails": {
-          "description": "The movement details of the person who needs to be escorted",
-          "$ref": "#/definitions/movementDetails"
         }
       },
       "required": [
         "personId",
+        "ceprReference",
         "firstName",
         "lastName",
         "dateOfBirth",
-        "gender",
-        "movementDetails"
+        "gender"
       ],
       "additionalProperties": false
     },
@@ -185,7 +130,7 @@
       "type": "object",
       "description": "Transfer Details",
       "properties": {
-        "movementDateTime": {
+        "movementDate": {
           "description": "Date in the ISO-8601 format of [YYYY]-[MM]-[DD]T[hh]:[mm]:[ss] e.g. 2018-05-01T08:37:12Z",
           "type": "string",
           "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T(0[0-9]|1[0-9]|2[0-3]):(0[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9])$"
@@ -198,13 +143,64 @@
             "DropOffAtSpecificTime"
           ]
         },
+        "movementType": {
+          "description": "Type of movement as identified in the CID",
+          "enum": [
+            "InitialDetentionAcceptance",
+            "Positioning",
+            "Transfer",
+            "Appointment",
+            "CourtHearing",
+            "Removal"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "description": "Reason e.g. Transfer to Another Detention Facility - Interview"
+        },
+        "pickupLocation": {
+          "type": "object",
+          "description": "Where the journey starts.",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "description": "The id of the location"
+            },
+            "location": {
+              "type": "string",
+              "description": "The location name"
+            }
+          },
+          "required": [
+            "id",
+            "location"
+          ]
+        },
+        "dropOffLocation": {
+          "type": "object",
+          "description": "Where the journey ends.",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "description": "The id of the location"
+            },
+            "location": {
+              "type": "string",
+              "description": "The location name"
+            }
+          },
+          "required": [
+            "id",
+            "location"
+          ]
+        },
         "from": {
           "$ref": "#/definitions/address",
-          "description": "Where the journey starts."
+          "description": "Manually enterered address where the Journey starts if address not found in pickupLocation"
         },
         "to": {
           "$ref": "#/definitions/address",
-          "description": "Where the journey ends."
+          "description": "Manually enterered address where the Journey ends if address not found in dropOffLocation"
         },
         "moveContractor": {
           "description": "Who is doing the move",
@@ -218,15 +214,7 @@
             "HMPrisonService",
             "Police"
           ]
-        },
-        "pickupLocation": {
-          "type": "string",
-          "description": "The flight details of the subject"
-        },
-        "dropOffLocation": {
-          "type": "string",
-          "description": "The flight details of the subject"
-        },
+        },   
         "additionalInformation": {
           "type": "string",
           "description": "Movement Order Comments or any information that will help escorts"
@@ -261,28 +249,36 @@
       },
       "oneOf": [
         { "required":
-        [ "movementDateTime",
+        [ "movementDate",
           "timeInformation",
+          "movementType",
+          "reason",
           "moveContractor",
           "from",
           "to"]},
         { "required":
-        [ "movementDateTime",
+        [ "movementDate",
           "timeInformation",
+          "movementType",
+          "reason",
           "moveContractor",
           "from",
           "dropOffLocation"
         ]},
         { "required": [
-          "movementDateTime",
+          "movementDate",
           "timeInformation",
+          "movementType",
+          "reason",
           "moveContractor",
           "pickupLocation",
           "to"
         ]},
         {"required": [
-          "movementDateTime",
+          "movementDate",
           "timeInformation",
+          "movementType",
+          "reason",
           "moveContractor",
           "pickupLocation",
           "dropOffLocation"
