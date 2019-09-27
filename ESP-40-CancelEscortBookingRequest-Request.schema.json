@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "ESP-40-CancelBookingRequest Request Schema",
+  "version": "0.0.1",
+  "description": "Schema for cancelling a previously requested escort booking.",
+  "properties": {
+    "movementRef": {
+      "type": "integer",
+      "description": "The unique movement request that is being cancelled"
+    },
+    "reason": {
+      "type": "string",
+      "description": "The reason the movement request is being cancelled"
+    }
+  },
+  "required": [
+    "movementRef",
+    "reason"
+  ]
+}

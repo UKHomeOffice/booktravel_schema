@@ -1,0 +1,363 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "ESP-30-EscortBookingRequest Request Schema",
+  "version": "0.0.1",
+  "description": "Schema for escort booking request sent by RMP to escort provider",
+  "properties": {
+    "movementRef": {
+      "type": "integer",
+      "description": "Unique Id generated for this movement request"
+    },
+    "journeyRef": {
+      "type": "integer",
+      "description": "Unique Id generated for all moves linked to a particular journey"
+    },
+    "directionIndicator": {
+      "enum": [
+        "Inbound",
+        "Outbound"
+      ],
+      "description": "Inbound/outbound indicator"
+    },
+    "reason": {
+      "type": "string",
+      "description": "Reason e.g. Transfer to Another Detention Facility - Interview"
+    },
+    "movementType": {
+      "type": "string",
+      "description": "An optional movement type we receive from Atlas. It is not used"
+    },
+    "movementDetails": {
+      "$ref": "#/definitions/movementDetails",
+      "description": "The details of the movement request"
+    },
+    "subject": {
+      "$ref": "#/definitions/subject",
+      "description": "The person/s who needs to be escorted"
+    }
+  },
+  "required": [
+    "movementRef",
+    "reason",
+    "movementDetails",
+    "subject"
+  ],
+  "definitions": {
+    "subject": {
+      "type": "object",
+      "description": "Subject details. person Id is always present. Mostly HO OR Port Reference is present",
+      "properties": {
+        "personId": {
+          "type": "string",
+          "description": "Person id found in the cid",
+          "minLength": 1
+        },
+        "ceprReference": {
+          "type": "string",
+          "description": "CEPR reference",
+          "minLength": 1
+        },
+        "prisonNumber": {
+          "type": "string",
+          "description": "Prison Number if any",
+          "minLength": 1
+        },
+        "firstName": {
+          "type": "string",
+          "description": "Given Name of the subject including any middle name",
+          "minLength": 1
+        },
+        "lastName": {
+          "type": "string",
+          "description": "Family Name of the subject. May be known or not",
+          "minLength": 1
+        },
+        "aliases": {
+          "type": "array",
+          "description": "Alternative Names of the subject if any",
+          "items": {
+            "type": "string"
+          }
+        },
+        "nationality": {
+          "type": "string",
+          "description": "Nationality of the person from CID. e.g. Angola, British Citizen",
+          "minLength": 1
+        },
+        "dateOfBirth": {
+          "type": "string",
+          "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$",
+          "description": "Date in the ISO-8601 format yyyy-MM-dd. Is it mandatory?"
+        },
+        "gender": {
+          "enum": [
+            "Male",
+            "Female"
+          ]
+        },
+        "medicalRisk": {
+          "enum": [
+            "Y",
+            "N"
+          ]
+        },
+        "nonMedicalRisk": {
+          "enum": [
+            "Y",
+            "N"
+          ]
+        },
+        "risksPosed": {
+          "type": "array",
+          "description": "Risks can be Medical or Non-Medical and both will be captured here",
+          "items": {
+            "$ref": "#/definitions/risk"
+          }
+        }
+      },
+      "required": [
+        "personId",
+        "ceprReference",
+        "firstName",
+        "lastName",
+        "dateOfBirth",
+        "gender"
+      ],
+      "additionalProperties": false
+    },
+    "movementDetails": {
+      "type": "object",
+      "description": "Transfer Details",
+      "properties": {
+        "movementDate": {
+          "description": "Date in the ISO-8601 format of [YYYY]-[MM]-[DD]T[hh]:[mm]:[ss] e.g. 2018-05-01T08:37:12Z",
+          "type": "string",
+          "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T(0[0-9]|1[0-9]|2[0-3]):(0[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9])$"
+        },
+        "timeInformation": {
+          "description": "Time information",
+          "enum": [
+            "TimeNotCritical",
+            "AsSoonAsPossible",
+            "DropOffAtSpecificTime"
+          ]
+        },
+        "movementType": {
+          "description": "Type of movement as identified in the CID",
+          "enum": [
+            "InitialDetentionAcceptance",
+            "Positioning",
+            "Transfer",
+            "Appointment",
+            "CourtHearing",
+            "Removal"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "description": "Reason e.g. Transfer to Another Detention Facility - Interview"
+        },
+        "pickupLocation": {
+          "type": "object",
+          "description": "Where the journey starts.",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "description": "The id of the location"
+            },
+            "location": {
+              "type": "string",
+              "description": "The location name"
+            }
+          },
+          "required": [
+            "id",
+            "location"
+          ]
+        },
+        "dropOffLocation": {
+          "type": "object",
+          "description": "Where the journey ends.",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "description": "The id of the location"
+            },
+            "location": {
+              "type": "string",
+              "description": "The location name"
+            }
+          },
+          "required": [
+            "id",
+            "location"
+          ]
+        },
+        "from": {
+          "$ref": "#/definitions/address",
+          "description": "Manually enterered address where the Journey starts if address not found in pickupLocation"
+        },
+        "to": {
+          "$ref": "#/definitions/address",
+          "description": "Manually enterered address where the Journey ends if address not found in dropOffLocation"
+        },
+        "moveContractor": {
+          "description": "Who is doing the move",
+          "enum": [
+            "CCInCountry",
+            "CCOverseas",
+            "CCCharters",
+            "CCRobustCrew",
+            "CentreContractor",
+            "ArrestTeam",
+            "HMPrisonService",
+            "Police"
+          ]
+        },   
+        "additionalInformation": {
+          "type": "string",
+          "description": "Movement Order Comments or any information that will help escorts"
+        },
+        "departureDetails": {
+          "type": "object",
+          "description": "This is applicable where movement type is 'Removals'",
+          "properties": {
+            "departureDateTime": {
+              "description": "Date in the ISO-8601 format of [YYYY]-[MM]-[DD]T[hh]:[mm]:[ss] e.g. 2018-05-01T08:37:12Z",
+              "type": "string",
+              "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T(0[0-9]|1[0-9]|2[0-3]):(0[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9])$"
+            },
+            "destination": {
+              "type": "string",
+              "description": "The country to which the subject is going to or being taken"
+            },
+            "flightNumber": {
+              "type": "string",
+              "description": "The flight details of the subject"
+            },
+            "shipNumber": {
+              "type": "string",
+              "description": "The ship details of the subject"
+            }
+          },
+          "required": [
+            "departureDateTime",
+            "destination"
+          ]
+        }
+      },
+      "oneOf": [
+        { "required":
+        [ "movementDate",
+          "timeInformation",
+          "movementType",
+          "reason",
+          "moveContractor",
+          "from",
+          "to"]},
+        { "required":
+        [ "movementDate",
+          "timeInformation",
+          "movementType",
+          "reason",
+          "moveContractor",
+          "from",
+          "dropOffLocation"
+        ]},
+        { "required": [
+          "movementDate",
+          "timeInformation",
+          "movementType",
+          "reason",
+          "moveContractor",
+          "pickupLocation",
+          "to"
+        ]},
+        {"required": [
+          "movementDate",
+          "timeInformation",
+          "movementType",
+          "reason",
+          "moveContractor",
+          "pickupLocation",
+          "dropOffLocation"
+        ]}
+      ],
+
+      "additionalProperties": false
+    },
+    "risk": {
+      "properties": {
+        "riskCode": {
+          "type": "string",
+          "description": "This will be the DS Risk code e.g. DEMC, DE "
+        },
+        "riskDescription": {
+          "type": "string",
+          "description": "DS descriptions for the codes e.g. DS: Existing Medical Condition, DS: Escape Risk"
+        },
+        "riskStartDate": {
+          "type": "string",
+          "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$",
+          "description": "Date in the ISO-8601 format of YYYY-MM-DD for when the risk starts"
+        },
+        "riskEndDate": {
+          "type": "string",
+          "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$",
+          "description": "Date in the ISO-8601 format of YYYY-MM-DD for when the risk ends"
+        },
+        "additionalInformation": {
+          "type": "string",
+          "description": "Agent entered information e.g. High BP, Burglary etc."
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "riskCode"
+      ]
+    },
+    "address": {
+      "type": "object",
+      "properties": {
+        "addressLine1": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 35
+        },
+        "addressLine2": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 35
+        },
+        "addressLine3": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 35
+        },
+        "addressLine4": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 35
+        },
+        "locationName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 35
+        },
+        "country": {
+          "type": "string"
+        },
+        "postcode": {
+          "type": "string",
+          "maxLength": 10
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "addressLine1",
+        "postcode"
+      ]
+    }
+  }
+}
