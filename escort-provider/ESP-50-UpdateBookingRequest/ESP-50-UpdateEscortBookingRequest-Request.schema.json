@@ -9,6 +9,10 @@
       "type": "integer",
       "description": "Unique Id generated for this movement request"
     },
+    "ceprRef": {
+      "type": "string",
+      "description": "The CEPR reference of the person this movement request is for"
+    },
     "risksPosed": {
           "type": "array",
           "description": "Risks can be Medical or Non-Medical and both will be captured here",
@@ -19,6 +23,7 @@
   },
   "required": [
     "movementRef",
+    "ceprRef",
     "risksPosed"
   ],
   "definitions": {  
