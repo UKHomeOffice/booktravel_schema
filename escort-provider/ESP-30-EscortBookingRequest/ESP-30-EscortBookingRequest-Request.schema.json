@@ -3,7 +3,7 @@
   "type": "object",
   "title": "ESP-30-EscortBookingRequest Request Schema",
   "version": "0.0.1",
-  "description": "Schema for escort booking request sent by RMP to escort provider",
+  "description": "Schema for escort booking request sent by BRM to escort provider",
   "properties": {
     "movementRef": {
       "type": "integer",
@@ -145,7 +145,8 @@
             "Transfer",
             "Appointment",
             "CourtHearing",
-            "Removal"
+            "Removal",
+            "Property"
           ]
         },
         "reason": {
@@ -238,6 +239,10 @@
           "required": [
             "destination"
           ]
+        },
+        "requester": {
+          "$ref": "#/definitions/requester",
+          "description": "The requester of the request"
         }
       },
       "oneOf": [
@@ -247,6 +252,7 @@
           "movementType",
           "reason",
           "moveContractor",
+          "requester",
           "from",
           "to"]},
         { "required":
@@ -255,6 +261,7 @@
           "movementType",
           "reason",
           "moveContractor",
+          "requester",
           "from",
           "dropOffLocation"
         ]},
@@ -264,6 +271,7 @@
           "movementType",
           "reason",
           "moveContractor",
+          "requester",
           "pickupLocation",
           "to"
         ]},
@@ -273,6 +281,7 @@
           "movementType",
           "reason",
           "moveContractor",
+          "requester",
           "pickupLocation",
           "dropOffLocation"
         ]}
@@ -350,6 +359,42 @@
       "required": [
         "addressLine1",
         "postcode"
+      ]
+    },
+    "requester": {
+      "description": "Details of the requester initiating the request",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "description": "Email address of the caseworker",
+          "type": "string",
+          "format": "email"
+        },
+        "telephone": {
+          "description": "Telephone number of the requester",
+          "type": "string"
+        },
+        "groupName": {
+          "description": "Group name to which the requester belongs",
+          "type": "string"
+        },
+        "groupEmail": {
+          "description": "Group email of the team to which the requester belongs",
+          "type": "string",
+          "format": "email"
+        },
+        "groupTelephone": {
+          "description": "Group telephone number of the requester",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "email"
       ]
     }
   }
