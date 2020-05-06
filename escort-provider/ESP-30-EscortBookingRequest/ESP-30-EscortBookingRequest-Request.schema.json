@@ -243,6 +243,10 @@
         "requester": {
           "$ref": "#/definitions/requester",
           "description": "The requester of the request"
+        },
+        "groupDetails": {
+          "$ref": "#/definitions/groupDetails",
+          "description": "The details of a group move movement request"
         }
       },
       "oneOf": [
@@ -395,6 +399,33 @@
       "required": [
         "name",
         "email"
+      ]
+    },
+    "groupDetails": {
+      "type": "object",
+      "description": "Group Move Details",
+      "properties": {
+        "groupRef": {
+          "type": "string",
+          "description": "Unique Id generated for all moves linked to a particular group move"
+        },
+        "groupType": {
+          "enum": [
+            "Family",
+            "Other"
+          ],
+          "description": "Indicates if Family or other group move"
+        },
+        "groupTotal": {
+          "type": "integer",
+          "description": "Defines total number of group members"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "groupRef",
+        "groupType",
+        "groupTotal"
       ]
     }
   }
