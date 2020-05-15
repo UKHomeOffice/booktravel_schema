@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "ESP-31-Escort Booking Query Request Schema",
+  "version": "0.0.1",
+  "description": "Mitie has raised a clarification from DEPMU before the Movement Order can be processed.",
+  "properties": {
+    "groupRef": {
+      "type": "string",
+      "description": "The group reference that needs clarification"
+    },
+    "movementRef": {
+      "type": "integer",
+      "description": "The movement reference that needs clarification"
+    },
+    "query": {
+      "type": "string",
+      "description": "The query to be raised with DEPMU for clarification"
+    }
+  },
+  "oneOf": [
+    {
+      "description": "Constraints suggesting that the query is applicable for an entire Group",
+      "required": [
+        "groupRef",
+        "query"
+      ]
+    },
+    {
+      "description": "Constraints suggesting that the query is applicable for a particular Movement",
+      "required": [
+        "movementRef",
+        "query"
+      ]
+    }
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "ESP-32-Escort Booking Query Confirmation Request Schema",
+  "version": "0.0.1",
+  "description": "DEPMU has provided a clarification for the query raised by ESP",
+  "properties": {
+    "groupRef": {
+      "type": "string",
+      "description": "The group reference for which the clarification was raised"
+    },
+    "movementRef": {
+      "type": "integer",
+      "description": "The movement reference for which the clarification was raised"
+    },
+    "confirmation": {
+      "type": "string",
+      "description": "The confirmation provided by DEPMU"
+    }
+  },
+  "oneOf": [
+    {
+      "description": "Clarification provided for an entire Group",
+      "required": [
+        "groupRef",
+        "confirmation"
+      ]
+    },
+    {
+      "description": "Clarification provided for the particular Movement",
+      "required": [
+        "movementRef",
+        "confirmation"
+      ]
+    }
+  ],
+  "additionalProperties": false
+}
