@@ -1,0 +1,339 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "OSE-20-EscortBookingRequest Request Schema",
+  "version": "0.0.1",
+  "description": "Schema for escort quote request sent by BRM to escort provider",
+  "properties": {
+    "quoteRef": {
+      "type": "string",
+      "description": "Unique Id generated for this quote request (the OSE booking request id)"
+    },
+    "requestAuthoriser": {
+      "$ref": "#/definitions/requester",
+      "description": "Details of the person/case worker who raised this request."
+    },
+    "travelDetails": {
+      "$ref": "#/definitions/travelDetails",
+      "description": "Details of destination & possible dates."
+    },
+    "subjects": {
+      "type": "array",
+      "description": "The person/s who needs to be escorted",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/definitions/subject"
+      }
+    }
+  },
+  "required": [ "quoteRef", "requestAuthoriser", "travelDetails", "subjects" ],
+  "definitions": {
+    "requester": {
+      "type": "object",
+      "description": "Basic contact details of the requester and/or the team",
+      "properties": {
+        "requesterId": {
+          "type": "string",
+          "description": "Case Worker Id if present",
+          "minLength": 1
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "email": {
+          "type": "string",
+          "format": "email"
+        },
+        "telephone": {
+          "type": "string",
+          "minLength": 1
+        },
+        "groupName": {
+          "type": "string",
+          "description": "Group name to contact if named contact not available.",
+          "minLength": 1
+        },
+        "groupCode": {
+          "type": "string",
+          "description": "Code of the contact group.",
+          "minLength": 1
+        },
+        "groupEmail": {
+          "type": "string",
+          "format": "email"
+        },
+        "groupTelephone": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false,
+      "required": [ "name" ]
+    },
+    "travelDetails": {
+      "type": "object",
+      "description": "Target date range, destination, departure and various restrictions",
+      "properties": {
+        "preferredDepartureDate": {
+          "description": "Preferred date for OSE to be made. Date in the ISO-8601 format of [YYYY]-[MM]-[DD",
+          "type": "string",
+          "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$"
+        },
+        "latestDepartureDate": {
+          "description": "Latest date that OSE can be made (optional). Date in the ISO-8601 format of [YYYY]-[MM]-[DD",
+          "type": "string",
+          "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])"
+        },
+        "dayRestrictions": {
+          "$ref": "#/definitions/restriction",
+          "description": "Restrictions to arrival/departure times (free text)"
+        },
+
+        "flightType": {
+          "description": "Preferred flight type (eg Direct flight preferred)",
+          "type": "string"
+        },
+        "specificFlights": {
+          "$ref": "#/definitions/specificFlights",
+          "description": "The details of specific flights"
+        },
+        "preferredDepartureTimeRestrictions": {
+          "$ref": "#/definitions/restriction",
+          "description": "Restrictions to arrival/departure times (free text)"
+        },
+        "arrivalTimeTimeRestrictions": {
+          "$ref": "#/definitions/restriction",
+          "description": "Restrictions to arrival/departure times (free text)"
+        },
+        "departureAirport": {
+          "type": "string",
+          "description": "The departure airport(s) to be used (free text)"
+        },
+
+        "arrivalAirport": {
+          "type": "string",
+          "description": "The arrival airport(s) to be used (free text)"
+        },
+
+        "transitRestrictions": {
+          "$ref": "#/definitions/restriction",
+          "description": "Transit country restrictions"
+        },
+        "airlineRestrictions": {
+          "$ref": "#/definitions/restriction",
+          "description": "Restrictions on which airlines that can be used"
+        },
+        "refundableTickets": {
+          "type": "boolean",
+          "description": "Whether or not flight tickets should be refundable"
+        },
+        "extraInformation": {
+          "type": "string",
+          "description": "Any other information pertinent to the quote request"
+        }
+      },
+      "additionalProperties": false,
+      "anyOf": [
+        {"required": [ "departureAirport", "arrivalAirport", "preferredDepartureDate"]},
+        {"required": [ "departureAirport", "arrivalAirport", "specificFlights"]}
+      ]
+
+    },
+    "restriction": {
+      "type": "object",
+      "properties": {
+        "isRestricted": {
+          "type": "boolean",
+          "description": "Whether or not restriction applies to this quote request"
+        },
+        "information": {
+          "type": "string",
+          "description": "Restrictions information (free text)"
+        }
+      },
+      "additionalProperties": false,
+      "required": [ "isRestricted" ]
+    },
+
+    "specificFlights": {
+      "type": "object",
+      "properties": {
+        "specificFlightNumbers": {
+          "type": "string",
+          "description": "Specific flight and airlines details"
+        },
+        "departureDate": {
+          "type": "string",
+          "description": "Departure date of the specific flights"
+        }
+      },
+      "additionalProperties": false,
+      "required": [ "specificFlightNumbers", "departureDate" ]
+    },
+    "subject": {
+      "type": "object",
+      "description": "Subject details. person Id is always present. Mostly HO OR Port Reference is present",
+      "properties": {
+        "personId": {
+          "type": "string",
+          "description": "Person id found in the cid",
+          "minLength": 1
+        },
+        "homeOfficeReference": {
+          "type": "string",
+          "minLength": 1
+        },
+        "portReference": {
+          "type": "string",
+          "description": "Port Reference Number if present. Used in case of transport from Ferry etc",
+          "minLength": 1
+        },
+        "nomsReference": {
+          "type": "string",
+          "description": "NOMS Reference Number if present",
+          "minLength": 1
+        },
+        "prisonNumber": {
+          "type": "string",
+          "description": "Prison Number if any",
+          "minLength": 1
+        },
+        "firstName": {
+          "type": "string",
+          "description": "Given Name of the subject including any middle name",
+          "minLength": 1
+        },
+        "lastName": {
+          "type": "string",
+          "description": "Family Name of the subject. May be known or not",
+          "minLength": 1
+        },
+        "aliases": {
+          "type": "array",
+          "description": "Alternative Names of the subject if any",
+          "items": {
+            "type": "string"
+          }
+        },
+        "nationality": {
+          "type": "string",
+          "description": "Nationality of the person from CID. e.g. Angola, British Citizen",
+          "minLength": 1
+        },
+        "dateOfBirth": {
+          "type": "string",
+          "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$",
+          "description": "Date in the ISO-8601 format yyyy-MM-dd. Is it mandatory?"
+        },
+        "gender": {
+          "enum": [ "Male", "Female" , "Unknown"]
+        },
+        "spotterRequired": {
+          "type": "boolean",
+          "description": "Whether or not a spotter is required at the destination airport"
+        },
+
+        "previousFailedRemovalDetails": {
+          "description": "Details about any previous failed removals of the person",
+          "properties": {
+            "failedReturn": {
+              "type": "boolean",
+              "description": "Indicates if the person has been failed to return previously"
+
+            },
+            "previousFailedRemoval": {
+              "$ref": "#/definitions/previousFailedRemoval"
+            }
+          },
+          "additionalProperties": false,
+          "required": [ "failedReturn"]
+        },
+        "detention": {
+          "$ref": "#/definitions/detentionDetails"
+        },
+        "outstandingBarriers": {
+          "type": "boolean",
+          "description": "Any legal , documentation or process issues outstanding"
+        },
+        "medicalRisk": {
+          "enum": [ "Yes", "No" ]
+        },
+        "nonMedicalRisk": {
+          "enum": [ "Yes", "No" ]
+        },
+        "risksPosed": {
+          "$ref": "#/definitions/riskInformation"
+        }
+      },
+      "additionalProperties": false,
+      "required": [ "personId", "firstName", "dateOfBirth", "gender" ]
+    },
+
+    "riskInformation": {
+      "description": "Risks associated with the person and other details",
+      "properties": {
+        "risks": {
+          "type": "array",
+          "description": "List of risks",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "details": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "detentionDetails": {
+      "description": "Whether or not subject is is detention and details about the place of detention",
+      "properties": {
+        "isDetained": {
+          "type": "boolean",
+          "description": "Indicates if the person is detained"
+
+        },
+        "placeOfDetention": {
+          "$ref": "#/definitions/placeOfDetention"
+        }
+      },
+      "additionalProperties": false,
+      "required": [ "isDetained"]
+    },
+
+    "placeOfDetention": {
+      "type": "object",
+      "properties": {
+        "location": {
+          "type": "string",
+          "description": "Place where the person in detained"
+        },
+        "details": {
+          "type": "string",
+          "description": "Details about the detention"
+        }
+      },
+      "additionalProperties": false,
+      "required": [ "location" ]
+    },
+    "previousFailedRemoval": {
+      "type": "object",
+      "properties": {
+        "date": {
+          "type": "string",
+          "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$",
+          "description": "Date in the ISO-8601 format yyyy-MM-dd."
+        },
+        "reason": {
+          "type": "string",
+          "description": "Details about the failed return"
+        }
+      },
+      "additionalProperties": false,
+      "required": ["date", "reason"]
+    }
+  }
+}
