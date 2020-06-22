@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-06/schema#",
   "type": "object",
   "title": "TSP-40-SubmitTicketDetails Response Schema",
-  "description": "Schema for RMP response to submission of ticket details. Receipt Id is a unique value generated each time this API is called.",
+  "description": "Schema for BRM response to submission of ticket details. Receipt Id is a unique value generated each time this API is called.",
   "properties": {
     "requestId": {
       "type": "integer",

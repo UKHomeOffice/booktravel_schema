@@ -1,9 +1,9 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "ESP-60-BookingRequest Fulfilment Request Schema",
+  "title": "ESP-60-Movement Request Fulfilment Schema",
   "version": "0.0.1",
-  "description": "Schema to update the RMP with movement flow for escort booking request being processed by Mitie",
+  "description": "ESP updates BRM with movement request being processed",
   "properties": {
     "movementRef": {
       "type": "integer",

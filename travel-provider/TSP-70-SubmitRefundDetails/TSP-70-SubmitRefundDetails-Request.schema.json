@@ -3,7 +3,7 @@
   "type": "object",
   "title": "TSP-70-Submit Refund Details Request Schema",
   "version": "0.0.1",
-  "description": "Schema for informing RMP of refunds received for tickets. A message sent on this interface will always reference a single cancellation request. Multiple messages may be sent in response to a single cancellation request as refunds may arrive at different times.",
+  "description": "Schema for informing BRM of refunds received for tickets. A message sent on this interface will always reference a single cancellation request. Multiple messages may be sent in response to a single cancellation request as refunds may arrive at different times.",
   "properties": {
     "cancellationId": {
       "type": "integer",
@@ -127,7 +127,7 @@
       "properties": {
         "ticketId": {
           "type": "string",
-          "description": "The unique ID that was assigned to this ticket when TSP first told RMP about it.",
+          "description": "The unique ID that was assigned to this ticket when TSP first told BRM about it.",
           "pattern": "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$"
         },
         "refundReceivedPence": {

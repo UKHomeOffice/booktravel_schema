@@ -3,11 +3,11 @@
   "type": "object",
   "title": "TSP-30-RankTravelOptionsResponse Response Schema",
   "version": "0.0.1",
-  "description": "Schema for ranked travel options response sent by RMP",
+  "description": "Schema for ranked travel options response sent by BRM",
   "properties": {
     "returnId": {
       "type": "integer",
-      "description": "Unique Id for this booking - take from the original booking request sent from RMP to TSP."
+      "description": "Unique Id for this booking - take from the original booking request sent from BRM to TSP."
     },
     "rankInfo": {
       "type": "object",

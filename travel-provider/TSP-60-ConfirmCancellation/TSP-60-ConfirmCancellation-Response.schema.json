@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-06/schema#",
   "type": "object",
   "title": "TSP-60-ConfirmCancellation Response Schema",
-  "description": "Schema for RMP response to cancellation confirmation.",
+  "description": "Schema for BRM response to cancellation confirmation.",
   "properties": {
     "requestId": {
       "type": "integer",

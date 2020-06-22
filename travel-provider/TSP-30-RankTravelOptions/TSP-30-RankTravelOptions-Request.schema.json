@@ -7,7 +7,7 @@
   "properties": {
     "returnId": {
       "type": "integer",
-      "description": "Unique Id for this booking - taken from the original booking request sent from RMP to TSP."
+      "description": "Unique Id for this booking - taken from the original booking request sent from BRM to TSP."
     },
     "travelOptions": {
       "type": "array",

@@ -3,7 +3,7 @@
   "type": "object",
   "title": "TSP-10-GetToken Response Schema",
   "version": "0.0.1",
-  "description": "Schema for authentication token response provided to RMP by the TSP",
+  "description": "Schema for authentication token response provided to BRM by the ESP",
   "properties": {
     "access_token": {
       "type": "string",

@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "OSE-25-Escort Fulfilment Request Schema",
+  "version": "0.0.1",
+  "description": "ESP confirms the date that the Escorts can be made available",
+  "properties": {
+    "quoteRef": {
+      "type": "string",
+      "description": "BRM Unique Id being fulfilled. This was supplied by BRM for the initial request (the OSE booking request id)"
+    },
+    "receiptId": {
+      "description": "ESP unique Id being fulfilled. This was the UUID acknowledgement by the ESP for the initial request",
+      "type": "string",
+      "pattern": "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$"
+    },
+    "preferredDepartureDate": {
+      "description": "Preferred date for the CWT to book the flights. Date in the ISO-8601 format of [YYYY]-[MM]-[DD",
+      "type": "string",
+      "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$"
+    },
+    "alternativeDate1": {
+      "description": "Preferred date for OSE to be made. Date in the ISO-8601 format of [YYYY]-[MM]-[DD",
+      "type": "string",
+      "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$"
+    },
+    "alternativeDate2": {
+      "description": "Preferred date for OSE to be made. Date in the ISO-8601 format of [YYYY]-[MM]-[DD",
+      "type": "string",
+      "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$"
+    },
+    "additionalInformation": {
+      "type": "string",
+      "description": "Comments related to Escorts or any information to assist CWT book the flights"
+    }
+  },
+  "required": [
+    "quoteRef",
+    "receiptId",
+    "preferredDepartureDate"
+  ],
+  "additionalProperties": false
+}

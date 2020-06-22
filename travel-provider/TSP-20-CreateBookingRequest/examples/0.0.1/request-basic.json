@@ -5,7 +5,7 @@
   "key": "CWT4534",
   "requestId": 123456,
   "requester": {
-    "name": "RMP CaseWorker",
+    "name": "BRM CaseWorker",
     "email": "caseworker1@ho.com",
     "telephone": "01234 546434",
     "teamEmail": "rmp@ho.com",
