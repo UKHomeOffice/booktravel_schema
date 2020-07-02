@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "OSE-45-CancelEscortingRequest-Request.schema",
+  "version": "0.0.1",
+  "description": "Schema for cancelling a previously requested escort booking.",
+  "properties": {
+    "quoteRef": {
+      "type": "string",
+      "description": "BRM Unique Id being cancelled. This was supplied by BRM for the initial request (the OSE booking request id)"
+    },
+    "reason": {
+      "type": "string",
+      "description": "The reason the request is being cancelled"
+    }
+  },
+  "required": [
+    "quoteRef"
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "event_date": "2019-12-06T16:13:42.834",
+  "event_type": "ACTION_ARRANGE_MOVEMENT",
+  "ipf_vertical": "EAB",
+  "linked_events": [],
+  "created": "2019-12-06T16:13:42.834",
+  "created_by": "ie_am_caseworker",
+  "user": null,
+  "group_id": null,
+  "internal_handle": {
+    "unique_identifier": "cec50c56512f3d02414589fb63a40dabed20db4a47d6e97e5c15e6ed3708d2be",
+    "visibility_marker": "DEFAULT",
+    "interface_identifier": "ACTION_ARRANGE_MOVEMENT__1566300876775_10068063_ff9d1fc8-a5aa-4216-8a43-1103eb5e6c3f"
+  },
+  "external_handle": null,
+  "identifiers": {
+    "SERVICE_DELIVERY": {
+      "unique_identifier": "b613560aa16c9e9b8776333644019c37f19169c126cf7403a067b84942c093a1",
+      "visibility_marker": "DEFAULT",
+      "interface_identifier": "1566300876775"
+    },
+    "INVOLVEMENT": {
+      "unique_identifier": "804217de0b6f92b874a8bdd090ae2b690a569f68b7fad95084d70ba68b8c883e",
+      "visibility_marker": "DEFAULT",
+      "interface_identifier": "10068063"
+    }
+  },
+  "event_attributes": {
+    "TYPE_LOCATION|1": {
+      "group_id": "1",
+      "value_type": "string",
+      "association_id": null,
+      "group_type": null,
+      "description": "Type of Location e.g. Prison, Hospital etc.",
+      "reference_data_set": null,
+      "data_type": "STRING",
+      "association_type": null,
+      "value": "not known"
+    },
+    "DATE_STARTED|1": {
+      "group_id": "1",
+      "value_type": "string",
+      "association_id": null,
+      "group_type": null,
+      "description": "Date of Movement",
+      "reference_data_set": null,
+      "data_type": "STRING",
+      "association_type": null,
+      "value": "2019-09-05"
+    },
+    "MOVEMENT_STATUS|1": {
+      "group_id": "1",
+      "value_type": "string",
+      "association_id": null,
+      "group_type": null,
+      "description": "BRM Status",
+      "reference_data_set": null,
+      "data_type": "STRING",
+      "association_type": null,
+      "value": "SentToESP"
+    },
+    "TIME_STARTED|1": {
+      "group_id": "1",
+      "value_type": "string",
+      "association_id": null,
+      "group_type": null,
+      "description": "Time of Movement",
+      "reference_data_set": null,
+      "data_type": "STRING",
+      "association_type": null,
+      "value": "01:15"
+    },
+    "SPECIFY_LOCATION|1": {
+      "group_id": "1",
+      "value_type": "string",
+      "association_id": null,
+      "group_type": null,
+      "description": "Drop Off Location",
+      "reference_data_set": null,
+      "data_type": "STRING",
+      "association_type": null,
+      "value": "Lunar House-40 Wellesley Road-CR9 2BY"
+    },
+    "REASON_MOVE|1": {
+      "group_id": "1",
+      "value_type": "string",
+      "association_id": null,
+      "group_type": null,
+      "description": "Reason for the movement",
+      "reference_data_set": null,
+      "data_type": "STRING",
+      "association_type": null,
+      "value": "Going into custody"
+    },
+    "MOVEMENT_REFERENCE|1": {
+      "group_id": "1",
+      "value_type": "string",
+      "association_id": null,
+      "group_type": null,
+      "description": "BRM Movement reference",
+      "reference_data_set": null,
+      "data_type": "STRING",
+      "association_type": null,
+      "value": "234251"
+    },
+    "MOVEMENT_TYPE_AM_OTHER|1": {
+      "group_id": "1",
+      "value_type": "string",
+      "association_id": null,
+      "group_type": null,
+      "description": "Type Of Movement e.g. Initial detention acceptance",
+      "reference_data_set": null,
+      "data_type": "STRING",
+      "association_type": null,
+      "value": "InitialDetentionAcceptance"
+    }
+  }
+}

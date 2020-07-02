@@ -1,0 +1,272 @@
+{
+  "event_date": "2019-12-06T16:15:30.173",
+  "event_type": "ACTION_ARRANGE_TRAVEL",
+  "ipf_vertical": "EAB",
+  "linked_events": [],
+  "created": "2019-12-06T16:15:30.173",
+  "created_by": "ie_at_caseworker",
+  "user": null,
+  "group_id": null,
+  "internal_handle": {
+    "unique_identifier": "6fca1beb6ba26ea363aadb1432c9633cba6e8efb185341513fc367ffbd7d21d3",
+    "visibility_marker": "DEFAULT",
+    "interface_identifier": "ACTION_ARRANGE_TRAVEL__1566300876775_10068063_503adb8d-3bbb-4eb7-a1ce-633197ab59b1"
+  },
+  "external_handle": null,
+  "identifiers": {
+    "SERVICE_DELIVERY": {
+      "unique_identifier": "b613560aa16c9e9b8776333644019c37f19169c126cf7403a067b84942c093a1",
+      "visibility_marker": "DEFAULT",
+      "interface_identifier": "1566300876775"
+    },
+    "INVOLVEMENT": {
+      "unique_identifier": "804217de0b6f92b874a8bdd090ae2b690a569f68b7fad95084d70ba68b8c883e",
+      "visibility_marker": "DEFAULT",
+      "interface_identifier": "10068063"
+    }
+  },
+  "event_attributes": {
+    "DESTINATION|1": {
+      "group_id": "1",
+      "value_type": "string",
+      "association_id": null,
+      "group_type": null,
+      "description": "Arrival Airport",
+      "reference_data_set": null,
+      "data_type": "STRING",
+      "association_type": null,
+      "value": "BJL-\"Yundum Intl Arpt\""
+    },
+    "DESTINATION|2": {
+      "group_id": "1",
+      "value_type": "string",
+      "association_id": null,
+      "group_type": null,
+      "description": "Arrival Airport",
+      "reference_data_set": null,
+      "data_type": "STRING",
+      "association_type": null,
+      "value": "CMN-\"Mohamed V Arpt\"-2"
+    },
+    "BOOKING_REF|2": {
+      "group_id": "1",
+      "value_type": "string",
+      "association_id": null,
+      "group_type": null,
+      "description": "Segment Confirmation Number",
+      "reference_data_set": null,
+      "data_type": "STRING",
+      "association_type": null,
+      "value": "LLKZHB"
+    },
+    "BOOKING_REF|1": {
+      "group_id": "1",
+      "value_type": "string",
+      "association_id": null,
+      "group_type": null,
+      "description": "Segment Confirmation Number",
+      "reference_data_set": null,
+      "data_type": "STRING",
+      "association_type": null,
+      "value": "LLKZHB"
+    },
+    "TRAVEL_DATE|1": {
+      "group_id": "1",
+      "value_type": "string",
+      "association_id": null,
+      "group_type": null,
+      "description": "Travel Date",
+      "reference_data_set": null,
+      "data_type": "STRING",
+      "association_type": null,
+      "value": "2019-05-09"
+    },
+    "CARRIER_INFORMATION|1": {
+      "group_id": "1",
+      "value_type": "string",
+      "association_id": null,
+      "group_type": null,
+      "description": "Carrier Information",
+      "reference_data_set": null,
+      "data_type": "STRING",
+      "association_type": null,
+      "value": "Royal Air Maroc"
+    },
+    "TRAVEL_DATE|2": {
+      "group_id": "1",
+      "value_type": "string",
+      "association_id": null,
+      "group_type": null,
+      "description": "Travel Date",
+      "reference_data_set": null,
+      "data_type": "STRING",
+      "association_type": null,
+      "value": "2019-05-10"
+    },
+    "CARRIER_INFORMATION|2": {
+      "group_id": "1",
+      "value_type": "string",
+      "association_id": null,
+      "group_type": null,
+      "description": "Carrier Information",
+      "reference_data_set": null,
+      "data_type": "STRING",
+      "association_type": null,
+      "value": "Royal Air Maroc"
+    },
+    "HOME_OFF_ESC|1": {
+      "group_id": "1",
+      "value_type": "string",
+      "association_id": null,
+      "group_type": null,
+      "description": "Number of Escorts",
+      "reference_data_set": null,
+      "data_type": "STRING",
+      "association_type": null,
+      "value": "0"
+    },
+    "SERVICE_NUMBER|1": {
+      "group_id": "1",
+      "value_type": "string",
+      "association_id": null,
+      "group_type": null,
+      "description": "Flight Number",
+      "reference_data_set": null,
+      "data_type": "STRING",
+      "association_type": null,
+      "value": "583"
+    },
+    "PORT_DEPARTURE|1": {
+      "group_id": "1",
+      "value_type": "string",
+      "association_id": null,
+      "group_type": null,
+      "description": "Departure Airport",
+      "reference_data_set": null,
+      "data_type": "STRING",
+      "association_type": null,
+      "value": "LGW-\"Gatwick Arpt\"-London"
+    },
+    "SERVICE_NUMBER|2": {
+      "group_id": "1",
+      "value_type": "string",
+      "association_id": null,
+      "group_type": null,
+      "description": "Flight Number",
+      "reference_data_set": null,
+      "data_type": "STRING",
+      "association_type": null,
+      "value": "803"
+    },
+    "DATE_ARRIVAL|1": {
+      "group_id": "1",
+      "value_type": "string",
+      "association_id": null,
+      "group_type": null,
+      "description": "Arrival Date",
+      "reference_data_set": null,
+      "data_type": "STRING",
+      "association_type": null,
+      "value": "2019-05-10"
+    },
+    "FINAL_DESTINATION_1|1": {
+      "group_id": "1",
+      "value_type": "string",
+      "association_id": null,
+      "group_type": null,
+      "description": "Country of final destination",
+      "reference_data_set": null,
+      "data_type": "STRING",
+      "association_type": null,
+      "value": "BJL-\"Yundum Intl Arpt\""
+    },
+    "DEPART_AIRPORT|1": {
+      "group_id": "1",
+      "value_type": "string",
+      "association_id": null,
+      "group_type": null,
+      "description": "Departure Airport",
+      "reference_data_set": null,
+      "data_type": "STRING",
+      "association_type": null,
+      "value": "CMN-\"Mohamed V Arpt\"-2"
+    },
+    "TRAVEL_TIME|2": {
+      "group_id": "1",
+      "value_type": "string",
+      "association_id": null,
+      "group_type": null,
+      "description": "Travel Time",
+      "reference_data_set": null,
+      "data_type": "STRING",
+      "association_type": null,
+      "value": "12:35"
+    },
+    "DATE_ARRIVAL|2": {
+      "group_id": "1",
+      "value_type": "string",
+      "association_id": null,
+      "group_type": null,
+      "description": "Arrival Date",
+      "reference_data_set": null,
+      "data_type": "STRING",
+      "association_type": null,
+      "value": "2019-05-11"
+    },
+    "DEPART_AIRPORT|2": {
+      "group_id": "1",
+      "value_type": "string",
+      "association_id": null,
+      "group_type": null,
+      "description": "Departure Airport",
+      "reference_data_set": null,
+      "data_type": "STRING",
+      "association_type": null,
+      "value": "LGW-\"Gatwick Arpt\"-N"
+    },
+    "TRAVEL_TIME|1": {
+      "group_id": "1",
+      "value_type": "string",
+      "association_id": null,
+      "group_type": null,
+      "description": "Travel Time",
+      "reference_data_set": null,
+      "data_type": "STRING",
+      "association_type": null,
+      "value": "20:55"
+    },
+    "TIME_ARRIVAL|1": {
+      "group_id": "1",
+      "value_type": "string",
+      "association_id": null,
+      "group_type": null,
+      "description": "Arrival Time",
+      "reference_data_set": null,
+      "data_type": "STRING",
+      "association_type": null,
+      "value": "02:50"
+    },
+    "TRAVEL_STATUS|1": {
+      "group_id": "1",
+      "value_type": "string",
+      "association_id": null,
+      "group_type": null,
+      "description": "BRM Booking State",
+      "reference_data_set": null,
+      "data_type": "STRING",
+      "association_type": null,
+      "value": "TICKETED"
+    },
+    "TIME_ARRIVAL|2": {
+      "group_id": "1",
+      "value_type": "string",
+      "association_id": null,
+      "group_type": null,
+      "description": "Arrival Time",
+      "reference_data_set": null,
+      "data_type": "STRING",
+      "association_type": null,
+      "value": "15:20"
+    }
+  }
+}
