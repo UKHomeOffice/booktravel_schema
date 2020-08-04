@@ -1,0 +1,192 @@
+{
+  "refDataSetId": 817,
+  "refDataSetName": "LOCATION_TYPE",
+  "refDataValues": [
+    {
+      "refDataValueCode": "SEC98IA",
+      "refDataValueId": 51000,
+      "refDataValueLongDesc": "Section 98 (Initial Accom)",
+      "refDataValueShortDesc": "Section 98 (Initial Accom)"
+    },
+    {
+      "refDataValueCode": "ASUDEF",
+      "refDataValueId": 51001,
+      "refDataValueLongDesc": "ASU Deferred accommodation",
+      "refDataValueShortDesc": "ASU Deferred accommodation"
+    },
+    {
+      "refDataValueCode": "ROUTING",
+      "refDataValueId": 51002,
+      "refDataValueLongDesc": "Routing (Overnight)",
+      "refDataValueShortDesc": "Routing (Overnight)"
+    },
+    {
+      "refDataValueCode": "EMERGACCOMM",
+      "refDataValueId": 51003,
+      "refDataValueLongDesc": "Emergency Accommodation",
+      "refDataValueShortDesc": "Emergency Accommodation"
+    },
+    {
+      "refDataValueCode": "OUT_OF_HOURS",
+      "refDataValueId": 51004,
+      "refDataValueLongDesc": "Out of Hours",
+      "refDataValueShortDesc": "Out of Hours"
+    },
+    {
+      "refDataValueCode": "X_ACC",
+      "refDataValueId": 51005,
+      "refDataValueLongDesc": "Accomodation",
+      "refDataValueShortDesc": "Accomodation"
+    },
+    {
+      "refDataValueCode": "X_AHC",
+      "refDataValueId": 51006,
+      "refDataValueLongDesc": "Appeal Hearing Centre",
+      "refDataValueShortDesc": "Appeal Hearing Centre"
+    },
+    {
+      "refDataValueCode": "X_AO",
+      "refDataValueId": 51007,
+      "refDataValueLongDesc": "Admin. Office",
+      "refDataValueShortDesc": "Admin. Office"
+    },
+    {
+      "refDataValueCode": "X_CCDMDO",
+      "refDataValueId": 51008,
+      "refDataValueLongDesc": "CCD - MDO Classification",
+      "refDataValueShortDesc": "CCD - MDO Classification"
+    },
+    {
+      "refDataValueCode": "X_CP",
+      "refDataValueId": 51009,
+      "refDataValueLongDesc": "Central Point",
+      "refDataValueShortDesc": "Central Point"
+    },
+    {
+      "refDataValueCode": "X_CS",
+      "refDataValueId": 51010,
+      "refDataValueLongDesc": "Custody Suite",
+      "refDataValueShortDesc": "Custody Suite"
+    },
+    {
+      "refDataValueCode": "X_D",
+      "refDataValueId": 51011,
+      "refDataValueLongDesc": "Detention Centre",
+      "refDataValueShortDesc": "Detention Centre"
+    },
+    {
+      "refDataValueCode": "X_EMCON",
+      "refDataValueId": 51012,
+      "refDataValueLongDesc": "EM Contractor",
+      "refDataValueShortDesc": "EM Contractor"
+    },
+    {
+      "refDataValueCode": "X_ENRC",
+      "refDataValueId": 51013,
+      "refDataValueLongDesc": "Enrolment Centre",
+      "refDataValueShortDesc": "Enrolment Centre"
+    },
+    {
+      "refDataValueCode": "X_HMP",
+      "refDataValueId": 51014,
+      "refDataValueLongDesc": "HM Prison",
+      "refDataValueShortDesc": "HM Prison"
+    },
+    {
+      "refDataValueCode": "X_I",
+      "refDataValueId": 51015,
+      "refDataValueLongDesc": "Induction Centre",
+      "refDataValueShortDesc": "Induction Centre"
+    },
+    {
+      "refDataValueCode": "X_IE",
+      "refDataValueId": 51016,
+      "refDataValueLongDesc": "IND Estate",
+      "refDataValueShortDesc": "IND Estate"
+    },
+    {
+      "refDataValueCode": "X_LEO",
+      "refDataValueId": 51017,
+      "refDataValueLongDesc": "LEO",
+      "refDataValueShortDesc": "LEO"
+    },
+    {
+      "refDataValueCode": "X_MFP",
+      "refDataValueId": 51018,
+      "refDataValueLongDesc": "Multi-functional Port",
+      "refDataValueShortDesc": "Multi-functional Port"
+    },
+    {
+      "refDataValueCode": "X_MHADET",
+      "refDataValueId": 51019,
+      "refDataValueLongDesc": "MHA - Detention",
+      "refDataValueShortDesc": "MHA - Detention"
+    },
+    {
+      "refDataValueCode": "X_NISTHF",
+      "refDataValueId": 51020,
+      "refDataValueLongDesc": "Non IS Short Term Holding Facility",
+      "refDataValueShortDesc": "Non IS Short Term Hold. Facil."
+    },
+    {
+      "refDataValueCode": "X_OC",
+      "refDataValueId": 51021,
+      "refDataValueLongDesc": "Operational Centre",
+      "refDataValueShortDesc": "Operational Centre"
+    },
+    {
+      "refDataValueCode": "X_P",
+      "refDataValueId": 51022,
+      "refDataValueLongDesc": "Port",
+      "refDataValueShortDesc": "Port"
+    },
+    {
+      "refDataValueCode": "X_PEO",
+      "refDataValueId": 51023,
+      "refDataValueLongDesc": "PEO",
+      "refDataValueShortDesc": "PEO"
+    },
+    {
+      "refDataValueCode": "X_PS",
+      "refDataValueId": 51024,
+      "refDataValueLongDesc": "Police Station",
+      "refDataValueShortDesc": "Police Station"
+    },
+    {
+      "refDataValueCode": "X_R",
+      "refDataValueId": 51025,
+      "refDataValueLongDesc": "Reporting",
+      "refDataValueShortDesc": "Reporting"
+    },
+    {
+      "refDataValueCode": "X_REM",
+      "refDataValueId": 51026,
+      "refDataValueLongDesc": "Removal Centre",
+      "refDataValueShortDesc": "Removal Centre"
+    },
+    {
+      "refDataValueCode": "X_REM_IRC",
+      "refDataValueId": 51027,
+      "refDataValueLongDesc": "Removal Centre - Immigration",
+      "refDataValueShortDesc": "Removal Centre - Immigration"
+    },
+    {
+      "refDataValueCode": "X_REM_STHF",
+      "refDataValueId": 51028,
+      "refDataValueLongDesc": "Removal Centre - Short Term Holding Facility",
+      "refDataValueShortDesc": "RC - Short Term Holding Facil."
+    },
+    {
+      "refDataValueCode": "X_UC",
+      "refDataValueId": 51029,
+      "refDataValueLongDesc": "Consulates in UK",
+      "refDataValueShortDesc": "Consulates in UK"
+    },
+    {
+      "refDataValueCode": "X_UCO",
+      "refDataValueId": 51030,
+      "refDataValueLongDesc": "UK Consulates Overseas",
+      "refDataValueShortDesc": "UK Consulates Overseas"
+    }
+  ]
+}
