@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "OSE-81-CancelMovementRequest Request Schema",
+  "type": "object",
+  "version": "0.0.1",
+  "description": "Schema for cancelling a previously requested escort booking.",
+  "properties": {
+    "movementRef": {
+      "description": "The unique movement request that is being cancelled",
+      "type": "integer"
+    },
+    "quoteRef": {
+      "description": "Unique Id generated for this quote request (the OSE booking request id)",
+      "type": "string"
+    },
+    "reason": {
+      "description": "The reason the movement request is being cancelled",
+      "type": "string"
+    }
+  },
+  "required": [
+    "quoteRef",
+    "movementRef",
+    "reason"
+  ],
+}
