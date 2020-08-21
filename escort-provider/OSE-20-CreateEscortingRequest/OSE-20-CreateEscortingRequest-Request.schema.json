@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "OSE-20-EscortBookingRequest Request Schema",
+  "title": "OSE-20-CreateEscortingRequest-Request.schema",
   "version": "0.0.1",
   "description": "Schema for escort quote request sent by BRM to escort provider",
   "properties": {
@@ -26,7 +26,12 @@
       }
     }
   },
-  "required": [ "quoteRef", "requestAuthoriser", "travelDetails", "subjects" ],
+  "required": [
+    "quoteRef",
+    "requestAuthoriser",
+    "travelDetails",
+    "subjects"
+  ],
   "definitions": {
     "requester": {
       "type": "object",
@@ -69,7 +74,9 @@
         }
       },
       "additionalProperties": false,
-      "required": [ "name" ]
+      "required": [
+        "name"
+      ]
     },
     "travelDetails": {
       "type": "object",
@@ -89,7 +96,6 @@
           "$ref": "#/definitions/restriction",
           "description": "Restrictions to arrival/departure times (free text)"
         },
-
         "flightType": {
           "description": "Preferred flight type (eg Direct flight preferred)",
           "type": "string"
@@ -110,12 +116,10 @@
           "type": "string",
           "description": "The departure airport(s) to be used (free text)"
         },
-
         "arrivalAirport": {
           "type": "string",
           "description": "The arrival airport(s) to be used (free text)"
         },
-
         "transitRestrictions": {
           "$ref": "#/definitions/restriction",
           "description": "Transit country restrictions"
@@ -135,10 +139,21 @@
       },
       "additionalProperties": false,
       "anyOf": [
-        {"required": [ "departureAirport", "arrivalAirport", "preferredDepartureDate"]},
-        {"required": [ "departureAirport", "arrivalAirport", "specificFlights"]}
+        {
+          "required": [
+            "departureAirport",
+            "arrivalAirport",
+            "preferredDepartureDate"
+          ]
+        },
+        {
+          "required": [
+            "departureAirport",
+            "arrivalAirport",
+            "specificFlights"
+          ]
+        }
       ]
-
     },
     "restriction": {
       "type": "object",
@@ -153,9 +168,10 @@
         }
       },
       "additionalProperties": false,
-      "required": [ "isRestricted" ]
+      "required": [
+        "isRestricted"
+      ]
     },
-
     "specificFlights": {
       "type": "object",
       "properties": {
@@ -169,7 +185,10 @@
         }
       },
       "additionalProperties": false,
-      "required": [ "specificFlightNumbers", "departureDate" ]
+      "required": [
+        "specificFlightNumbers",
+        "departureDate"
+      ]
     },
     "subject": {
       "type": "object",
@@ -221,33 +240,41 @@
           "description": "Nationality of the person from CID. e.g. Angola, British Citizen",
           "minLength": 1
         },
+        "religion": {
+          "$ref": "#/definitions/religion",
+          "description": "The details of the religion"
+        },
         "dateOfBirth": {
           "type": "string",
           "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$",
           "description": "Date in the ISO-8601 format yyyy-MM-dd. Is it mandatory?"
         },
         "gender": {
-          "enum": [ "Male", "Female" , "Unknown"]
+          "enum": [
+            "Male",
+            "Female",
+            "Unknown"
+          ]
         },
         "spotterRequired": {
           "type": "boolean",
           "description": "Whether or not a spotter is required at the destination airport"
         },
-
         "previousFailedRemovalDetails": {
           "description": "Details about any previous failed removals of the person",
           "properties": {
             "failedReturn": {
               "type": "boolean",
               "description": "Indicates if the person has been failed to return previously"
-
             },
             "previousFailedRemoval": {
               "$ref": "#/definitions/previousFailedRemoval"
             }
           },
           "additionalProperties": false,
-          "required": [ "failedReturn"]
+          "required": [
+            "failedReturn"
+          ]
         },
         "detention": {
           "$ref": "#/definitions/detentionDetails"
@@ -257,19 +284,46 @@
           "description": "Any legal , documentation or process issues outstanding"
         },
         "medicalRisk": {
-          "enum": [ "Yes", "No" ]
+          "enum": [
+            "Yes",
+            "No"
+          ]
         },
         "nonMedicalRisk": {
-          "enum": [ "Yes", "No" ]
+          "enum": [
+            "Yes",
+            "No"
+          ]
         },
         "risksPosed": {
           "$ref": "#/definitions/riskInformation"
         }
       },
       "additionalProperties": false,
-      "required": [ "personId", "firstName", "dateOfBirth", "gender" ]
+      "required": [
+        "personId",
+        "firstName",
+        "dateOfBirth",
+        "gender"
+      ]
     },
-
+    "religion": {
+      "description": "Details about the religion of the person",
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "religion code"
+        },
+        "description": {
+          "type": "string",
+          "description": "religion description"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "code"
+      ]
+    },
     "riskInformation": {
       "description": "Risks associated with the person and other details",
       "properties": {
@@ -287,23 +341,22 @@
       },
       "additionalProperties": false
     },
-
     "detentionDetails": {
       "description": "Whether or not subject is is detention and details about the place of detention",
       "properties": {
         "isDetained": {
           "type": "boolean",
           "description": "Indicates if the person is detained"
-
         },
         "placeOfDetention": {
           "$ref": "#/definitions/placeOfDetention"
         }
       },
       "additionalProperties": false,
-      "required": [ "isDetained"]
+      "required": [
+        "isDetained"
+      ]
     },
-
     "placeOfDetention": {
       "type": "object",
       "properties": {
@@ -317,7 +370,9 @@
         }
       },
       "additionalProperties": false,
-      "required": [ "location" ]
+      "required": [
+        "location"
+      ]
     },
     "previousFailedRemoval": {
       "type": "object",
@@ -333,7 +388,10 @@
         }
       },
       "additionalProperties": false,
-      "required": ["date", "reason"]
+      "required": [
+        "date",
+        "reason"
+      ]
     }
   }
 }
