@@ -1,0 +1,142 @@
+{
+  "reference": "400",
+  "requestId": "2010162",
+  "createdBy": {
+    "groupName": "CWT HEATHROW HOME OFFICE SECTION",
+    "groupEmail": "Homeoffice.lhr.uk@contactcwt.com",
+    "groupTelephone": "0203 353 0392"
+  },
+  "createdDateTime": "2020-08-26T15:03:00",
+  "bookingDetails": {
+    "bookingState": "TICKETED",
+    "bookingId": "c77b86c4-f047-49b8-981e-e18cd308011d",
+    "flightDetails": [
+      {
+        "personnelType": "DEPU",
+        "locator": {
+          "locatorCode": "OLD-KQS2HG",
+          "lastName": "MURPHY"
+        },
+        "itinerary": {
+          "from": {
+            "airportCode": "LTN",
+            "airportName": "LUTON AIRPORT"
+          },
+          "to": {
+            "airportCode": "OTP",
+            "airportName": "HENRI COANDA INTERNATIONAL"
+          },
+          "segments": [
+            {
+              "segmentNumber": 1,
+              "tickets": [],
+              "airlineCode": "W6",
+              "airlineName": "Wizz Air Hungary",
+              "flightNumber": "3010",
+              "departureAirport": {
+                "airportCode": "LTN",
+                "airportName": "LUTON AIRPORT"
+              },
+              "departureDateTime": "2020-08-30T13:35:00",
+              "arrivalAirport": {
+                "airportCode": "OTP",
+                "airportName": "HENRI COANDA INTERNATIONAL"
+              },
+              "arrivalDateTime": "2020-08-30T18:50:00",
+              "confirmationNumber": "AFZJ3A"
+            }
+          ]
+        }
+      }
+    ],
+    "generalRemarks": [
+      "0603*BRM",
+      "MOXIE INCIDENT ID-6804767",
+      "AUTOMAIL-YES",
+      "0106*0706510",
+      "CONF*SEND TO MAIL STEPHEN.MONTON@HOMEOFFICE.GOV.UK",
+      "CONF*SEND TO MAIL PERBT2@HOMEOFFICE.GOV.UK",
+      "1311*0TO",
+      "LANGUAGE-EN-GB",
+      "NO/AISLE/",
+      "0650*15:235DF786",
+      "*CONF*NCX* PROCESSED BY CBR TO STEPHEN.MONTON@HOMEOFFICE.GOV.UK*26AUG*1505Z",
+      "9993*NC",
+      "SEAT-NA",
+      "TRVLR TYPE-GUEST",
+      "0609*NO",
+      "PREF SEAT-NA",
+      "0604*STEPHEN.MONTON",
+      "GUID/CT-14:AB26/SU-14:835E2",
+      "0653*MUSSUUUUUUUA",
+      "PORTRAIT CLIENT TOP:HOME OFFICE IMMIGRATION",
+      "LASTUSER-UKXK337-UKXK337",
+      "0099*UKXK337",
+      "*DS FORMAT V3.0",
+      "CONF*SEND TO MAIL BFMANSEA@HOMEOFFICE.GOV.UK",
+      "*QSORT* PNR QUEUE SORT SUCCESS - LONWL21HM/Q12C0 - LONWL21HM/Q66C20 27AUG0010",
+      "CONF*SEND TO MAIL OSECONFIRMATIONS@CAREANDCUSTODY-SECURE.CO.UK",
+      "7311*0TO",
+      "NAME-BRITTANY//MURPHY",
+      "PORTRAIT PIN:150085305",
+      "0113*20200826",
+      "SYMPHONIE EXPRESS PILOT",
+      "*CONF*NCX* PROCESSED BY CBR TO PERBT2@HOMEOFFICE.GOV.UK*26AUG*1505Z",
+      "9994*0.00",
+      "NA",
+      "0610*2010162",
+      "PREF CAR TY-ICAR",
+      "0606*DEPU",
+      "GUID/TT-14:107472/T-15:235DF786",
+      "0601*BFO",
+      "PORTRAIT SUBUNIT:UK- HOME OFFICE IMMIGRATION SUBJECT",
+      "ONHOLD:AWAITING FARE DETAILS",
+      "CONF*NOMINIRULES*",
+      "CONF*TEAM:UK021008*UK AMA HOME OFFICE",
+      "4311*0TO",
+      "GENDER-M",
+      "PCCLONWL21HM",
+      "LANGUAGE-EN-GB",
+      "3311*0TO",
+      "TEAM IMM-021",
+      "*CONF*NCX* PROCESSED BY CBR TO OSECONFIRMATIONS@CAREANDCUSTODY-SECURE.CO.UK*26AUG*1505Z",
+      "9995*NC",
+      "QC-LCC MANUAL FULFILLMENT NEEDED",
+      "9991*0.00",
+      "TEAM IMM-021",
+      "*** 24HSC INSTRUCTIONS - USE POWER LIBRARY ***",
+      "0607*COMPLEX",
+      "1005*Y",
+      "0102*1",
+      "0602*HOL/5355685",
+      "AFF75/15:235DF786",
+      "CONF*LANG:EN",
+      "SYEXGVS:14:AB26 14:835E2 14:107472 15:235DF786 T-706510 - EN-GB",
+      "ARRANGER GUID - A:1C3BA878",
+      "6311*0TO",
+      "CONF*SEND TO MAIL PERBT2@HOMEOFFICE.GOV.UK",
+      "PROFILE UPLOADED BY PORTRAIT",
+      "0104*284",
+      "PCCLONWL21HM",
+      "*CONF*NCX* PROCESSED BY CBR TO BFMANSEA@HOMEOFFICE.GOV.UK*26AUG*1505Z",
+      "0107*KK01",
+      "QC-LCC ERROR IN WINGS LABELS-FULFILL MANUALLY",
+      "ROOMPREF-NON SMOKING/NO PREFERENCE/NO PREFERENCE/",
+      "9992*0.00",
+      "QC-AQUA PLATINUM QC 26AUG 1705 -20.1.0.9-",
+      "***24HSC INSTRUCTIONS-ALSO SEE PROFILE PDN/24HSC***",
+      "0608*13826895",
+      "BOOK-LONWL21HM/TKT-LONWL21HM/CC-UK"
+    ],
+    "itineraryRemarks": [
+      "CREDIT CARD FEE APPLIED BY THE AIRLINE",
+      "PASSPORT AND VISA INFORMATION",
+      "FARES ARE NOT GUARANTEED UNTIL YOUR TICKET HAS BEEN ISSUED",
+      "*TLXL*TICKETING DATE NOT SET CONFIRM BY *26/08/2020*",
+      "ON HOLD:AWAITING FARE DETAILS",
+      "ALL FARES QUOTED ARE INCLUDING AIRPORT DEPARTURE",
+      "AND SECURITY TAXES AND MAY INCLUDE A NONREFUNDABLE",
+      "*GB.GOV1002*"
+    ]
+  }
+}

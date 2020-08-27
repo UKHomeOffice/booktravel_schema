@@ -1,7 +1,7 @@
 {
+  "supplierServiceName": "AMADEUS",
   "bookingID": "b22c3dff-7ce9-4861-8e6f-326dcebbd333",
   "recordLocator": "W86JE7",
-  "supplierServiceName": "AMADEUS",
   "creationDateTime": "2018-08-30T03:17:00.000",
   "versionLastUpdateDateTime": "2018-08-30T03:37:00.000",
   "bookingState": "BOOKED",

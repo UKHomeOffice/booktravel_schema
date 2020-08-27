@@ -1,0 +1,212 @@
+{
+  "reference": "400",
+  "requestId": "2009589",
+  "createdBy": {
+    "groupName": "CWT HEATHROW HOME OFFICE SECTION",
+    "groupEmail": "Homeoffice.lhr.uk@contactcwt.com",
+    "groupTelephone": "0203 353 0392"
+  },
+  "createdDateTime": "2020-07-23T12:02:00",
+  "bookingDetails": {
+    "bookingState": "TICKETED",
+    "bookingId": "4b2fe9b5-c55a-4dce-8a8b-8c5473adbcfa",
+    "flightDetails": [
+      {
+        "personnelType": "DEPU",
+        "locator": {
+          "locatorCode": "OLD-R4KU4Z",
+          "lastName": "DOOLITTLE"
+        },
+        "itinerary": {
+          "from": {
+            "airportCode": "LHR",
+            "airportName": "HEATHROW",
+            "terminal": "2"
+          },
+          "to": {
+            "airportCode": "BJL",
+            "airportName": "YUNDUM INTERNATIONAL"
+          },
+          "segments": [
+            {
+              "segmentNumber": 1,
+              "tickets": [
+                {
+                  "fareType": "ADULT",
+                  "lastName": "DOOLITTLE",
+                  "firstName": "LIZA OLA",
+                  "eTicketNumber": "0823835699176"
+                }
+              ],
+              "airlineCode": "SN",
+              "airlineName": "Brussels Airlines",
+              "flightNumber": "2094",
+              "departureAirport": {
+                "airportCode": "LHR",
+                "airportName": "HEATHROW",
+                "terminal": "2"
+              },
+              "departureDateTime": "2020-09-09T11:05:00",
+              "arrivalAirport": {
+                "airportCode": "BRU",
+                "airportName": "BRUSSELS AIRPORT"
+              },
+              "arrivalDateTime": "2020-09-09T13:15:00",
+              "confirmationNumber": "R4KU4Z"
+            },
+            {
+              "segmentNumber": 2,
+              "tickets": [
+                {
+                  "fareType": "ADULT",
+                  "lastName": "DOOLITTLE",
+                  "firstName": "LIZA OLA",
+                  "eTicketNumber": "0823835699176"
+                }
+              ],
+              "airlineCode": "SN",
+              "airlineName": "Brussels Airlines",
+              "flightNumber": "217",
+              "departureAirport": {
+                "airportCode": "BRU",
+                "airportName": "BRUSSELS AIRPORT"
+              },
+              "departureDateTime": "2020-09-09T15:00:00",
+              "arrivalAirport": {
+                "airportCode": "BJL",
+                "airportName": "YUNDUM INTERNATIONAL"
+              },
+              "arrivalDateTime": "2020-09-09T19:25:00",
+              "confirmationNumber": "R4KU4Z"
+            }
+          ]
+        }
+      }
+    ],
+    "generalRemarks": [
+      "*CONF*NCX* PROCESSED BY CBR TO VOLUNTARYRETURNS@HOMEOFFICE.GOV.UK*23JUL*1205Z",
+      "*DS FORMAT V3.0",
+      "CONF*SEND TO MAIL PERBT2@HOMEOFFICE.GOV.UK",
+      "CONF*TEAM:UK021008*UK AMA HOME OFFICE",
+      "*CONF*NCX* PROCESSED BY CBR TO PERBT2@HOMEOFFICE.GOV.UK*26AUG*1446Z",
+      "0113*20200723",
+      "ROOMPREF-NON SMOKING/NO PREFERENCE/NO PREFERENCE/",
+      "CITIZENSHIP-ZZ",
+      "7110*YD",
+      "0610*2009589",
+      "BOOK-LONWL21HM/TKT-LONWL21HM/CC-UK",
+      "0601*CAP",
+      "*CONF*NCX* PROCESSED BY CBR TO OSECONFIRMATIONS@CAREANDCUSTODY-SECURE.CO.UK*23JUL*1205Z",
+      "CONF*NOMINIRULES*",
+      "CONF*SEND TO MAIL OSECONFIRMATIONS@CAREANDCUSTODY-SECURE.CO.UK",
+      "PCHK:AVP4248-TA-AIR VENDOR",
+      "*CONF*NCX* PROCESSED BY CBR TO PERBT2@HOMEOFFICE.GOV.UK*14AUG*1025Z",
+      "*CONF*NCX* PROCESSED BY CBR TO VOLUNTARYRETURNS@HOMEOFFICE.GOV.UK*26AUG*1446Z",
+      "3311*0TO",
+      "NAME-LIZAOLA//DOOLITTLE",
+      "7105*BJL",
+      "9991*0.00",
+      "PREF SEAT-NA",
+      "GUID/CT-14:AB26/SU-14:835E2",
+      "0602*VRS/5344912",
+      "PORTRAIT CLIENT TOP:HOME OFFICE IMMIGRATION",
+      "*CONF*NCX* PROCESSED BY CBR TO CLARE.TILDESLEY@HOMEOFFICE.GOV.UK*23JUL*1205Z",
+      "SYEXGVS:14:AB26 14:835E2 14:107472 15:235C9169 T-706510 - EN-GB",
+      "ARRANGER GUID - 15:235CB196",
+      "*CONF*NCX* PROCESSED BY CBR TO VOLUNTARYRETURNS@HOMEOFFICE.GOV.UK*14AUG*1025Z",
+      "*CONF*NCX* PROCESSED BY CBR TO OSECONFIRMATIONS@CAREANDCUSTODY-SECURE.CO.UK*26AUG*1446Z",
+      "0104*284",
+      "P AND V : VISA CHECK UNITED KINGDOM - UNABLE TO CONFIRM - 1",
+      "AQUA PLATINUM TICKETING 23JUL 0802 -20.1.0.9-",
+      "9992*0.00",
+      "PREF CAR TY-ICAR",
+      "*CONF*NCX* PROCESSED BY CBR TO PERBT2@HOMEOFFICE.GOV.UK*05AUG*0935Z",
+      "GUID/TT-14:107472/T-15:235C9169",
+      "0603*BRM",
+      "PORTRAIT SUBUNIT:UK- HOME OFFICE IMMIGRATION SUBJECT",
+      "AUTOMAIL-YES",
+      "*CONF*NCX* PROCESSED BY CBR TO OSECONFIRMATIONS@CAREANDCUSTODY-SECURE.CO.UK*14AUG*1025Z",
+      "SEAT-NA",
+      "*CONF*NCX* PROCESSED BY CBR TO CLARE.TILDESLEY@HOMEOFFICE.GOV.UK*26AUG*1446Z",
+      "1311*0TO",
+      "P AND V : VISA CHECK BELGIUM - UNABLE TO CONFIRM - 1",
+      "CXP ID RI-493587 EMLD PORT AND AS PER PHONE CONV ADV CLARE FLT CANX 07SEP",
+      "9993*NC",
+      "*** 24HSC INSTRUCTIONS - USE POWER LIBRARY ***",
+      "SYMPHONIE EXPRESS PILOT",
+      "7302*1594.74",
+      "*CONF*NCX* PROCESSED BY CBR TO VOLUNTARYRETURNS@HOMEOFFICE.GOV.UK*05AUG*0935Z",
+      "0604*CLARE.TILDESLEY",
+      "AFF75/15:235C9169",
+      "BKG 09SEP EMLD UPDATED ITIN AND REVALIDATED ETKT",
+      "LASTUSER-UCXP393-UCXP393",
+      "*CONF*NCX* PROCESSED BY CBR TO CLARE.TILDESLEY@HOMEOFFICE.GOV.UK*14AUG*1025Z",
+      "AQUA PLATINUM TICKETING 26AUG 1001 -20.1.0.9-",
+      "7311*0TO",
+      "NO/AISLE/",
+      "P AND V : VISA CHECK GAMBIA - UNABLE TO CONFIRM - 1",
+      "DUE TO COVID-19 BY THE AIRLINE",
+      "TEAM IMM-021",
+      "QC-AQUA PLATINUM QC 26AUG 1645 -20.1.0.9-",
+      "9994*0.00",
+      "***24HSC INSTRUCTIONS-ALSO SEE PROFILE PDN/24HSC***",
+      "TEAM IMM-021",
+      "1005*Y",
+      "7305*R1",
+      "*CONF*NCX* PROCESSED BY CBR TO OSECONFIRMATIONS@CAREANDCUSTODY-SECURE.CO.UK*05AUG*0935Z",
+      "0606*DEPU",
+      "0099*UCXP393",
+      "ONHOLD:AWAITING APPROVAL",
+      "VQ-2 REMARKS TO BE VERIFIED",
+      "4311*0TO",
+      "PORTRAIT PIN:149610227",
+      "CONF*SEND TO MAIL PERBT2@HOMEOFFICE.GOV.UK",
+      "BKG 09SEP EMLD UPDATED ITIN",
+      "QC-QC OK",
+      "9995*NC",
+      "TRVLR TYPE-GUEST",
+      "PCCLONWL21HM",
+      "7303*894.74",
+      "*CONF*NCX* PROCESSED BY CBR TO CLARE.TILDESLEY@HOMEOFFICE.GOV.UK*05AUG*0935Z",
+      "0607*STANDARD",
+      "ONHOLD:AWAITING FARE DETAILS",
+      "VQ-VR FROM AIRLINE-NO ACTION NEEDED-PC REMOVED FROM Q",
+      "6311*0TO",
+      "LANGUAGE-EN-GB",
+      "CONF*SEND TO MAIL CLARE.TILDESLEY@HOMEOFFICE.GOV.UK",
+      "0107*CP04",
+      "DT-13:CZ-ZZ:DN-DUMMY:EX-23/07/2020:DV-UNABLE TO CONFIRM",
+      "7306*AA",
+      "0608*7548294",
+      "CONF*LANG:EN",
+      "*CONF*NCX* PROCESSED BY CBR TO PERBT2@HOMEOFFICE.GOV.UK*23JUL*1205Z",
+      "*QSORT* PNR QUEUE SORT SUCCESS - LONWL21HM/Q12C0 - LONWL21HM/Q66C20 27AUG0010",
+      "0106*0706510",
+      "PROFILE UPLOADED BY PORTRAIT",
+      "CONF*SEND TO MAIL VOLUNTARYRETURNS@HOMEOFFICE.GOV.UK",
+      "0650*15:235C9169",
+      "LANGUAGE-EN-GB",
+      "PCCLONWL21HM",
+      "7211*894.74",
+      "0609*NO",
+      "0102*1",
+      "0653*MUSSUUUUUUUA"
+    ],
+    "itineraryRemarks": [
+      "*TLXL*TICKETING DATE NOT SET CONFIRM BY *26/08/2020*",
+      "ALL FARES QUOTED ARE INCLUDING AIRPORT DEPARTURE",
+      "AND SECURITY TAXES AND MAY INCLUDE A NONREFUNDABLE",
+      "PASSPORT AND VISA INFORMATION",
+      "*GB.GOV1002*",
+      "CREDIT CARD FEE APPLIED BY THE AIRLINE",
+      "TRAVELLERS NATIONALITY: UNABLE TO CONFIRM",
+      "FARES ARE NOT GUARANTEED UNTIL YOUR TICKET HAS BEEN ISSUED",
+      "VALID PASSPORT HELD: UNABLE TO CONFIRM",
+      "ON HOLD:AWAITING APPROVAL",
+      "VISA CHECK: UNITED KINGDOM UNABLE TO CONFIRM",
+      "ON HOLD:AWAITING FARE DETAILS",
+      "VISA CHECK: BELGIUM UNABLE TO CONFIRM",
+      "VISA CHECK: GAMBIA UNABLE TO CONFIRM"
+    ]
+  }
+}

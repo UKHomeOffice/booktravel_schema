@@ -1,0 +1,438 @@
+{
+  "reference": "300",
+  "requestId": "2009755",
+  "createdBy": {
+    "groupName": "CWT HEATHROW HOME OFFICE SECTION",
+    "groupEmail": "Homeoffice.lhr.uk@contactcwt.com",
+    "groupTelephone": "0203 353 0392"
+  },
+  "createdDateTime": "2020-08-21T13:30:00",
+  "bookingDetails": {
+    "bookingState": "TICKETED",
+    "bookingId": "22d46753-d8a8-468a-ac0d-57e366a3ab19",
+    "flightDetails": [
+      {
+        "personnelType": "MEDIC",
+        "locator": {
+          "locatorCode": "OLD-UXYQ9G",
+          "lastName": "HOFFMAN"
+        },
+        "itinerary": {
+          "from": {
+            "airportCode": "LHR",
+            "airportName": "HEATHROW",
+            "terminal": "2"
+          },
+          "to": {
+            "airportCode": "LHR",
+            "airportName": "HEATHROW",
+            "terminal": "2"
+          },
+          "segments": [
+            {
+              "segmentNumber": 1,
+              "tickets": [
+                {
+                  "fareType": "ADT",
+                  "lastName": "HOFFMAN",
+                  "firstName": "VIV",
+                  "eTicketNumber": "0573835877151"
+                }
+              ],
+              "airlineCode": "AF",
+              "airlineName": "Air France",
+              "flightNumber": "1081",
+              "departureAirport": {
+                "airportCode": "LHR",
+                "airportName": "HEATHROW",
+                "terminal": "2"
+              },
+              "departureDateTime": "2020-09-05T06:20:00",
+              "arrivalAirport": {
+                "airportCode": "CDG",
+                "airportName": "CHARLES DE GAULLE",
+                "terminal": "2E"
+              },
+              "arrivalDateTime": "2020-09-05T08:35:00",
+              "confirmationNumber": "UXYQ9G"
+            },
+            {
+              "segmentNumber": 2,
+              "tickets": [
+                {
+                  "fareType": "ADT",
+                  "lastName": "HOFFMAN",
+                  "firstName": "VIV",
+                  "eTicketNumber": "0573835877151"
+                }
+              ],
+              "airlineCode": "AF",
+              "airlineName": "Air France",
+              "flightNumber": "741",
+              "departureAirport": {
+                "airportCode": "CDG",
+                "airportName": "CHARLES DE GAULLE",
+                "terminal": "2E"
+              },
+              "departureDateTime": "2020-09-05T11:35:00",
+              "arrivalAirport": {
+                "airportCode": "SDQ",
+                "airportName": "AEROPUERTO DE LAS AMERICAS"
+              },
+              "arrivalDateTime": "2020-09-05T18:25:00",
+              "confirmationNumber": "UXYQ9G"
+            },
+            {
+              "segmentNumber": 3,
+              "tickets": [
+                {
+                  "fareType": "ADT",
+                  "lastName": "HOFFMAN",
+                  "firstName": "VIV",
+                  "eTicketNumber": "0573835877151"
+                }
+              ],
+              "airlineCode": "AF",
+              "airlineName": "Air France",
+              "flightNumber": "741",
+              "departureAirport": {
+                "airportCode": "SDQ",
+                "airportName": "AEROPUERTO DE LAS AMERICAS"
+              },
+              "departureDateTime": "2020-09-07T20:10:00",
+              "arrivalAirport": {
+                "airportCode": "CDG",
+                "airportName": "CHARLES DE GAULLE",
+                "terminal": "2E"
+              },
+              "arrivalDateTime": "2020-09-08T10:55:00",
+              "confirmationNumber": "UXYQ9G"
+            },
+            {
+              "segmentNumber": 4,
+              "tickets": [
+                {
+                  "fareType": "ADT",
+                  "lastName": "HOFFMAN",
+                  "firstName": "VIV",
+                  "eTicketNumber": "0573835877151"
+                }
+              ],
+              "airlineCode": "AF",
+              "airlineName": "Air France",
+              "flightNumber": "1280",
+              "departureAirport": {
+                "airportCode": "CDG",
+                "airportName": "CHARLES DE GAULLE",
+                "terminal": "2E"
+              },
+              "departureDateTime": "2020-09-08T16:00:00",
+              "arrivalAirport": {
+                "airportCode": "LHR",
+                "airportName": "HEATHROW",
+                "terminal": "2"
+              },
+              "arrivalDateTime": "2020-09-08T16:25:00",
+              "confirmationNumber": "UXYQ9G"
+            }
+          ],
+          "totalCost": 143.70,
+          "costCurrency": "GBP"
+        }
+      },
+      {
+        "personnelType": "MEDIC",
+        "locator": {
+          "locatorCode": "OLD-UXYQ9G",
+          "lastName": "LEHAN"
+        },
+        "itinerary": {
+          "to": {
+            "airportCode": "LHR",
+            "airportName": "HEATHROW",
+            "terminal": "2"
+          },
+          "from": {
+            "airportCode": "LHR",
+            "airportName": "HEATHROW",
+            "terminal": "2"
+          },
+          "segments": [
+            {
+              "segmentNumber": 5,
+              "tickets": [
+                {
+                  "fareType": "ADT",
+                  "lastName": "LEHAN",
+                  "firstName": "JOHN",
+                  "eTicketNumber": "0573835877152"
+                }
+              ],
+              "airlineCode": "AF",
+              "airlineName": "Air France",
+              "flightNumber": "1081",
+              "departureAirport": {
+                "airportCode": "LHR",
+                "airportName": "HEATHROW",
+                "terminal": "2"
+              },
+              "departureDateTime": "2020-09-05T06:20:00",
+              "arrivalDateTime": "2020-09-05T08:35:00",
+              "arrivalAirport": {
+                "airportCode": "CDG",
+                "airportName": "CHARLES DE GAULLE",
+                "terminal": "2E"
+              },
+              "confirmationNumber": "UXYQ9G"
+            },
+            {
+              "segmentNumber": 6,
+              "tickets": [
+                {
+                  "fareType": "ADT",
+                  "lastName": "LEHAN",
+                  "firstName": "JOHN",
+                  "eTicketNumber": "0573835877152"
+                }
+              ],
+              "airlineCode": "AF",
+              "airlineName": "Air France",
+              "flightNumber": "741",
+              "departureAirport": {
+                "airportCode": "CDG",
+                "airportName": "CHARLES DE GAULLE",
+                "terminal": "2E"
+              },
+              "departureDateTime": "2020-09-05T11:35:00",
+              "arrivalDateTime": "2020-09-05T18:25:00",
+              "arrivalAirport": {
+                "airportCode": "SDQ",
+                "airportName": "AEROPUERTO DE LAS AMERICAS"
+              },
+              "confirmationNumber": "UXYQ9G"
+            },
+            {
+              "segmentNumber": 7,
+              "tickets": [
+                {
+                  "fareType": "ADT",
+                  "lastName": "LEHAN",
+                  "firstName": "JOHN",
+                  "eTicketNumber": "0573835877152"
+                }
+              ],
+              "airlineCode": "AF",
+              "airlineName": "Air France",
+              "flightNumber": "741",
+              "departureAirport": {
+                "airportCode": "SDQ",
+                "airportName": "AEROPUERTO DE LAS AMERICAS"
+              },
+              "departureDateTime": "2020-09-07T20:10:00",
+              "arrivalDateTime": "2020-09-08T10:55:00",
+              "arrivalAirport": {
+                "airportCode": "CDG",
+                "airportName": "CHARLES DE GAULLE",
+                "terminal": "2E"
+              },
+              "confirmationNumber": "UXYQ9G"
+            },
+            {
+              "segmentNumber": 8,
+              "tickets": [
+                {
+                  "fareType": "ADT",
+                  "lastName": "LEHAN",
+                  "firstName": "JOHN",
+                  "eTicketNumber": "0573835877152"
+                }
+              ],
+              "airlineCode": "AF",
+              "airlineName": "Air France",
+              "flightNumber": "1280",
+              "departureAirport": {
+                "airportCode": "CDG",
+                "airportName": "CHARLES DE GAULLE",
+                "terminal": "2E"
+              },
+              "departureDateTime": "2020-09-08T16:00:00",
+              "arrivalDateTime": "2020-09-08T16:25:00",
+              "arrivalAirport": {
+                "airportCode": "LHR",
+                "airportName": "HEATHROW",
+                "terminal": "2"
+              },
+              "confirmationNumber": "UXYQ9G"
+            }
+          ],
+          "totalCost": 143.70,
+          "costCurrency": "GBP"
+        }
+      }
+    ],
+    "generalRemarks": [
+      "7211*2013.90\\n2013.90",
+      "9995*ZZ",
+      "CONF*SEND TO MAIL RLCOMPLEXCASES@HOMEOFFICE.GSI.GOV.UK",
+      "PROFILE UPLOADED BY PORTRAIT",
+      "7303*2013.90\\n2013.90",
+      "0609*YES",
+      "BF-GBP1599.00:PCC-284 AG-AV03",
+      "ROOMPREF-NON SMOKING/NO PREFERENCE/NO PREFERENCE/",
+      "*QSORT* PNR QUEUE SORT SUCCESS - LONWL21HM/Q12C0 - LONWL21HM/Q66C20 27AUG0010",
+      "7302*2013.90\\n2013.90",
+      "6311*0TO",
+      "0604*JACQUELINE.SLANEY",
+      "DT-13:CZ-ZZ:DN-DUMMY:EX-21/08/2020:DV-UNABLE TO CONFIRM",
+      "BOOK-LONWL21HM/TKT-LONWL21HM/CC-UK",
+      "0107*AV03",
+      "CONF*LANG:EN",
+      "**********************************",
+      "SEAT-NA",
+      "7302*143.70",
+      "CONF*SEND TO MAIL JACQUELINE.SLANEY@HOMEOFFICE.GOV.UK",
+      "0609*YES",
+      "*CONF*NCX* PROCESSED BY CBR TO JACQUELINE.SLANEY@HOMEOFFICE.GOV.UK*21AUG*1336Z",
+      "BF-GBP1599.00:CHGS-SCHEDULE CHANGE PERMITTED FREE OF CHARGE",
+      "0106*0706508",
+      "PCCLONWL21HM",
+      "0604*JACQUELINE.SLANEY",
+      "LANGUAGE-EN-GB",
+      "PREF SEAT-NA",
+      "*CONF*NCX* PROCESSED BY CBR TO RLCOMPLEXCASES@HOMEOFFICE.GSI.GOV.UK*26AUG*1631Z",
+      "0650*14:1CA5719F",
+      "0653*MUSSUUUUUUUA",
+      "*****************************",
+      "7305*ZZ",
+      "CONF*SEND TO MAIL CCDREMOVALS@HOMEOFFICE.GOV.UK",
+      "0610*2009755",
+      "*CONF*NCX* PROCESSED BY CBR TO PERBT2@HOMEOFFICE.GOV.UK*21AUG*1336Z",
+      "BF-GBP1599.00:CANX-FULL REFUND",
+      "*DS FORMAT V3.0",
+      "0606*ESCORT",
+      "CITIZENSHIP-ZZ",
+      "PREF CAR TY-ICAR",
+      "*CONF*NCX* PROCESSED BY CBR TO JACQUELINE.SLANEY@HOMEOFFICE.GOV.UK*26AUG*1631Z",
+      "0113*20200821",
+      "0601*CCC",
+      "INBOUND REBOOKED TO SDQ-CDG-LHR AS REQUESTED BY MITIE-AV",
+      "PORTRAIT CLIENT TOP:HOME OFFICE IMMIGRATION",
+      "7303*143.70",
+      "CONF*TEAM:UK021008*UK AMA HOME OFFICE",
+      "0610*2009755",
+      "*CONF*NCX* PROCESSED BY CBR TO CCDREMOVALS@HOMEOFFICE.GOV.UK*21AUG*1336Z",
+      "BF-GBP1599.00:APP-AF:RERTE-PERMITTED",
+      "TEAM IMM-021",
+      "CONF*NOMINIRULES*",
+      "0606*ESCORT",
+      "NAME-VIV//HOFFMAN",
+      "*** 24HSC INSTRUCTIONS - USE POWER LIBRARY ***",
+      "1005*Y",
+      "*CONF*NCX* PROCESSED BY CBR TO CCDREMOVALS@HOMEOFFICE.GOV.UK*26AUG*1631Z",
+      "3311*0TO",
+      "0601*CCC",
+      "PORTRAIT SUBUNIT:UK- HOME OFFICE IMMIGRATION ESCORTS",
+      "7306*YY",
+      "PCHK:AVP4236-TA-AIR VENDOR",
+      "9991*143.70",
+      "*CONF*NCX* PROCESSED BY CBR TO OSECONFIRMATIONS@CAREANDCUSTODY-SECURE.CO.UK*21AUG*1336Z",
+      "BF-GBP1599.00:MIN-NO MINIMUM STAY:MAX-ONE YEAR",
+      "SYEXGVS:14:AB26 14:15FB40 14:1475CA 14:1CA5719F T-706508 EN-GB EN-GB",
+      "AQUA PLATINUM TICKETING 21AUG 0902 -20.1.0.9-",
+      "0607*COMPLEX",
+      "DOB-21JUN56/GENDER-M",
+      "***24HSC INSTRUCTIONS-ALSO SEE PROFILE PDN/24HSC***",
+      "0104*284",
+      "0602*9144564",
+      "7211*143.70",
+      "ARRANGER GUID - A:10C342C",
+      "QC-AQUA PLATINUM QC 26AUG 1830 -20.1.0.9-",
+      "9992*143.70",
+      "P AND V : VISA CHECK UNITED KINGDOM - UNABLE TO CONFIRM - 1",
+      "*CONF*NCX* PROCESSED BY CBR TO RLCOMPLEXCASES@HOMEOFFICE.GSI.GOV.UK*21AUG*1501Z",
+      "NO/AISLE/",
+      "0607*COMPLEX",
+      "MERCHANT FEES-0.00",
+      "TRVLR TYPE-ESCORT-UK-G",
+      "1311*0TO",
+      "0602*9144564",
+      "SYMPHONIE EXPRESS PILOT",
+      "7110*YN",
+      "AUTOMAIL-YES",
+      "UA SECTORS CNXLD AND LOGGED FOR REFUND",
+      "0099*U014AXV",
+      "CONF*BAG:3-1PC/4-1PC/5-1PC/6-1PC*",
+      "9993*YY",
+      "P AND V : VISA CHECK FRANCE - UNABLE TO CONFIRM - 1",
+      "PORTRAIT PIN:108016273",
+      "0608*9144564",
+      "BF-GBP1599.00:H-143.70 C-143.70 L-143.70 N-143.70",
+      "AQUA PLATINUM TICKETING 26AUG 1401 -20.1.0.9-",
+      "7311*0TO",
+      "0603*BRM",
+      "TEAM IMM-021",
+      "GUID/CT-14:AB26/SU-14:15FB40",
+      "7105*LON",
+      "LASTUSER-U014AXV-U014AXV",
+      "PEGA ID I-6735659",
+      "QC-E-DHS SECURE FLIGHT DATA INCOMPLETE - MULTI PAX",
+      "7211*1835.04\\n1835.04",
+      "9994*143.70",
+      "P AND V : VISA CHECK DOMINICAN REPUBLIC - UNABLE TO CONFIRM - 1",
+      "7303*1835.04\\n1835.04",
+      "0608*9144564",
+      "BF-GBP1599.00:HC-ZZ LC-YY CL-YN DEST-LON TK-ET INV-1",
+      "VQ-VR FROM AIRLINE-NO ACTION NEEDED-PC REMOVED FROM Q",
+      "7302*2435.04\\n2435.04",
+      "4311*0TO",
+      "0603*BRM",
+      "PCCLONWL21HM",
+      "GUID/TT-14:1475CA/T-14:1CA5719F",
+      "0102*1",
+      "7109*LHR",
+      "ONHOLD:AWAITING APPROVAL",
+      "INBOUND CHANGED TO SDQ-CDG-LHR AS REQUETED BY MITIE-AV"
+    ],
+    "itineraryRemarks": [
+      "SAVINGS ACHIEVED VS HIGH FARE GBP0.00",
+      "VISA CHECK: UNITED KINGDOM UNABLE TO CONFIRM",
+      "MORE ABOUT THESE RESTRICTIONS CONTACT YOUR AIRLINE OR",
+      "THIS FARE WILL BE ISSUED AS AN E TICKET",
+      "SAVINGS MISSED VS LOWEST FARE GBP0.00",
+      "VISA CHECK: FRANCE UNABLE TO CONFIRM",
+      "GO TO WWW.FAA.GOV/ABOUT/INITIATIVES/HAZMATSAFETY",
+      "****************************************************",
+      "MAIN RESTRICTIONS:",
+      "VISA CHECK: DOMINICAN REPUBLIC UNABLE TO CONFIRM",
+      "RI*CO2**DISTANCE 15625*",
+      "*TLXL*TICKETING DATE NOT SET CONFIRM BY *26/08/2020*",
+      "CHANGE OF RESERVATION : SCHEDULE CHANGE PERMITTED FREE OF CHARGE",
+      "TOTAL ADDITIONAL FARE PAYMENT: GBP 143.70",
+      "RI*CO2**CO2 1665.65KG*",
+      "ALL FARES QUOTED ARE INCLUDING AIRPORT DEPARTURE",
+      "IMPORTANT ENTRY REGULATION FOR USA: APPLY FOR YOUR TRAVEL AUTH",
+      "CANCELLATION : FULL REFUND",
+      "*GB.GOV1002*",
+      "ROUTING : LONDON PARIS SANTO DOMINGO PARIS LONDON",
+      "RI*CO2**COMPENSATION 46.64 GBP*",
+      "AND SECURITY TAXES AND MAY INCLUDE A NONREFUNDABLE",
+      "AT LEAST 72H BEFORE DEPARTURE ON HTTPS://ESTA.CBP.DHS.GOV",
+      "VALID ON : AF",
+      "HIGH FARE : GBP143.70",
+      "PASSPORT AND VISA INFORMATION",
+      "CREDIT CARD FEE APPLIED BY THE AIRLINE",
+      "UNITED STATES FEDERAL LAW FORBIDS THE CARRIAGE OF",
+      "MINIMUM STAY : NO MINIMUM STAY",
+      "CHARGED FARE : GBP143.70",
+      "TRAVELLERS NATIONALITY: UNABLE TO CONFIRM",
+      "FARES ARE NOT GUARANTEED UNTIL YOUR TICKET HAS BEEN ISSUED",
+      "CERTAIN HAZARDOUS MATERIALS SUCH AS AEROSOLS FIREWORKS",
+      "MAXIMUM STAY : ONE YEAR",
+      "LOWEST FARE : GBP143.70",
+      "VALID PASSPORT HELD: UNABLE TO CONFIRM",
+      "ON HOLD:AWAITING APPROVAL",
+      "AND FLAMMABLE LIQUIDS ABOARD THE AIRCRAFT. TO LEARN",
+      "REROUTING : PERMITTED"
+    ]
+  }
+}

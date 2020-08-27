@@ -205,7 +205,7 @@
         "type": "object",
         "properties": {
           "segmentNumber": {
-            "exclusiveMinimum": 0,
+            "exclusiveMinimum": true,
             "minimum": 0,
             "type": "integer",
             "multipleOf": 1
@@ -293,7 +293,8 @@
         }
       },
       "required": [
-        "airportCode"
+        "airportCode",
+        "airportName"
       ],
       "additionalProperties": false
     },
@@ -330,6 +331,7 @@
         "required": [
           "firstName",
           "lastName",
+          "eTicketNumber",
           "fareType"
         ],
         "additionalProperties": false
