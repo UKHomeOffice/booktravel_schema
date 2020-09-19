@@ -25,7 +25,9 @@
         "Complete",
         "NotComplete",
         "AuthorityCancelled",
-        "SupplierCancelled"
+        "SupplierCancelled",
+        "InProgress",
+        "FlightTakingOff"
       ]
     },
     "movementDetails": {

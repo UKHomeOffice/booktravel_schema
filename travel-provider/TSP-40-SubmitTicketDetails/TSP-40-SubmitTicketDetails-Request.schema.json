@@ -84,7 +84,7 @@
       "properties": {
         "bookingId": {
           "type": "string",
-          "description": "Booking ID OR Itinerary Number issued by the GDS (Global distribution systems - travel networking systems used by travel agencies)"
+          "description": "Alphanumeric value upto 60 characters. Booking ID OR Itinerary Number issued by the GDS (Global distribution systems - travel networking systems used by travel agencies)."
         },
         "bookingState": {
           "type": "string",
