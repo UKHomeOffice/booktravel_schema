@@ -1,0 +1,175 @@
+[
+    {
+        "internal_handle": {
+            "unique_identifier": "acf5be43264ac8d2da2e39482e4ddd81a760b80b53a375c3f43222c5c4fd8c60",
+            "visibility_marker": "DEFAULT",
+            "interface_identifier": "ACTION_ARRANGE_TRAVEL__16299649_1602757617907_db6662eb-e66a-42d6-a8bb-32c07e198f2d"
+        },
+        "external_handle": null,
+        "identifiers": {
+            "INVOLVEMENT": {
+                "unique_identifier": "11ea6e8b5c051423213505ae986c2d06c78978edadcd8494923024f04c307843",
+                "visibility_marker": "DEFAULT",
+                "interface_identifier": "1602757617907"
+            },
+            "SERVICE_DELIVERY": {
+                "unique_identifier": "2349cf96e330b2d20ae2add583f75410fffca2623098a8a4eebbba4c3b7e2c5f",
+                "visibility_marker": "DEFAULT",
+                "interface_identifier": "16299649"
+            }
+        },
+        "event_date": "2020-10-15T17:12:44.958",
+        "event_type": "ACTION_ARRANGE_TRAVEL",
+        "ipf_vertical": "EAB",
+        "linked_events": [],
+        "event_attributes": {
+            "BOOKING_REF|1": {
+                "value": "P5IIG8",
+                "value_type": "string",
+                "description": "Segment Confirmation Number",
+                "group_id": 1,
+                "group_type": null,
+                "data_type": "STRING",
+                "association_id": null,
+                "association_type": null,
+                "reference_data_set": null
+            },
+            "TRAVEL_STATUS|1": {
+                "value": "CANCELLED",
+                "value_type": "string",
+                "description": "BRM Booking State",
+                "group_id": 1,
+                "group_type": null,
+                "data_type": "STRING",
+                "association_id": null,
+                "association_type": null,
+                "reference_data_set": null
+            },
+            "DATE_CANCELLATION|1": {
+                "value": "2020-10-15",
+                "value_type": "string",
+                "description": "Date when Cancellation Received",
+                "group_id": 1,
+                "group_type": null,
+                "data_type": "STRING",
+                "association_id": null,
+                "association_type": null,
+                "reference_data_set": null
+            },
+            "CANCELLATION_REASON|1": {
+                "value": "Alternative Departure:Departure Date Rescheduled",
+                "value_type": "string",
+                "description": "Reason for cancellation",
+                "group_id": 1,
+                "group_type": null,
+                "data_type": "STRING",
+                "association_id": null,
+                "association_type": null,
+                "reference_data_set": null
+            },
+            "CANCEL_REASON_OTHER|1": {
+                "value": "As subject is travelling on an ETD he must arrive on a week day between  09:00 - 16:00",
+                "value_type": "string",
+                "description": "User Inputs for cancellation",
+                "group_id": 1,
+                "group_type": null,
+                "data_type": "STRING",
+                "association_id": null,
+                "association_type": null,
+                "reference_data_set": null
+            }
+        },
+        "references": {},
+        "created_by": "ie_at_caseworker",
+        "created": "2020-10-15T17:12:44.958",
+        "user": null,
+        "group_id": null
+    },
+    {
+        "internal_handle": {
+            "unique_identifier": "f5838df0cb4f9a79dcd035beee50ec9b33d23f03aea75756d861479c11babfc1",
+            "visibility_marker": "DEFAULT",
+            "interface_identifier": "ACTION_ARRANGE_TRAVEL__16299649_1602757617907_c3240e13-f4af-4705-badc-69546852ade2"
+        },
+        "external_handle": null,
+        "identifiers": {
+            "INVOLVEMENT": {
+                "unique_identifier": "11ea6e8b5c051423213505ae986c2d06c78978edadcd8494923024f04c307843",
+                "visibility_marker": "DEFAULT",
+                "interface_identifier": "1602757617907"
+            },
+            "SERVICE_DELIVERY": {
+                "unique_identifier": "2349cf96e330b2d20ae2add583f75410fffca2623098a8a4eebbba4c3b7e2c5f",
+                "visibility_marker": "DEFAULT",
+                "interface_identifier": "16299649"
+            }
+        },
+        "event_date": "2020-10-30T12:32:17.758",
+        "event_type": "ACTION_ARRANGE_TRAVEL",
+        "ipf_vertical": "EAB",
+        "linked_events": [],
+        "event_attributes": {
+            "BOOKING_REF|1": {
+                "value": "S2U4EE",
+                "value_type": "string",
+                "description": "Segment Confirmation Number",
+                "group_id": 1,
+                "group_type": null,
+                "data_type": "STRING",
+                "association_id": null,
+                "association_type": null,
+                "reference_data_set": null
+            },
+            "TRAVEL_STATUS|1": {
+                "value": "CANCELLED",
+                "value_type": "string",
+                "description": "BRM Booking State",
+                "group_id": 1,
+                "group_type": null,
+                "data_type": "STRING",
+                "association_id": null,
+                "association_type": null,
+                "reference_data_set": null
+            },
+            "DATE_CANCELLATION|1": {
+                "value": "2020-10-30",
+                "value_type": "string",
+                "description": "Date when Cancellation Received",
+                "group_id": 1,
+                "group_type": null,
+                "data_type": "STRING",
+                "association_id": null,
+                "association_type": null,
+                "reference_data_set": null
+            },
+            "CANCELLATION_REASON|1": {
+                "value": "Administrative:Tickets",
+                "value_type": "string",
+                "description": "Reason for cancellation",
+                "group_id": 1,
+                "group_type": null,
+                "data_type": "STRING",
+                "association_id": null,
+                "association_type": null,
+                "reference_data_set": null
+            },
+            "CANCEL_REASON_OTHER|1": {
+                "value": "Subject's name on the ETD differ to name on booking",
+                "value_type": "string",
+                "description": "User Inputs for cancellation",
+                "group_id": 1,
+                "group_type": null,
+                "data_type": "STRING",
+                "association_id": null,
+                "association_type": null,
+                "reference_data_set": null
+            }
+        },
+        "references": {},
+        "created_by": "ie_at_caseworker",
+        "created": "2020-10-30T12:32:17.758",
+        "user": null,
+        "group_id": null
+    }
+    
+]

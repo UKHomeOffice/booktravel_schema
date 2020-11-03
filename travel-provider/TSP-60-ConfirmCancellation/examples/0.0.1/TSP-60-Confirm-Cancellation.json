@@ -1,0 +1,22 @@
+{
+  "requestId": "2939314",
+  "bookingId": "vivek9b5-c55a-4dce-8a8b-8c5473adbcfa",
+  "locator": {
+    "locatorCode": "OLD-VIV1",
+    "lastName": "Kumar"
+  },
+  "createdBy": {
+    "name": "CWT User",
+    "email": "cwtuser@cwt.com",
+    "telephone": "0209 843 9991",
+    "groupName": "BRM-CWT",
+    "groupEmail": "BRMCancel@cwt.com",
+    "groupTelephone": "0209 843 9992",
+    "groupCode": "BRM101111"
+  },
+  "createdDateTime": "2020-11-03T17:10:20",
+  "generalRemarks": [
+    "General Remark 1",
+    "General Remark 2"
+  ]
+}
