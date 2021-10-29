@@ -11,7 +11,8 @@
         "Home Office",
         "BPMS",
         "SHELL VPOB"
-      ]
+      ],
+      "default": "Home Office"
     },
     "travelType": {
       "description": "Type of travel booking request",
@@ -177,17 +178,15 @@
               },
               "unstructuredRemarks": {
                 "description": "This is a free text"
-              },
-              "additionalProperties": false,
-              "description": "Whether or not the traveler is is detention and details about the place of detention"
+              }
             },
+            "additionalProperties": false,
             "required": [
               "firstName",
               "lastName",
               "dateOfBirth",
               "gender",
-              "nationality",
-              "isDetained"
+              "nationality"
             ]
           },
           "travelDocument": {
@@ -256,11 +255,11 @@
               "frequentFlyerNumber": {
                 "description": "Mostly used for Escorts",
                 "type": "string"
-              },
-              "required": [
-                "documentType"
-              ]
-            }
+              }
+            },
+            "required": [
+              "documentType"
+            ]
           },
           "preferences": {
             "type": "object",
@@ -274,23 +273,27 @@
                 ]
               },
               "specialAssistance": {
-                "description": "Any special assistance required - this is a Free Text",
+                "description": "Any special assistance required",
                 "type": "string"
               },
-              "mealPreference": {
-                "description": "Type of meal required ",
-                "type": "string",
-                "enum": [
-                  "Vegetarian",
-                  "Child",
-                  "Baby",
-                  "Muslim",
-                  "Hindu",
-                  "Diabetic",
-                  "Other",
-                  "They need a meal to cater for Nut allergy"
-                ],
-                "default": "Vegetarian"
+              "mealPreferences": {
+                "description": "Type of meal. e.g. Vegetarian does not contain meat, fish, fowl, eggs, honey, dairy products or derivatives. Hindu meal is vegetarian, meat-free and may include curries and spicy flavors",
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "Baby",
+                    "Child meal",
+                    "Diabetic",
+                    "Vegetarian",
+                    "Gluten intolerant",
+                    "Hindu",
+                    "Muslim",
+                    "Other",
+                    "Nut allergy"
+                  ],
+                  "default": "Vegetarian"
+                }
               }
             }
           },
@@ -355,11 +358,35 @@
           },
           "escortsMedicsSpottersRequired": {
             "description": "This will include the value for escorts, medics and/or spotters",
-            "type": "string",
-            "enum": [
-              "Escorts",
-              "Medics",
-              "Spotters"
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "Escorts",
+                "Medics",
+                "Spotters"
+              ]
+            }
+          },
+          "spotterDetails": {
+            "type": "object",
+            "properties": {
+              "detailsKnown": {
+                "type": "boolean",
+                "description": "This will indicate whether the details of the spotter is known"
+              },
+              "name": {
+                "type": "string",
+                "description": "Spotter name"
+              },
+              "location": {
+                "type": "string",
+                "description": "Where the spotter is based"
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "detailsKnown"
             ]
           },
           "outstandingBarriers": {
