@@ -321,24 +321,12 @@
               "complexCase"
             ]
           },
-          "riskInformation": {
-            "description": "Risks associated with the Traveler and other details",
-            "properties": {
-              "risks": {
-                "type": "array",
-                "description": "List of risks",
-                "minItems": 1,
-                "items": {
-                  "type": "string",
-                  "description": "Risk information e.g. Self harm, Suicide, Escape, Food Refusal, Medical etc "
-                }
-              },
-              "details": {
-                "type": "string",
-                "description": "These are specific details entered by the Caseworker for the Escort and Travel Team about the Risks"
-              }
-            },
-            "additionalProperties": false
+          "risksPosed": {
+            "type": "array",
+            "description": "Risks are provided by the caseworker in BRM",
+            "items": {
+              "$ref": "#/definitions/risk"
+            }
           },
           "previousFailedReturnDetails": {
             "description": "Details about any previous failed returns of the Traveler",
@@ -642,6 +630,37 @@
       "additionalProperties": false,
       "required": [
         "isRestricted"
+      ]
+    },
+    "risk": {
+      "description": "Risks associated with the returnee that caseworker decides to share with CWT ",
+      "properties": {
+        "riskCode": {
+          "type": "string",
+          "description": "This will be the Risk code e.g. ACDT, Arson etc "
+        },
+        "riskDescription": {
+          "type": "string",
+          "description": "Descriptions for the codes e.g. Existing Medical Condition, Escape Risk"
+        },
+        "riskStartDate": {
+          "type": "string",
+          "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$",
+          "description": "Date in the ISO-8601 format of YYYY-MM-DD for when the risk starts"
+        },
+        "riskEndDate": {
+          "type": "string",
+          "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$",
+          "description": "Date in the ISO-8601 format of YYYY-MM-DD for when the risk ends"
+        },
+        "additionalInformation": {
+          "type": "string",
+          "description": "Agent entered information e.g. Has a conviction for threatening the travel staff with a bladed article"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "riskCode"
       ]
     },
     "specificFlights": {

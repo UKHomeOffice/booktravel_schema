@@ -7,7 +7,7 @@
   "properties": {
     "quoteRef": {
       "type": "string",
-      "description": "Unique Id generated for this quote request (the OSE booking request id)"
+      "description": "Unique Id generated for this quote request. Its the same as OSE booking requestId"
     },
     "requestAuthoriser": {
       "$ref": "#/definitions/requester",
@@ -296,7 +296,11 @@
           ]
         },
         "risksPosed": {
-          "$ref": "#/definitions/riskInformation"
+          "type": "array",
+          "description": "Risks are provided by the caseworker in BRM",
+          "items": {
+            "$ref": "#/definitions/risk"
+          }
         }
       },
       "additionalProperties": false,
@@ -324,22 +328,36 @@
         "code"
       ]
     },
-    "riskInformation": {
-      "description": "Risks associated with the person and other details",
+    "risk": {
+      "description": "Risks associated with the returnee that caseworker decides to shared with CWT and Mitie OSE Team",
       "properties": {
-        "risks": {
-          "type": "array",
-          "description": "List of risks",
-          "minItems": 1,
-          "items": {
-            "type": "string"
-          }
+        "riskCode": {
+          "type": "string",
+          "description": "This will be the Risk code e.g. Acdt, Arson etc "
         },
-        "details": {
-          "type": "string"
+        "riskDescription": {
+          "type": "string",
+          "description": "Descriptions for the codes e.g. Existing Medical Condition, Escape Risk"
+        },
+        "riskStartDate": {
+          "type": "string",
+          "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$",
+          "description": "Date in the ISO-8601 format of YYYY-MM-DD for when the risk starts"
+        },
+        "riskEndDate": {
+          "type": "string",
+          "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$",
+          "description": "Date in the ISO-8601 format of YYYY-MM-DD for when the risk ends"
+        },
+        "additionalInformation": {
+          "type": "string",
+          "description": "Agent entered information e.g. High BP, Burglary etc."
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "required": [
+        "riskCode"
+      ]
     },
     "detentionDetails": {
       "description": "Whether or not subject is is detention and details about the place of detention",
