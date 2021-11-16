@@ -43,6 +43,11 @@
     "subject": {
       "$ref": "#/definitions/subject",
       "description": "The person/s who needs to be escorted"
+    },
+    "additionalInformation": {
+      "type": "string",
+      "description": "Extra information for agent. For e.g. Baggage needs to be collected en-route",
+      "minLength": 1
     }
   },
   "required": [
@@ -59,6 +64,21 @@
       "properties": {
         "ceprReference": {
           "type": "string",
+          "description": "Person id found in the cid which is the same as CEPR from Atlas",
+          "minLength": 1
+        },
+        "homeOfficeReference": {
+          "type": "string",
+          "minLength": 1
+        },
+        "portReference": {
+          "type": "string",
+          "description": "Port Reference Number if present. Used in case of transport from Ferry etc",
+          "minLength": 1
+        },
+        "nomsReference": {
+          "type": "string",
+          "description": "NOMS Reference Number if present",
           "minLength": 1
         },
         "prisonNumber": {
@@ -118,6 +138,25 @@
           "items": {
             "$ref": "#/definitions/risk"
           }
+        },
+        "languages": {
+          "type": "array",
+          "description": "Languages spoken or understood by the returnee that may assist transportation",
+          "items": {
+            "type": "string"
+          }
+        },
+        "references": {
+          "type": "array",
+          "description": "Any references that are required. For e.g. IFB Reference",
+          "items": {
+            "$ref": "#/definitions/reference"
+          }
+        },
+        "notes": {
+          "type": "string",
+          "description": "Person specific notes applicable to the returnee",
+          "minLength": 1
         }
       },
       "required": [
@@ -338,6 +377,42 @@
       "additionalProperties": false,
       "required": [
         "riskCode"
+      ]
+    },
+    "reference": {
+      "description": "Any references associated with the returnee that caseworker decides to shared with CWT and Mitie OSE Team",
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "Unique Reference Code e.g. NOMSREF, HO_FILE_REF etc"
+        },
+        "referenceValue": {
+          "type": "string",
+          "description": "Value assigned to the returnee for the code. e.g. V34543587"
+        },
+        "shortDescription": {
+          "type": "string",
+          "description": "Short Description for the codes e.g. NOMS Reference"
+        },
+        "longDescription": {
+          "type": "string",
+          "description": "Long Description for the codes e.g. National Offender Management System (NOMS) Reference"
+        },
+        "creationDate": {
+          "type": "string",
+          "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$",
+          "description": "Date in the ISO-8601 format yyyy-MM-dd when the reference is created"
+        },
+        "expiryDate": {
+          "type": "string",
+          "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$",
+          "description": "Date in the ISO-8601 format yyyy-MM-dd when the reference is expiring"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "referenceValue"
       ]
     },
     "address": {
