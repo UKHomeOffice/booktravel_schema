@@ -12,7 +12,7 @@
   "subjects": [
     {
       "homeOfficeReference": "HRF28032018160932",
-      "personId": "23424342",
+      "ceprReference": "23424342",
       "firstName": "Jane",
       "lastName": "Doe",
       "aliases": ["JA"],

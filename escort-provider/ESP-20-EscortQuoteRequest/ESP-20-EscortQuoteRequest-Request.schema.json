@@ -174,9 +174,9 @@
       "type": "object",
       "description": "Subject details. person Id is always present. Mostly HO OR Port Reference is present",
       "properties": {
-        "personId": {
+        "ceprReference": {
           "type": "string",
-          "description": "Person id found in the cid",
+          "description": "Atlas CEPR which is the same as Person id found in the CID system",
           "minLength": 1
         },
         "homeOfficeReference": {
@@ -243,7 +243,7 @@
         }
       },
       "additionalProperties": false,
-      "required": ["personId", "firstName", "dateOfBirth", "gender"]
+      "required": ["ceprReference", "firstName", "dateOfBirth", "gender"]
     },
     "risk": {
       "properties": {
