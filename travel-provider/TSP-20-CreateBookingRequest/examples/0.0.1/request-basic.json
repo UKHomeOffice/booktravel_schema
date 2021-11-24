@@ -1,7 +1,7 @@
 {
-  "companyId": "Home Office",
-  "travelType": "Flight",
-  "actionType": "New",
+  "clientAccountNumber": "Home Office",
+  "travelServices": "Flight",
+  "status": "New",
   "key": "CWT4534",
   "requestId": 123456,
   "requester": {
@@ -16,7 +16,7 @@
       "reference": "HO123",
       "travelerId": "CID123",
       "travelerType": "DEPU",
-      "routeType": "OneWay",
+      "wayDirection": "outbound",
       "travelerDetails": {
         "firstName": "John",
         "lastName": "Doe",
@@ -27,7 +27,7 @@
       "reference": "HO214",
       "travelerId": "CID234",
       "travelerType": "DEPU",
-      "routeType": "Return",
+      "wayDirection": "Return",
       "travelerDetails": {
         "firstName": "Jane",
         "lastName": "Day",
@@ -37,7 +37,7 @@
   ],
   "flights": {
     "refundableRequired": true,
-    "flightClass": "Economy",
+    "bookingClass": "Economy",
     "flightDetails": {
       "departureAirport": "London Heathrow",
       "departureAirportCode": "LHR",
@@ -45,13 +45,13 @@
       "preferredDepartureTime": "11:25",
       "earliestDepartureDate": "2018-09-12",
       "latestDepartureDate": "2018-11-21",
-      "flightNumber": "PK-308",
+      "number": "PK-308",
       "arrivalAirport": "Karachi",
       "arrivalAirportCode": "KHI",
-      "arrivalDate": "2018-09-13",
+      "earliestArrivalDate": "2018-09-13",
       "preferredArrivalTime": "04:45"
     },
-    "routeType": "Air Boeing 747-400",
+    "wayDirection": "Air Boeing 747-400",
     "routingConsiderations": "Direct Flight Only",
     "additionalInformation": "Some Additional Information"
   }

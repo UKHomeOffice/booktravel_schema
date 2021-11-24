@@ -70,7 +70,7 @@
       "type": "object",
       "description": "Flight details.",
       "properties": {
-        "flightNumber": {
+        "number": {
           "type": "string"
         },
         "departureDateTime": {
@@ -80,7 +80,7 @@
         }
       },
       "required": [
-        "flightNumber"
+        "number"
       ],
       "additionalProperties": false
     }
