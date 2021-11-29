@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "OSE-45-CancelEscortingRequest-Response.schema",
+  "title": "OSE-20-OverseasQuoteResponse",
   "version": "0.0.1",
   "description": "Schema for ESP response to an escorting request. Processing the request is asynchronous so this response payload simply includes a ESP generated receipt Id.",
   "properties": {

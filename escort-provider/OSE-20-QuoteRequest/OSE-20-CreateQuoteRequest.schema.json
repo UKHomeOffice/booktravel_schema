@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "OSE-20-CreateEscortingRequest-Request.schema",
+  "title": "OSE-20-OverseasQuoteRequest",
   "version": "0.0.1",
   "description": "Schema for escort quote request sent by BRM to escort provider",
   "properties": {

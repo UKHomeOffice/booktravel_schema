@@ -1,9 +1,9 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "OSE-80-EscortRemovalRequest Request Schema",
+  "title": "OSE-80-RemovalRequest",
   "version": "0.0.1",
-  "description": "Schema for escort booking request sent by RMP to escort provider",
+  "description": "Movement Order request to move the detainee(s) from their current holding location to the appropriate airport terminal",
   "properties": {
     "quoteRef": {
       "type": "string",

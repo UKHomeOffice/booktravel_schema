@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "OSE-45-CancelEscortingRequest-Request.schema",
+  "title": "OSE-45-CancelQuoteBookingRequest",
   "version": "0.0.1",
   "description": "Schema for cancelling a previously requested escort booking.",
   "properties": {

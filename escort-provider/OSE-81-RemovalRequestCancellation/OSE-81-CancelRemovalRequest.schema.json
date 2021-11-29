@@ -1,9 +1,9 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "OSE-81-CancelMovementRequest Request Schema",
+  "title": "OSE-81-CancelRemovalRequest",
   "version": "0.0.1",
-  "description": "Schema for cancelling a previously requested escort booking.",
+  "description": "Movement Order request cancellation so that not to move the detainee(s) to the airport terminal",
   "properties": {
     "quoteRef": {
       "type": "string",

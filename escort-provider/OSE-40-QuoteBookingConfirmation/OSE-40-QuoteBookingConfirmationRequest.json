@@ -1,9 +1,9 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "OSE-40-EscortBookingConfirmation-Request.schema",
+  "title": "OSE-40-QuoteBookingConfirmationRequest",
   "version": "0.0.1",
-  "description": "Schema for sending ticket details received for escorts from CWT to escort provider",
+  "description": "Add or update ESP with the flight data passed over to BRM from TSP using TSP-40 for the Escorts accompanying the returnee",
   "properties": {
     "quoteRef": {
       "type": "string",

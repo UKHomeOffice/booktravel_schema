@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "OSE-25-FulfillmentRequest-Request.schema",
+  "title": "OSE-25-QuoteFulfillmentRequest",
   "version": "0.0.1",
   "description": "ESP confirms the date that the Escorts can be made available",
   "properties": {
