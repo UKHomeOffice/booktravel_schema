@@ -1,0 +1,119 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TspCreateBookingResponse",
+  "version": "1.0.0",
+  "description": "CWT response for the return booking request raised by BRMr",
+  "type": "object",
+  "properties": {
+    "success": {
+      "type": "boolean"
+    },
+    "responseData": {
+      "type": "object",
+      "properties": {
+        "clientRequestId": {
+          "type": "string",
+          "description": "The BRM unique identifier to track the booking request that was submitted"
+        },
+        "caseId": {
+          "type": "string",
+          "description": "The CBR unique id generated for this request that can be used to track the status in CBR OR trace back any failures"
+        },
+        "message": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "clientRequestId",
+        "caseId"
+      ]
+    },
+    "errors": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "message": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "scope": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "stackTrace": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "innerException": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "errorValue": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "expectedValue": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "message"
+          ]
+        }
+      ]
+    },
+    "validationErrors": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "message": {
+              "type": "string"
+            },
+            "field": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "message"
+          ]
+        }
+      ]
+    }
+  },
+  "anyOf": [
+    {
+      "description": "Constraints requiring either success with responseData",
+      "required": [
+        "success",
+        "responseData"
+      ]
+    },
+    {
+      "description": "Constraints requiring failure with the errors that caused failure",
+      "required": [
+        "success",
+        "errors"
+      ]
+    }
+  ]
+}
