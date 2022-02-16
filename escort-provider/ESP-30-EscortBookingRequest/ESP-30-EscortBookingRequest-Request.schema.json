@@ -58,6 +58,11 @@
           "description": "Person id found in the cid system which is the same as CEPR from Atlas",
           "minLength": 1
         },
+        "uan": {
+          "description": "Unique Application Number will be allocated at the point of entry into the immigration system. E.g. 1212-0099-0039-4065",
+          "type": "string",
+          "minLength": 1
+        },
         "homeOfficeReference": {
           "type": "string",
           "minLength": 1

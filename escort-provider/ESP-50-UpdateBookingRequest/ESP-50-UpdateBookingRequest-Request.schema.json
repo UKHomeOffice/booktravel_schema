@@ -9,9 +9,14 @@
       "type": "integer",
       "description": "Unique Id generated for this movement request"
     },
-    "ceprRef": {
+    "ceprReference": {
       "type": "string",
       "description": "The CEPR reference of the person this movement request is for"
+    },
+    "uan": {
+      "description": "Unique Application Number will be allocated at the point of entry into the immigration system. E.g. 1212-0099-0039-4065",
+      "type": "string",
+      "minLength": 1
     },
     "risksPosed": {
       "type": "array",
@@ -23,7 +28,7 @@
   },
   "required": [
     "movementRef",
-    "ceprRef",
+    "ceprReference",
     "risksPosed"
   ],
   "definitions": {
