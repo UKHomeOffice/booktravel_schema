@@ -21,6 +21,11 @@
       "description": "CEPR/Person Id value of the HO system. For a group booking this will be the id of the main traveller",
       "type": "string"
     },
+    "uan": {
+      "description": "Unique Application Number will be allocated at the point of entry into the immigration system. E.g. 1212-0099-0039-4065",
+      "type": "string",
+      "minLength": 1
+    },
     "status": {
       "description": "Identifies the status of the booking request",
       "type": "string",
