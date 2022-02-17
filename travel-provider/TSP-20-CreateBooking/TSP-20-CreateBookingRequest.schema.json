@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
-  "title": "TspCreateBookingRequest",
+  "title": "TSP20CreateBookingRequest",
   "version": "1.0.0",
   "description": "Schema for travel booking request sent to travel provider. Reference http://travelagenthub.blogspot.com/search/label/Amadeus",
   "properties": {
@@ -24,6 +24,11 @@
     "uan": {
       "description": "Unique Application Number will be allocated at the point of entry into the immigration system. E.g. 1212-0099-0039-4065",
       "type": "string",
+      "minLength": 1
+    },
+    "homeOfficeReference": {
+      "type": "string",
+      "description": "This is the HO Reference which may or may not be available",
       "minLength": 1
     },
     "status": {
@@ -93,12 +98,14 @@
         },
         "departureDescription": {
           "description": "Indicates the name of the departure airport if known",
-          "type": "string"
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 150
         },
         "arrivalDescription": {
           "description": "Indicates the name of the arrival airport",
           "type": "string",
-          "minLength": 0,
+          "minLength": 1,
           "maxLength": 150
         },
         "earliestDepartureDate": {
@@ -249,11 +256,6 @@
         }
       ]
     },
-    "homeOfficeReference": {
-      "type": "string",
-      "description": "This is the HO Reference which may or may not be available",
-      "minLength": 1
-    }
   },
   "required": [
     "clientAccountNumber",
