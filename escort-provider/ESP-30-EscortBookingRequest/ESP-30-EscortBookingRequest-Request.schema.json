@@ -59,7 +59,7 @@
           "minLength": 1
         },
         "uan": {
-          "description": "Unique Application Number will be allocated at the point of entry into the immigration system. E.g. 1212-0099-0039-4065",
+          "description": "Unique Application Number will be allocated at the point of entry into the immigration system. E.g. 1212-0099-0039-4065/02",
           "type": "string",
           "minLength": 1
         },
