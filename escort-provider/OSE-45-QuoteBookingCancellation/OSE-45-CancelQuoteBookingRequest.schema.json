@@ -15,6 +15,7 @@
     }
   },
   "required": [
-    "quoteRef"
+    "quoteRef",
+    "reason"
   ]
 }

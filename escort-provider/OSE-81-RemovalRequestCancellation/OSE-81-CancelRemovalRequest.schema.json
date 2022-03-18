@@ -5,14 +5,14 @@
   "version": "0.0.1",
   "description": "Movement Order request cancellation so that not to move the detainee(s) to the airport terminal",
   "properties": {
+    "movementRef": {
+      "type": "integer",
+      "description": "The movement request that is being cancelled"
+    },
     "quoteRef": {
       "type": "string",
       "minLength": 1,
-      "description": "Unique Id generated for this quote request (the OSE booking request id)"
-    },
-    "movementRef": {
-      "type": "integer",
-      "description": "The unique movement request that is being cancelled"
+      "description": "Travel return id generated for this removal quote request (the OSE booking request id)"
     },
     "reason": {
       "type": "string",
@@ -20,8 +20,8 @@
     }
   },
   "required": [
-    "quoteRef",
     "movementRef",
+    "quoteRef",
     "reason"
   ]
 }

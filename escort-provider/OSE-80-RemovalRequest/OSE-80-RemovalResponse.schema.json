@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "OSE-80-RemovalResponse",
+  "title": "OSE-80-RemovalResponse Schema",
   "version": "0.0.1",
   "description": "Schema for ESP response to a movement order request. Processing the request is asynchronous so this response payload simply includes a ESP generated receipt Id.",
   "properties": {

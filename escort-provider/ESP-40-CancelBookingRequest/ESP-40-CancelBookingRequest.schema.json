@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "ESP-40-CancelBookingRequest Request Schema",
+  "title": "ESP-40-CancelBookingRequestSchema",
   "version": "0.0.1",
   "description": "Schema for cancelling a previously requested escort booking.",
   "properties": {
