@@ -430,12 +430,12 @@
         "addressLine1": {
           "type": "string",
           "minLength": 1,
-          "maxLength": 35
+          "maxLength": 90
         },
         "addressLine2": {
           "type": "string",
           "minLength": 1,
-          "maxLength": 35
+          "maxLength": 90
         },
         "addressLine3": {
           "type": "string",
@@ -450,7 +450,7 @@
         "locationName": {
           "type": "string",
           "minLength": 1,
-          "maxLength": 35
+          "maxLength": 90
         },
         "country": {
           "type": "string"
