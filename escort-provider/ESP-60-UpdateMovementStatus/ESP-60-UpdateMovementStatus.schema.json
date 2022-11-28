@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "ESP-60-Movement Request Fulfilment Schema",
+  "title": "ESP-60-UpdateMovementRequest",
   "version": "0.0.1",
   "description": "ESP updates BRM with movement request being processed",
   "properties": {
@@ -10,10 +10,11 @@
       "description": "Unique Id generated for this movement request"
     },
     "status": {
-      "description": "Declined/Supplier Cancelled should only be used by Mitie when it's above the cap. Failed will align to NotComplete",
+      "description": "SupplierCancelled will likely be used by Mitie when move counts is above the cap",
       "enum": [
         "Accepted",
         "InPlanning",
+        "InProgress",
         "InProgressEnRouteCollect",
         "InProgressArrivedCollect",
         "InProgressCompletedCollect",
@@ -22,12 +23,12 @@
         "InProgressCompletedDrop",
         "InProgressStartedWait",
         "InProgressCompletedWait",
-        "Complete",
-        "NotComplete",
+        "FailedIncomplete",
         "AuthorityCancelled",
         "SupplierCancelled",
-        "InProgress",
-        "FlightTakingOff"
+        "FlightTakingOff",
+        "Complete",
+        "NotComplete"
       ]
     },
     "movementDetails": {

@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "ESP-30-EscortBookingRequest Request Schema",
+  "title": "ESP-30-EscortBookingRequest",
   "version": "0.0.1",
   "description": "Schema for ICE booking request sent by BRM to escort provider",
   "properties": {
@@ -191,13 +191,12 @@
             "InitialDetentionAcceptance",
             "Positioning",
             "Transfer",
-            "Appointment",
-            "CourtHearing",
             "Removal",
             "Property",
-            "MedicalAppointment",
+            "Appointment",
+            "CourtHearing",
             "Interview",
-            "UnescortedInterview"
+            "MedicalAppointment"
           ]
         },
         "reason": {

@@ -1,9 +1,9 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "ESP-50-EscortBookingRequest Response Schema",
+  "title": "ESP-50-UpdateRiskInformationResponse Schema",
   "version": "0.0.1",
-  "description": "Schema for ESP response to an escorting request. Processing the request is asynchronous so this response payload simply includes a ESP generated receipt Id.",
+  "description": "",
   "properties": {
     "movementRef": {
       "type": "integer",
