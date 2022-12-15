@@ -7,7 +7,7 @@
   "properties": {
     "quoteRef": {
       "type": "string",
-      "description": "Unique Id generated for this quote request (the OSE booking request id)"
+      "description": "BRM return Id generated for this travel request and it becomes the OSE booking request id"
     },
     "requestAuthoriser": {
       "$ref": "#/definitions/requester",

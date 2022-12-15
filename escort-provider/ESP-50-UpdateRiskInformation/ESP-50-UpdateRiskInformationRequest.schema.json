@@ -1,9 +1,9 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "ESP-50-UpdateBookingRequestSchema",
+  "title": "ESP-50-UpdateRiskInformationRequest Schema",
   "version": "0.0.1",
-  "description": "BRM sends an update to ESP for a previously submitted escort booking request e.g. Risks update",
+  "description": "BRM sends updated Risks to ESP",
   "properties": {
     "movementRef": {
       "type": "integer",

@@ -196,13 +196,12 @@
             "InitialDetentionAcceptance",
             "Positioning",
             "Transfer",
-            "Appointment",
-            "CourtHearing",
             "Removal",
             "Property",
-            "MedicalAppointment",
+            "Appointment",
+            "CourtHearing",
             "Interview",
-            "UnescortedInterview"
+            "MedicalAppointment"
           ]
         },
         "reason": {

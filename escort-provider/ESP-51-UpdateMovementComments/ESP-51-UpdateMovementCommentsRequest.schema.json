@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "ESP-51-UpdateMovementComments Request",
+  "version": "1.0.0",
+  "description": "BRM sends an updated MO comments to ESP",
+  "properties": {
+    "movementRef": {
+      "type": "integer",
+      "description": "Unique Id generated for this movement request"
+    },
+    "ceprReference": {
+      "type": "string",
+      "description": "The CEPR reference of the person"
+    },
+    "additionalInformation": {
+      "type": "string",
+      "description": "Updated movement order comments entered by the operations user"
+    },
+    "quoteRef": {
+      "type": "string",
+      "description": "Unique Id generated for this quote request. Its the same as OSE booking requestId"
+    },
+    "uan": {
+      "description": "Unique Application Number allocated at the point of entry E.g. 1212-0099-0039-4065",
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "movementRef",
+    "ceprReference",
+    "additionalInformation"
+  ]
+}
