@@ -246,11 +246,11 @@
         },
         "from": {
           "$ref": "#/definitions/address",
-          "description": "Manually enterered address where the Journey starts if address not found in pickupLocation"
+          "description": "Manually entered address where the Journey starts if address not found in pickupLocation"
         },
         "to": {
           "$ref": "#/definitions/address",
-          "description": "Manually enterered address where the Journey ends if address not found in dropOffLocation"
+          "description": "Manually entered address where the Journey ends if address not found in dropOffLocation"
         },
         "moveContractor": {
           "description": "Who is doing the move",
@@ -260,6 +260,7 @@
             "CCCharters",
             "CCRobustCrew",
             "CCSuitableCrew",
+            "CCFamilyTeam",
             "CentreContractor",
             "ArrestTeam",
             "HMPrisonService",
