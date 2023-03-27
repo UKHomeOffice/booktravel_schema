@@ -27,13 +27,17 @@
           "riskCode": "DS: Claimed Medical Condition",
           "riskDescription": "High BP",
           "riskStartDate": "2012-02-01",
-          "riskEndDate": "2013-04-03"
+          "riskEndDate": "2013-04-03",
+          "additionalInformation" : "Person has a medical history",
+          "depmuNotes": "Needs a Medic to accompany the person"
         },
         {
           "riskCode": "DS: Criminal Activity,",
           "riskDescription": "Burglary",
           "riskStartDate": "2015-05-01",
-          "riskEndDate": "2018-04-30"
+          "riskEndDate": "2018-04-30",
+          "additionalInformation": "Detainee is refusing to cooperate during transfer preparation",
+          "depmuNotes": "Has a history of attack with Knife"
         }
       ],
       "movementDetails": {

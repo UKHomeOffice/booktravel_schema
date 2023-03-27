@@ -54,7 +54,11 @@
         },
         "additionalInformation": {
           "type": "string",
-          "description": "Agent entered information e.g. High BP, Burglary etc."
+          "description": "Comments entered by the Caseworker in Atlas for the Risk or Alert"
+        },
+        "depmuNotes": {
+          "type": "string",
+          "description": "DEPMU specific notes entered in Atlas for the Risk or Alert"
         }
       },
       "additionalProperties": false,

@@ -15,7 +15,7 @@
     },
     "query": {
       "type": "string",
-      "description": "The query to be raised with DEPMU for clarification"
+      "description": "Query raised by MEDS for DEPMU's clarification"
     }
   },
   "oneOf": [
