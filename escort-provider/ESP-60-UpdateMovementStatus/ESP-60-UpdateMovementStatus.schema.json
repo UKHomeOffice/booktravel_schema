@@ -10,7 +10,7 @@
       "description": "Unique Id generated for this movement request"
     },
     "status": {
-      "description": "SupplierCancelled will likely be used by Mitie when move counts is above the cap",
+      "description": "SupplierCancelled is used by Mitie when move counts is above the cap. FailedIncomplete when movement is cancelled after start",
       "enum": [
         "Accepted",
         "InPlanning",
