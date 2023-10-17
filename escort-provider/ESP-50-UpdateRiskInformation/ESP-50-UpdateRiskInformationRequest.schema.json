@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "ESP-50-UpdateRiskInformationRequest Schema",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "BRM sends updated Risks to ESP",
   "properties": {
     "movementRef": {
@@ -24,6 +24,10 @@
       "items": {
         "$ref": "#/definitions/risk"
       }
+    },
+    "requester": {
+      "$ref": "#/definitions/requester",
+      "description": "The person who raised the movement cancellation request"
     }
   },
   "required": [
@@ -60,6 +64,42 @@
       "additionalProperties": false,
       "required": [
         "riskCode"
+      ]
+    },
+        "requester": {
+      "description": "Details of the requester initiating the cancellation request",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "description": "Email address of the caseworker",
+          "type": "string",
+          "format": "email"
+        },
+        "telephone": {
+          "description": "Telephone number of the requester",
+          "type": "string"
+        },
+        "groupName": {
+          "description": "Group name to which the requester belongs",
+          "type": "string"
+        },
+        "groupEmail": {
+          "description": "Group email of the team to which the requester belongs",
+          "type": "string",
+          "format": "email"
+        },
+        "groupTelephone": {
+          "description": "Group telephone number of the requester",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "email"
       ]
     }
   }
