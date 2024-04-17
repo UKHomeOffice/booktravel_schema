@@ -4,60 +4,78 @@
   "title": "TSP20CreateBookingRequest",
   "version": "1.0.0",
   "description": "Schema for travel booking request sent to travel provider. Reference http://travelagenthub.blogspot.com/search/label/Amadeus",
-  "properties": {
-    "clientAccountNumber": {
+  "properties":
+  {
+    "clientAccountNumber":
+    {
       "type": "string",
-      "description": "CWT client account number for HO. This is as agreed by HO with CWT Client Executive",
+      "description": "TSP client account number for HO. This is as agreed by HO with TSP Client Executive",
       "minLength": 0,
       "maxLength": 20
     },
-    "requestId": {
+    "requestId":
+    {
       "type": "integer",
-      "description": "HO generated request code for this booking to be used in all the correspondence with HO and CWT",
+      "description": "HO generated request code for this booking to be used in all the correspondence with HO, TSP and ESP (if Escorted Booking)",
       "minLength": 0,
       "maxLength": 20
     },
-    "ceprReference": {
+    "ceprReference":
+    {
       "description": "CEPR/Person Id value of the HO system. For a group booking this will be the id of the main traveller",
       "type": "string"
     },
-    "uan": {
+    "uan":
+    {
       "description": "Unique Application Number will be allocated at the point of entry into the immigration system. E.g. 1212-0099-0039-4065",
       "type": "string",
       "minLength": 1
     },
-    "homeOfficeReference": {
+    "homeOfficeReference":
+    {
       "type": "string",
       "description": "This is the HO Reference which may or may not be available",
       "minLength": 1
     },
-    "status": {
-      "description": "Identifies the status of the booking request",
+    "status":
+    {
+      "description": "Identifies the status of the booking request in HO. Not all status may be supplied by TSP",
       "type": "string",
-      "enum": [
-        "newRequest",
-        "updateRequest",
-        "cancelRequest",
-        "cancelRebookRequest"
+      "enum":
+      [
+        "Incomplete",
+        "WaitingForTicket",
+        "Cancelled",
+        "SupplierCancelled",
+        "Rebooked",
+        "CancelRebooked",
+        "SupplierCancelRebooked",
+        "TicketBooked",
+        "Completed"
       ],
-      "default": "newRequest"
+      "default": "WaitingForTicket"
     },
-    "bookingType": {
+    "bookingType":
+    {
       "type": "string",
       "description": "Identifies the kind of booking selected by the caseworker e.g. individual, group, family, escortOnlyIndividual, escortOnlyFamily",
-      "enum": [
+      "enum":
+      [
         "individual",
         "group",
         "family"
       ],
       "default": "individual"
     },
-    "travelServices": {
+    "travelServices":
+    {
       "description": "Type of services needed for this travel booking",
       "type": "array",
-      "items": {
+      "items":
+      {
         "type": "string",
-        "enum": [
+        "enum":
+        [
           "flights",
           "cars",
           "trains",
@@ -67,122 +85,149 @@
         "default": "flights"
       }
     },
-    "travelers": {
+    "travelers":
+    {
       "description": "For a group booking this is all the passengers who are returning as part of the same itinerary",
       "type": "array",
-      "items": {
+      "items":
+      {
         "$ref": "#/definitions/traveler"
       }
     },
-    "flights": {
+    "flights":
+    {
       "description": "Flight details",
       "type": "object",
-      "properties": {
-        "bookingClass": {
+      "properties":
+      {
+        "bookingClass":
+        {
           "description": "These are usually Fare classes e.g. Economy, Premium Economy, Business First",
-          "type": [
+          "type":
+          [
             "string",
             "null"
           ]
         },
-        "isLowCost": {
+        "isLowCost":
+        {
           "description": "Flight low cost",
-          "type": [
+          "type":
+          [
             "boolean",
             "null"
           ]
         },
-        "isRefundable": {
+        "isRefundable":
+        {
           "type": "boolean",
           "description": "Whether or not flight tickets should be refundable"
         },
-        "departureDescription": {
+        "departureDescription":
+        {
           "description": "Indicates the name of the departure airport if known",
           "type": "string",
           "minLength": 1,
           "maxLength": 150
         },
-        "arrivalDescription": {
+        "arrivalDescription":
+        {
           "description": "Indicates the name of the arrival airport",
           "type": "string",
           "minLength": 1,
           "maxLength": 150
         },
-        "earliestDepartureDate": {
+        "earliestDepartureDate":
+        {
           "description": "Earliest date by which the traveler should depart - in ISO-8601 format of yyyy-MM-dd",
           "type": "string",
           "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$"
         },
-        "latestDepartureDate": {
+        "latestDepartureDate":
+        {
           "description": "Latest date by which the traveler should depart - in ISO-8601 format of yyyy-MM-dd",
           "type": "string",
           "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$"
         },
-        "departureCode": {
+        "departureCode":
+        {
           "description": "IATA code of the departure airport",
           "type": "string",
           "minLength": 0,
           "maxLength": 10
         },
-        "preferredDepartureTime": {
+        "preferredDepartureTime":
+        {
           "description": "Preferred time of departure including any restrictions that apply",
           "type": "string"
         },
-        "arrivalCode": {
+        "arrivalCode":
+        {
           "description": "IATA code of the arrival airport",
           "type": "string"
         },
-        "earliestArrivalDate": {
+        "earliestArrivalDate":
+        {
           "description": "Date by which the traveler should arrive at the destination - in ISO-8601 format of yyyy-MM-dd",
           "type": "string",
           "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$"
         },
-        "latestArrivalDate": {
+        "latestArrivalDate":
+        {
           "description": "Latest date by which the traveler should depart - in ISO-8601 format of yyyy-MM-dd",
           "type": "string",
           "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$"
         },
-        "preferredArrivalTime": {
+        "preferredArrivalTime":
+        {
           "description": "Preferred time of arrival including any restrictions that apply",
           "type": "string"
         },
-        "number": {
+        "number":
+        {
           "description": "To be used only if a specific Flight is required",
           "type": "string",
           "minLength": 0,
           "maxLength": 10
         },
-        "departureDate": {
+        "departureDate":
+        {
           "description": "This is to be used when only when this specific date of travel is required. Format: yyyy-MM-dd",
           "type": "string",
           "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$"
         },
-        "departureTime": {
+        "departureTime":
+        {
           "description": "This is to be used when only when this specific time of travel is required. Format: HH:mm (24h)",
           "type": "string"
         },
-        "transitRestriction": {
+        "transitRestriction":
+        {
           "description": "Additional entry requirements for several countries. E.g. Proof of a negative COVID-19 test taken within 72 hours",
           "type": "string",
           "minLength": 0,
           "maxLength": 300
         },
-        "airlineRestriction": {
+        "airlineRestriction":
+        {
           "description": "Restricted on any specific airlines due to any previous unruly behaviour or Restricted medication on certain flights",
           "type": "string",
           "minLength": 0,
           "maxLength": 300
         },
-        "travelTimeConstraintType": {
+        "travelTimeConstraintType":
+        {
           "description": "Time preference on when the flight should be booked",
           "type": "string"
         },
-        "notes": {
+        "notes":
+        {
           "description": "Any other information pertinent to the travel e.g. day, airline, travelling with a co-passenger etc.",
           "type": "string"
         }
       },
-      "required": [
+      "required":
+      [
         "bookingClass",
         "isLowCost",
         "isRefundable",
@@ -191,13 +236,16 @@
         "earliestDepartureDate"
       ]
     },
-    "priority": {
+    "priority":
+    {
       "description": "Priority of the request to do the booking",
-      "type": [
+      "type":
+      [
         "string",
         "null"
       ],
-      "enum": [
+      "enum":
+      [
         null,
         "normal",
         "urgent",
@@ -205,42 +253,53 @@
       ],
       "default": "normal"
     },
-    "requester": {
+    "requester":
+    {
       "description": "Details of the case worker initiating the travel request",
       "type": "object",
-      "properties": {
-        "fullName": {
+      "properties":
+      {
+        "fullName":
+        {
           "type": "string"
         },
-        "email": {
+        "email":
+        {
           "description": "Email address of the caseworker if available",
           "type": "string"
         },
-        "telephone": {
+        "telephone":
+        {
           "description": "Telephone number of the caseworker if available",
           "type": "string"
         },
-        "requestDate": {
+        "requestDate":
+        {
           "description": "Date when the request was raised",
           "type": "string"
         },
-        "teamEmail": {
+        "teamEmail":
+        {
           "description": "Group email of the team to which the requester belongs",
           "type": "string"
         },
-        "teamTelephone": {
+        "teamTelephone":
+        {
           "description": "Group telephone of the requester",
           "type": "string"
         },
-        "teamName": {
+        "teamName":
+        {
           "description": "This will have both Group name to contact if named contact is not available and the Group code of the team to which the requester belongs",
           "type": "string"
         }
       },
-      "anyOf": [
+      "anyOf":
+      [
         {
           "description": "Constraints requiring either personal or team contact details to be provided.",
-          "required": [
+          "required":
+          [
             "fullName",
             "email",
             "telephone"
@@ -248,16 +307,18 @@
         },
         {
           "description": "Constraints requiring either personal or team contact details to be provided.",
-          "required": [
+          "required":
+          [
             "fullName",
             "teamEmail",
             "teamTelephone"
           ]
         }
       ]
-    },
+    }
   },
-  "required": [
+  "required":
+  [
     "clientAccountNumber",
     "requestId",
     "ceprReference",
@@ -269,48 +330,61 @@
     "priority",
     "requester"
   ],
-  "definitions": {
-    "contact": {
+  "definitions":
+  {
+    "contact":
+    {
       "type": "object",
-      "properties": {
-        "contactType": {
+      "properties":
+      {
+        "contactType":
+        {
           "description": "Type of contact",
           "type": "string",
-          "enum": [
+          "enum":
+          [
             "email",
             "phone",
             "fax",
             "mobile"
           ]
         },
-        "description": {
+        "description":
+        {
           "description": "Description of the contact",
           "type": "string"
         },
-        "text": {
+        "text":
+        {
           "description": "Details or value of the contact type selected",
           "type": "string",
           "minLength": 0,
           "maxLength": 100
         }
       },
-      "required": [
+      "required":
+      [
         "contactType",
         "description",
         "text"
       ]
     },
-    "traveler": {
+    "traveler":
+    {
       "type": "object",
-      "properties": {
-        "travelerId": {
+      "properties":
+      {
+        "travelerId":
+        {
           "description": "Unique ID to identify the traveller for a booking. Mostly used in group bookings, this will be different for each traveler",
           "type": "integer"
         },
-        "travelerType": {
+        "travelerType":
+        {
           "description": "Industry-approved codes signifying the type of traveler and if Unaccompanied or Accompanied",
           "type": "string",
-          "enum": [
+          "enum":
+          [
             "DEPU",
             "DEPA",
             "MEDA",
@@ -319,80 +393,97 @@
           ],
           "default": "DEPU"
         },
-        "ceprReference": {
+        "ceprReference":
+        {
           "description": "This is only present for a returnee and not for Escorts. This should not be used as a unique Id as for a Family/Group Booking this will be shared by multiple travelers",
           "type": "string",
           "minLength": 1
         },
-        "title": {
+        "title":
+        {
           "description": "Person title",
-          "type": [
+          "type":
+          [
             "string",
             "null"
           ],
-          "enum": [
+          "enum":
+          [
             null,
             "mr",
             "mrs",
             "ms"
           ]
         },
-        "firstName": {
+        "firstName":
+        {
           "type": "string",
           "minLength": 0,
           "maxLength": 150
         },
-        "lastName": {
+        "lastName":
+        {
           "type": "string",
           "minLength": 0,
           "maxLength": 150
         },
-        "fullName": {
-          "type": [
+        "fullName":
+        {
+          "type":
+          [
             "string",
             "null"
           ],
           "minLength": 0,
           "maxLength": 300
         },
-        "dateOfBirth": {
+        "dateOfBirth":
+        {
           "description": "Date of birth of the traveler in ISO-8601 format of yyyy-MM-dd",
           "type": "string",
           "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$"
         },
-        "gender": {
+        "gender":
+        {
           "description": "Gender of the traveler if supplied",
           "type": "string",
-          "enum": [
+          "enum":
+          [
             "male",
             "female",
             "other"
           ]
         },
-        "nationality": {
+        "nationality":
+        {
           "type": "string",
           "description": "Nationality of the traveler e.g. Angola, British Citizen",
           "minLength": 0,
           "maxLength": 30
         },
-        "personalDocument": {
+        "personalDocument":
+        {
           "type": "object",
           "$ref": "#/definitions/personalDocument"
         },
-        "seatPreference": {
+        "seatPreference":
+        {
           "description": "Seating preference e.g. Bulkhead, Window, Aisle, Handicapped, Smoking Aisle Seat etc",
-          "type": [
+          "type":
+          [
             "string",
             "null"
           ],
           "minLength": 0,
           "maxLength": 100
         },
-        "mealPreference": {
+        "mealPreference":
+        {
           "description": "IATA Code of the type of meal preferred e.g. Asian Vegetarian meal(AVML) for Hindus is meat-free that include curries and spicy flavors",
           "minLength": 0,
           "maxLength": 100,
-          "enum": [
+          "enum":
+          [
             "AVML",
             "BBML",
             "CHML",
@@ -407,119 +498,151 @@
           ],
           "default": "VGML"
         },
-        "isEscortRequired": {
+        "isEscortRequired":
+        {
           "type": "boolean"
         },
-        "isMedicsRequired": {
+        "isMedicsRequired":
+        {
           "type": "boolean"
         },
-        "isSpotterRequired": {
+        "isSpotterRequired":
+        {
           "type": "boolean"
         },
-        "specialAssistance": {
+        "specialAssistance":
+        {
           "description": "Special assistance preference",
-          "type": [
+          "type":
+          [
             "string",
             "null"
           ],
           "minLength": 0,
           "maxLength": 100
         },
-        "isDetained": {
+        "isDetained":
+        {
           "type": "boolean",
-          "description": "Indicates to CWT/ESP if the person is detained"
+          "description": "Indicates to TSP/ESP if the person is detained"
         },
-        "isComplexCase": {
+        "isComplexCase":
+        {
           "type": "boolean",
-          "description": "Indicates to CWT/ESP if this is a complex or standard case"
+          "description": "Indicates to TSP/ESP if this is a complex or standard case"
         },
-        "complexCaseComments": {
+        "complexCaseComments":
+        {
           "type": "string",
           "description": "Complex case information if any",
           "minLength": 0,
           "maxLength": 600
         },
-        "placeOfDetention": {
+        "placeOfDetention":
+        {
           "$ref": "#/definitions/placeOfDetention"
         },
-        "contacts": {
+        "contacts":
+        {
           "description": "Passenger contact details if available",
           "type": "array",
-          "items": {
+          "items":
+          {
             "$ref": "#/definitions/contact"
           }
         },
-        "risksPosed": {
+        "risksPosed":
+        {
           "type": "array",
           "description": "Risks as applicable that may help to decide where to book the seats in the plane e.g. Suicidal, Violent etc.",
-          "items": {
+          "items":
+          {
             "type": "string"
           }
         },
-        "spotterDetails": {
+        "spotterDetails":
+        {
           "type": "object",
           "description": "This will be supplied if the spotter details are known at the time of booking. ESP will know it more accurately",
-          "properties": {
-            "name": {
+          "properties":
+          {
+            "name":
+            {
               "type": "string",
               "description": "Spotter name"
             },
-            "location": {
+            "location":
+            {
               "type": "string",
               "description": "The place where spotter is based"
             }
           },
-          "required": [
+          "required":
+          [
             "name"
           ]
         },
-        "previousFailedReturnDetails": {
+        "previousFailedReturnDetails":
+        {
           "description": "Details about any previous failed returns of the traveler",
-          "properties": {
-            "anyPreviousFailedReturns": {
+          "properties":
+          {
+            "anyPreviousFailedReturns":
+            {
               "type": "boolean",
               "description": "Indicates if the person has been failed to return previously"
             },
-            "previousFailedReturn": {
+            "previousFailedReturn":
+            {
               "$ref": "#/definitions/previousFailedReturn"
             }
           },
           "additionalProperties": false,
-          "required": [
+          "required":
+          [
             "anyPreviousFailedReturns"
           ]
         },
-        "outstandingBarriers": {
+        "outstandingBarriers":
+        {
           "type": "object",
-          "properties": {
-            "anyOutstandingBarrier": {
+          "properties":
+          {
+            "anyOutstandingBarrier":
+            {
               "type": "boolean",
               "description": "Any legal, documentation or process issues outstanding"
             },
-            "information": {
+            "information":
+            {
               "type": "string",
               "description": "Details of the outstanding barrier if any"
             }
           },
           "additionalProperties": false,
-          "required": [
+          "required":
+          [
             "anyOutstandingBarrier"
           ]
         },
-        "frequentTravelerProgram": {
+        "frequentTravelerProgram":
+        {
           "description": "Mostly used for Escorts frequent flier number",
           "type": "string"
         },
-        "additionalInformation": {
-          "description": "The information is generally mostly for CWT and ESP about any restrictions",
+        "additionalInformation":
+        {
+          "description": "The information is generally mostly for TSP and ESP about any restrictions",
           "type": "string"
         },
-        "notes": {
+        "notes":
+        {
           "description": "Any notes added for this booking",
           "type": "string"
         }
       },
-      "required": [
+      "required":
+      [
         "travelerId",
         "travelerType",
         "title",
@@ -540,13 +663,17 @@
         "isComplexCase"
       ]
     },
-    "personalDocument": {
+    "personalDocument":
+    {
       "type": "object",
-      "properties": {
-        "type": {
+      "properties":
+      {
+        "type":
+        {
           "description": "Type of travel document to be used for booking the travel",
           "type": "string",
-          "enum": [
+          "enum":
+          [
             "passport",
             "idCard",
             "visa",
@@ -560,51 +687,62 @@
           ],
           "default": "passport"
         },
-        "number": {
+        "number":
+        {
           "description": "Code/number document",
           "type": "string",
           "minLength": 0,
           "maxLength": 30
         },
-        "issueBy": {
+        "issueBy":
+        {
           "description": "Release authority",
           "type": "string",
           "minLength": 0,
           "maxLength": 150
         },
-        "issueCountry": {
+        "issueCountry":
+        {
           "description": "Place where the document is issued. Usually the ISO country code",
           "type": "string"
         },
-        "issueDate": {
+        "issueDate":
+        {
           "description": "Date of issue of the document in ISO-8601 format yyyy-MM-dd",
           "type": "string",
           "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$"
         },
-        "expiryDate": {
+        "expiryDate":
+        {
           "description": "Expiry date of the document in ISO-8601 format yyyy-MM-dd",
           "type": "string",
           "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$",
           "format": "date"
         },
-        "visas": {
+        "visas":
+        {
           "description": "Visa Details if any",
           "type": "object",
-          "properties": {
-            "type": {
+          "properties":
+          {
+            "type":
+            {
               "description": "Type of visa",
               "type": "string"
             },
-            "issueCountry": {
+            "issueCountry":
+            {
               "description": "Visa issuing Country"
             },
-            "issueDate": {
+            "issueDate":
+            {
               "description": "Visa Issue date in ISO-8601 format yyyy-MM-dd",
               "type": "string",
               "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$",
               "format": "date"
             },
-            "expiryDate": {
+            "expiryDate":
+            {
               "description": "Visa Expiry Date in ISO-8601 format yyyy-MM-dd",
               "type": "string",
               "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$",
@@ -613,43 +751,54 @@
           }
         }
       },
-      "required": [
+      "required":
+      [
         "type"
       ]
     },
-    "previousFailedReturn": {
+    "previousFailedReturn":
+    {
       "type": "object",
-      "properties": {
-        "date": {
+      "properties":
+      {
+        "date":
+        {
           "type": "string",
           "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$",
           "description": "Date in the ISO-8601 format yyyy-MM-dd."
         },
-        "reason": {
+        "reason":
+        {
           "type": "string",
           "description": "Details about the failed return"
         }
       },
       "additionalProperties": false,
-      "required": [
+      "required":
+      [
         "date",
         "reason"
       ]
     },
-    "placeOfDetention": {
+    "placeOfDetention":
+    {
       "type": "object",
-      "properties": {
-        "location": {
+      "properties":
+      {
+        "location":
+        {
           "type": "string",
           "description": "Place where the person is detained"
         },
-        "details": {
+        "details":
+        {
           "type": "string",
           "description": "Details about the detention"
         }
       },
       "additionalProperties": false,
-      "required": [
+      "required":
+      [
         "location"
       ]
     }
