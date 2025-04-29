@@ -49,11 +49,16 @@
           "items": {
             "$ref": "#/definitions/escortDetails"
           }
+        },
+        "daysAvailable": {
+          "description": "Number of days for which escorts are available",
+          "type" : "integer"
         }
       },
       "required": [
         "escorts",
-        "travelDate"
+        "travelDate",
+        "daysAvailable"
       ],
       "additionalProperties": false
     },
@@ -69,10 +74,19 @@
           "type": "string",
           "pattern": "^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$",
           "description": "Date in the ISO-8601 format yyyy-MM-dd. Is it mandatory?"
+        },
+        "escortType": {
+          "type": "string",
+          "description" : "Type of escort suggested by Mitie",
+          "enum": [
+            "Escort",
+            "Medic"
+          ]
         }
       },
       "required": [
-        "name"
+        "name",
+        "escortType"
       ],
       "additionalProperties": false
     }
