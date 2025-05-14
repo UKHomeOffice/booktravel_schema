@@ -381,6 +381,10 @@
         "additionalInformation": {
           "type": "string",
           "description": "Agent entered information e.g. High BP, Burglary etc."
+        },
+        "depmuNotes": {
+          "type": "string",
+          "description": "Notes applicable to movement orders, added by DEPMU"
         }
       },
       "additionalProperties": false,
