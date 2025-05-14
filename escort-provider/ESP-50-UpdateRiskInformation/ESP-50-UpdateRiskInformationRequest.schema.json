@@ -62,7 +62,7 @@
         },
         "depmuNotes": {
           "type": "string",
-          "description": "This will be the depmu notes"
+          "description": "Notes applicable to movement orders, added by DEPMU"
         }
       },
       "additionalProperties": false,
