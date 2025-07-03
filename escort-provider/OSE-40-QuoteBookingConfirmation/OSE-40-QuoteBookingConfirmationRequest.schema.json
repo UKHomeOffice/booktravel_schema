@@ -61,7 +61,7 @@
         }
       },
       "additionalProperties": false,
-      "required": [ "name" ]
+      "required": [ "groupName", "groupEmail", "groupTelephone"]
     },
     "bookingDetailsDefinition": {
       "type": "object",
